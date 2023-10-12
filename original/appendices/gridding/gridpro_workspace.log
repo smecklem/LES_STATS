@@ -1,0 +1,1824 @@
+system tray is not available
+Evaluating license..
+Found the required "ws" license for version 6.5
+Saving GridPro settings...
+writing : /home/qungibbo/.config/GridPro/workspace.conf
+Saved GridPro settings.
+loading topology...
+    setting initial default density and dimension.
+Evaluating license....
+Evaluating license....
+Found the required ws license for version 6.5
+read -fn /media/qungibbo/data/sims/ace/lima_grid/squishlima.fra
+	+-------------------------read-------------------------+
+	|          !!! For Authorized Use Only !!!              
+	|                                                       
+	| (c)Copyright 1993-2019,   Program Development Comp.   
+	|     ----   Licensed Materials, All Rights Reserved.   
+	| 300 Hamilton Ave.,Suite 409, White Plains, NY 10601   
+	| Tel: (914) 761-9152             Fax: (914) 761-1735   
+	+------------------------------------------------------+
+    --->--->Destroying the topology structure.
+    --->--->Deleting the corners of the topology.
+    --->--->deleting all surfaces in the group 0.
+    --->Ignoring GRID.SURF 
+    --->evaluating number of corners and surfaces of the component "main".
+    --->evaluating number of corners and surfaces of the component "surf".
+    --->evaluating number of corners and surfaces of the component "corn".
+    --->Realloc of corners: 0 -> 5484
+appending surface "surface.tube".
+replacing the previous file __tria_file_of_tube.tria (if any).
+loading surface...
+Num Vertices : 32300
+Num triangles : 64402
+evaluating surface tree.
+evaluated surface tree.
+loaded surface
+loaded surface
+appending surface "".
+renaming the current file __tria_file_of_tube.tria.
+s 1 -tria "__tria_file_of_tube.tria" -t  346.9500000000    0.0000000000    0.0000000000 -R    1.0000000000    0.0000000000    0.0000000000    0.0000000000    1.0000000000    0.0000000000    0.0000000000    0.0000000000    1.0000000000 ; 
+loading surface...
+Num Vertices : 4
+Num triangles : 3
+evaluating surface tree.
+evaluated surface tree.
+loaded surface
+loaded surface
+appending surface "".
+renaming the current file __tria_file_of_tube.tria.
+s 2 -tria "__tria_file_of_tube.tria" -t  461.9500000000    0.0000000000    0.0000000000 -R    0.0000000000   -1.0000000000    0.0000000000    1.0000000000    0.0000000000    0.0000000000    0.0000000000    0.0000000000    1.0000000000 ; 
+loading surface...
+Num Vertices : 4
+Num triangles : 3
+evaluating surface tree.
+evaluated surface tree.
+loaded surface
+loaded surface
+appending surface "".
+renaming the current file __tria_file_of_tube.tria.
+s 3 -tria "__tria_file_of_tube.tria" -t  461.9500000000    0.0000000000    0.0000000000 -R    0.0000000000    0.0000000000   -1.0000000000    0.0000000000    1.0000000000    0.0000000000    1.0000000000    0.0000000000    0.0000000000 ; 
+loading surface...
+Num Vertices : 4
+Num triangles : 3
+evaluating surface tree.
+evaluated surface tree.
+loaded surface
+loaded surface
+appending surface "".
+renaming the current file __tria_file_of_tube.tria.
+s 4 -tria "__tria_file_of_tube.tria" -t  661.9500000000    0.0000000000    0.0000000000 -R    1.0000000000    0.0000000000    0.0000000000    0.0000000000    1.0000000000    0.0000000000    0.0000000000    0.0000000000    1.0000000000 ; 
+loading surface...
+Num Vertices : 4
+Num triangles : 3
+evaluating surface tree.
+evaluated surface tree.
+loaded surface
+loaded surface
+appending surface "".
+renaming the current file __tria_file_of_tube.tria.
+s 5 -tria "__tria_file_of_tube.tria" -t  461.9500000000    0.0000000000    0.0000000000 -R    0.0000000000   -0.7071067812   -0.7071067812    0.7071067812    0.5000000000   -0.5000000000    0.7071067812   -0.5000000000    0.5000000000 ; 
+loading surface...
+Num Vertices : 4
+Num triangles : 3
+evaluating surface tree.
+evaluated surface tree.
+loaded surface
+loaded surface
+****--->No. of surfaces : 6
+****--->No. of corners  : 5484
+    --->setting surface labels.
+    generating the topology edges and faces from group 0.
+    Destroying the topology structure.
+    collecting edges of the topology.
+    Realloc of edges: 0 -> 15014
+
+****Edges generated : 15014
+    collecting faces of the topology.
+    Realloc of faces: 0 -> 13659
+
+****Faces generated : 13659
+    Assigning edges to the surfaces
+    Assigning faces to the surfaces
+    Setting edge labels
+    Setting face labels
+    evaluating edges in the edge group of edge 26 (21 0).
+    evaluating edges in the edge group of edge 1085 (726 0).
+    evaluating edges in the edge group of edge 34 (31 29).
+    evaluating edges in the edge group of edge 7973 (3422 36).
+    evaluating edges in the edge group of edge 2807 (1400 726).
+    evaluating edges in the edge group of edge 4529 (2074 1400).
+    evaluating edges in the edge group of edge 6251 (2748 2074).
+    evaluating edges in the edge group of edge 8626 (3682 3422).
+applying face exclusions.
+loaded topology
+saving topology as _ws.fra
+Created a backup of _ws.fra
+replacing the previous file _ws.fra (if any).
+    # Writing the toplogy to the file "_ws.fra".
+    evaluating edges in the edge group of edge 26 (21 0).
+    evaluating edges in the edge group of edge 34 (31 29).
+    evaluating edges in the edge group of edge 1085 (726 0).
+    evaluating edges in the edge group of edge 2807 (1400 726).
+    evaluating edges in the edge group of edge 4529 (2074 1400).
+    evaluating edges in the edge group of edge 6251 (2748 2074).
+    evaluating edges in the edge group of edge 7973 (3422 36).
+    evaluating edges in the edge group of edge 8626 (3682 3422).
+    generating the entire topology from group 0.
+    generating the topology edges, faces and blocks from group 0.
+    collecting blocks of the topology.
+    Realloc of blocks: 0 -> 4128
+
+****Blocks generated: 4128
+    Auto elimination of blocks
+    Auto elimination of faces
+    Setting block labels
+    checking validity of blocks.
+    checking validity of surfaces.
+    checking validity of corners.
+    checking validity of edges.
+    checking validity of faces.
+    setting block orientn.
+    evaluating singularities ***
+****very     severe singularities : 0
+****mediumly severe singularities : 0
+****mildly   severe singularities : 0
+    Auto block/face/edge/corner elimination :
+****Surfaces :       6 ->       6
+****Corners  :    5484 ->    5484
+****Edges    :   15014 ->   15014
+****Faces    :   13659 ->   13659
+****Blocks   :    4128 ->    4128
+Running Ggrid
+    setting initial default density and dimension.
+generate_grid -tfn _ws.fra 
+	+--------------------generate_grid---------------------+
+	|          !!! For Authorized Use Only !!!              
+	|                                                       
+	| (c)Copyright 1993-2019,   Program Development Comp.   
+	|     ----   Licensed Materials, All Rights Reserved.   
+	| 300 Hamilton Ave.,Suite 409, White Plains, NY 10601   
+	| Tel: (914) 761-9152             Fax: (914) 761-1735   
+	+------------------------------------------------------+
+
++----------------------- Ggrid ------------------------+
+| The GridPro grid engine, 'helpaz <ret>' for help.    |
+|                                                      |
+|          !!! For Authorized Use Only !!!             |
+|                                                      |
+| (c)Copyright 1993-2016,   Program Development Comp.  |
+|     ----   Licensed Materials, All Rights Reserved.  |
+| 300 Hamilton Ave.,Suite 409, White Plains, NY 10601  |
+| Tel: (914) 761-9152             Fax: (914) 761-1735  |
++------------------------------------------------------+
+Version  : 6.5 (Jan 28 08:37 2016)                        
+User Info: 985306338(=0x3aba94e2) 'Wintermute=127.0.1.1'
+
+pdclm: delete '/home/qungibbo/.clnt_13890.log'
+pdclm: licenser_id=0 release=Jan 28 08:37 2016
+pdclm: create '/home/qungibbo/.clnt_5275.log'
+pdclm: load   '/home/qungibbo/programs/GridPro-6.5/lc_mngr/gridpro.lic' ...
+pdclm: 1 product checksums are checked
+pdclm: licensee_id=0
+FILENAME.SCH  _ws.sch
+FILENAME.PARA _ws.par
+FILENAME.LOG  log.tmp
+FILENAME.CONN conn.tmp
+FILENAME.DUMP dump.tmp
+WAIT.FN _stamp.tmp 	(_stamp.tmp) 	_stamp.tmp
+SEARCH.SEED 1569825494
+
+
+PROCESSING TIL INPUT:
+  parsing '_ws.fra' as header:  1/1 
+	 'main'	 'surf'	 'corn'
+
+  linking components:
+  expanding topology:
+
+
+GENERATING TOPOLOGY:
+       6 surfaces.
+    5484 corners
+   15014 edges
+   13659 faces.  excluded: manual 0.
+    4128 blocks. excluded: manual 0
+
+
+  Statistics of singularities:
+    Internal   C: 88(6b) 24(10b)
+    One   Surf C: 18(3b) 16(5b)
+    Internal   E: 97(3b) 32(5b)
+
+
+  There are 80 edge groups.
+
+LOADING SURFACES:
+  s0 (a) tube '..ace/lima_grid/surface.tube':  (refining from 32 nodes)   (nodes=39, segms=38)
+    init tree: branchs=4  bs=(m2,M3,avg2.4,lmt=4) depth_max=3
+  s1 (a) plane( 50*X = 17347.5 )
+  s2 (a) plane( 50*Y = 0 )
+  s3 (a) plane( 50*Z = 0 )
+  s4 (a) plane( 50*X = 33097.5 )
+  s5 (a) plane( 35.3553*Y + 35.3553*Z = 0 )
+
+
+INITIALIZING GRID:
+  mark e (eid den eCnt):
+    (def    6    ) (26   500  29) (34  1672  29) (1085 22 1176) 
+    (2807 22 1176) (4529 22 1176) (6251 22 1176) (7973  56 330) 
+    (8626  48 330) 
+  total points needed: points=33206976x96+42421248x8 = 3363 MB
+  allocating: b0/4128  points=792x96+1536x8 = 0 MB      
+  allocating: b1/4128  points=1584x96+3072x8 = 0 MB      
+  allocating: b2/4128  points=2376x96+4608x8 = 0 MB      
+  allocating: b3/4128  points=3168x96+6144x8 = 0 MB      
+  allocating: b4/4128  points=3960x96+7680x8 = 0 MB      
+  allocating: b5/4128  points=4752x96+9216x8 = 0 MB      
+  allocating: b6/4128  points=5544x96+10752x8 = 0 MB      
+  allocating: b7/4128  points=6336x96+12288x8 = 0 MB      
+  allocating: b8/4128  points=72336x96+108672x8 = 7 MB      
+  allocating: b9/4128  points=293040x96+430080x8 = 30 MB      
+  allocating: b10/4128  points=359040x96+526464x8 = 36 MB      
+  allocating: b11/4128  points=359832x96+528000x8 = 36 MB      
+  allocating: b12/4128  points=360624x96+529536x8 = 37 MB      
+  allocating: b13/4128  points=361416x96+531072x8 = 37 MB      
+  allocating: b14/4128  points=362208x96+532608x8 = 37 MB      
+  allocating: b15/4128  points=363000x96+534144x8 = 37 MB      
+  allocating: b16/4128  points=363792x96+535680x8 = 37 MB      
+  allocating: b17/4128  points=364584x96+537216x8 = 37 MB      
+  allocating: b18/4128  points=365376x96+538752x8 = 37 MB      
+  allocating: b19/4128  points=366168x96+540288x8 = 37 MB      
+  allocating: b20/4128  points=366960x96+541824x8 = 37 MB      
+  allocating: b21/4128  points=367752x96+543360x8 = 37 MB      
+  allocating: b22/4128  points=368544x96+544896x8 = 37 MB      
+  allocating: b23/4128  points=369336x96+546432x8 = 37 MB      
+  allocating: b24/4128  points=370128x96+547968x8 = 38 MB      
+  allocating: b25/4128  points=370920x96+549504x8 = 38 MB      
+  allocating: b26/4128  points=371712x96+551040x8 = 38 MB      
+  allocating: b27/4128  points=372504x96+552576x8 = 38 MB      
+  allocating: b28/4128  points=373296x96+554112x8 = 38 MB      
+  allocating: b29/4128  points=374088x96+555648x8 = 38 MB      
+  allocating: b30/4128  points=374880x96+557184x8 = 38 MB      
+  allocating: b31/4128  points=375672x96+558720x8 = 38 MB      
+  allocating: b32/4128  points=376464x96+560256x8 = 38 MB      
+  allocating: b33/4128  points=377256x96+561792x8 = 38 MB      
+  allocating: b34/4128  points=378048x96+563328x8 = 38 MB      
+  allocating: b35/4128  points=378840x96+564864x8 = 38 MB      
+  allocating: b36/4128  points=379632x96+566400x8 = 39 MB      
+  allocating: b37/4128  points=380424x96+567936x8 = 39 MB      
+  allocating: b38/4128  points=381216x96+569472x8 = 39 MB      
+  allocating: b39/4128  points=382008x96+571008x8 = 39 MB      
+  allocating: b40/4128  points=382800x96+572544x8 = 39 MB      
+  allocating: b41/4128  points=383592x96+574080x8 = 39 MB      
+  allocating: b42/4128  points=384384x96+575616x8 = 39 MB      
+  allocating: b43/4128  points=385176x96+577152x8 = 39 MB      
+  allocating: b44/4128  points=385968x96+578688x8 = 39 MB      
+  allocating: b45/4128  points=386760x96+580224x8 = 39 MB      
+  allocating: b46/4128  points=387552x96+581760x8 = 39 MB      
+  allocating: b47/4128  points=388344x96+583296x8 = 40 MB      
+  allocating: b48/4128  points=389136x96+584832x8 = 40 MB      
+  allocating: b49/4128  points=389928x96+586368x8 = 40 MB      
+  allocating: b50/4128  points=390720x96+587904x8 = 40 MB      
+  allocating: b51/4128  points=391512x96+589440x8 = 40 MB      
+  allocating: b52/4128  points=392304x96+590976x8 = 40 MB      
+  allocating: b53/4128  points=393096x96+592512x8 = 40 MB      
+  allocating: b54/4128  points=393888x96+594048x8 = 40 MB      
+  allocating: b55/4128  points=394680x96+595584x8 = 40 MB      
+  allocating: b56/4128  points=395472x96+597120x8 = 40 MB      
+  allocating: b57/4128  points=396264x96+598656x8 = 40 MB      
+  allocating: b58/4128  points=397056x96+600192x8 = 40 MB      
+  allocating: b59/4128  points=397848x96+601728x8 = 41 MB      
+  allocating: b60/4128  points=398640x96+603264x8 = 41 MB      
+  allocating: b61/4128  points=399432x96+604800x8 = 41 MB      
+  allocating: b62/4128  points=400224x96+606336x8 = 41 MB      
+  allocating: b63/4128  points=401016x96+607872x8 = 41 MB      
+  allocating: b64/4128  points=401808x96+609408x8 = 41 MB      
+  allocating: b65/4128  points=402600x96+610944x8 = 41 MB      
+  allocating: b66/4128  points=403392x96+612480x8 = 41 MB      
+  allocating: b67/4128  points=404184x96+614016x8 = 41 MB      
+  allocating: b68/4128  points=404976x96+615552x8 = 41 MB      
+  allocating: b69/4128  points=405768x96+617088x8 = 41 MB      
+  allocating: b70/4128  points=406560x96+618624x8 = 41 MB      
+  allocating: b71/4128  points=407352x96+620160x8 = 42 MB      
+  allocating: b72/4128  points=408144x96+621696x8 = 42 MB      
+  allocating: b73/4128  points=408936x96+623232x8 = 42 MB      
+  allocating: b74/4128  points=409728x96+624768x8 = 42 MB      
+  allocating: b75/4128  points=410520x96+626304x8 = 42 MB      
+  allocating: b76/4128  points=411312x96+627840x8 = 42 MB      
+  allocating: b77/4128  points=412104x96+629376x8 = 42 MB      
+  allocating: b78/4128  points=412896x96+630912x8 = 42 MB      
+  allocating: b79/4128  points=413688x96+632448x8 = 42 MB      
+  allocating: b80/4128  points=414480x96+633984x8 = 42 MB      
+  allocating: b81/4128  points=415272x96+635520x8 = 42 MB      
+  allocating: b82/4128  points=416064x96+637056x8 = 42 MB      
+  allocating: b83/4128  points=416856x96+638592x8 = 43 MB      
+  allocating: b84/4128  points=417648x96+640128x8 = 43 MB      
+  allocating: b85/4128  points=418440x96+641664x8 = 43 MB      
+  allocating: b86/4128  points=419232x96+643200x8 = 43 MB      
+  allocating: b87/4128  points=420024x96+644736x8 = 43 MB      
+  allocating: b88/4128  points=420816x96+646272x8 = 43 MB      
+  allocating: b89/4128  points=421608x96+647808x8 = 43 MB      
+  allocating: b90/4128  points=422400x96+649344x8 = 43 MB      
+  allocating: b91/4128  points=423192x96+650880x8 = 43 MB      
+  allocating: b92/4128  points=423984x96+652416x8 = 43 MB      
+  allocating: b93/4128  points=424776x96+653952x8 = 43 MB      
+  allocating: b94/4128  points=425568x96+655488x8 = 43 MB      
+  allocating: b95/4128  points=426360x96+657024x8 = 44 MB      
+  allocating: b96/4128  points=427152x96+658560x8 = 44 MB      
+  allocating: b97/4128  points=427944x96+660096x8 = 44 MB      
+  allocating: b98/4128  points=428736x96+661632x8 = 44 MB      
+  allocating: b99/4128  points=429528x96+663168x8 = 44 MB      
+  allocating: b100/4128  points=430320x96+664704x8 = 44 MB      
+  allocating: b101/4128  points=431112x96+666240x8 = 44 MB      
+  allocating: b102/4128  points=431904x96+667776x8 = 44 MB      
+  allocating: b103/4128  points=432696x96+669312x8 = 44 MB      
+  allocating: b104/4128  points=433488x96+670848x8 = 44 MB      
+  allocating: b105/4128  points=434280x96+672384x8 = 44 MB      
+  allocating: b106/4128  points=435072x96+673920x8 = 44 MB      
+  allocating: b107/4128  points=435864x96+675456x8 = 45 MB      
+  allocating: b108/4128  points=436656x96+676992x8 = 45 MB      
+  allocating: b109/4128  points=437448x96+678528x8 = 45 MB      
+  allocating: b110/4128  points=438240x96+680064x8 = 45 MB      
+  allocating: b111/4128  points=439032x96+681600x8 = 45 MB      
+  allocating: b112/4128  points=439824x96+683136x8 = 45 MB      
+  allocating: b113/4128  points=440616x96+684672x8 = 45 MB      
+  allocating: b114/4128  points=441408x96+686208x8 = 45 MB      
+  allocating: b115/4128  points=442200x96+687744x8 = 45 MB      
+  allocating: b116/4128  points=442992x96+689280x8 = 45 MB      
+  allocating: b117/4128  points=443784x96+690816x8 = 45 MB      
+  allocating: b118/4128  points=444576x96+692352x8 = 45 MB      
+  allocating: b119/4128  points=445368x96+693888x8 = 46 MB      
+  allocating: b120/4128  points=446160x96+695424x8 = 46 MB      
+  allocating: b121/4128  points=446952x96+696960x8 = 46 MB      
+  allocating: b122/4128  points=447744x96+698496x8 = 46 MB      
+  allocating: b123/4128  points=448536x96+700032x8 = 46 MB      
+  allocating: b124/4128  points=449328x96+701568x8 = 46 MB      
+  allocating: b125/4128  points=450120x96+703104x8 = 46 MB      
+  allocating: b126/4128  points=450912x96+704640x8 = 46 MB      
+  allocating: b127/4128  points=451704x96+706176x8 = 46 MB      
+  allocating: b128/4128  points=452496x96+707712x8 = 46 MB      
+  allocating: b129/4128  points=453288x96+709248x8 = 46 MB      
+  allocating: b130/4128  points=454080x96+710784x8 = 46 MB      
+  allocating: b131/4128  points=454872x96+712320x8 = 47 MB      
+  allocating: b132/4128  points=455664x96+713856x8 = 47 MB      
+  allocating: b133/4128  points=456456x96+715392x8 = 47 MB      
+  allocating: b134/4128  points=457248x96+716928x8 = 47 MB      
+  allocating: b135/4128  points=458040x96+718464x8 = 47 MB      
+  allocating: b136/4128  points=458832x96+720000x8 = 47 MB      
+  allocating: b137/4128  points=459624x96+721536x8 = 47 MB      
+  allocating: b138/4128  points=460416x96+723072x8 = 47 MB      
+  allocating: b139/4128  points=461208x96+724608x8 = 47 MB      
+  allocating: b140/4128  points=462000x96+726144x8 = 47 MB      
+  allocating: b141/4128  points=462792x96+727680x8 = 47 MB      
+  allocating: b142/4128  points=463584x96+729216x8 = 48 MB      
+  allocating: b143/4128  points=464376x96+730752x8 = 48 MB      
+  allocating: b144/4128  points=465168x96+732288x8 = 48 MB      
+  allocating: b145/4128  points=465960x96+733824x8 = 48 MB      
+  allocating: b146/4128  points=466752x96+735360x8 = 48 MB      
+  allocating: b147/4128  points=467544x96+736896x8 = 48 MB      
+  allocating: b148/4128  points=468336x96+738432x8 = 48 MB      
+  allocating: b149/4128  points=469128x96+739968x8 = 48 MB      
+  allocating: b150/4128  points=469920x96+741504x8 = 48 MB      
+  allocating: b151/4128  points=470712x96+743040x8 = 48 MB      
+  allocating: b152/4128  points=471504x96+744576x8 = 48 MB      
+  allocating: b153/4128  points=472296x96+746112x8 = 48 MB      
+  allocating: b154/4128  points=473088x96+747648x8 = 49 MB      
+  allocating: b155/4128  points=473880x96+749184x8 = 49 MB      
+  allocating: b156/4128  points=474672x96+750720x8 = 49 MB      
+  allocating: b157/4128  points=475464x96+752256x8 = 49 MB      
+  allocating: b158/4128  points=476256x96+753792x8 = 49 MB      
+  allocating: b159/4128  points=477048x96+755328x8 = 49 MB      
+  allocating: b160/4128  points=477840x96+756864x8 = 49 MB      
+  allocating: b161/4128  points=478632x96+758400x8 = 49 MB      
+  allocating: b162/4128  points=479424x96+759936x8 = 49 MB      
+  allocating: b163/4128  points=480216x96+761472x8 = 49 MB      
+  allocating: b164/4128  points=481008x96+763008x8 = 49 MB      
+  allocating: b165/4128  points=481800x96+764544x8 = 49 MB      
+  allocating: b166/4128  points=482592x96+766080x8 = 50 MB      
+  allocating: b167/4128  points=483384x96+767616x8 = 50 MB      
+  allocating: b168/4128  points=484176x96+769152x8 = 50 MB      
+  allocating: b169/4128  points=484968x96+770688x8 = 50 MB      
+  allocating: b170/4128  points=485760x96+772224x8 = 50 MB      
+  allocating: b171/4128  points=486552x96+773760x8 = 50 MB      
+  allocating: b172/4128  points=487344x96+775296x8 = 50 MB      
+  allocating: b173/4128  points=488136x96+776832x8 = 50 MB      
+  allocating: b174/4128  points=488928x96+778368x8 = 50 MB      
+  allocating: b175/4128  points=489720x96+779904x8 = 50 MB      
+  allocating: b176/4128  points=490512x96+781440x8 = 50 MB      
+  allocating: b177/4128  points=491304x96+782976x8 = 50 MB      
+  allocating: b178/4128  points=492096x96+784512x8 = 51 MB      
+  allocating: b179/4128  points=492888x96+786048x8 = 51 MB      
+  allocating: b180/4128  points=493680x96+787584x8 = 51 MB      
+  allocating: b181/4128  points=494472x96+789120x8 = 51 MB      
+  allocating: b182/4128  points=495264x96+790656x8 = 51 MB      
+  allocating: b183/4128  points=496056x96+792192x8 = 51 MB      
+  allocating: b184/4128  points=496848x96+793728x8 = 51 MB      
+  allocating: b185/4128  points=497640x96+795264x8 = 51 MB      
+  allocating: b186/4128  points=498432x96+796800x8 = 51 MB      
+  allocating: b187/4128  points=499224x96+798336x8 = 51 MB      
+  allocating: b188/4128  points=500016x96+799872x8 = 51 MB      
+  allocating: b189/4128  points=500808x96+801408x8 = 51 MB      
+  allocating: b190/4128  points=501600x96+802944x8 = 52 MB      
+  allocating: b191/4128  points=502392x96+804480x8 = 52 MB      
+  allocating: b192/4128  points=503184x96+806016x8 = 52 MB      
+  allocating: b193/4128  points=503976x96+807552x8 = 52 MB      
+  allocating: b194/4128  points=504768x96+809088x8 = 52 MB      
+  allocating: b195/4128  points=505560x96+810624x8 = 52 MB      
+  allocating: b196/4128  points=506352x96+812160x8 = 52 MB      
+  allocating: b197/4128  points=507144x96+813696x8 = 52 MB      
+  allocating: b198/4128  points=507936x96+815232x8 = 52 MB      
+  allocating: b199/4128  points=508728x96+816768x8 = 52 MB      
+  allocating: b200/4128  points=509520x96+818304x8 = 52 MB      
+  allocating: b201/4128  points=510312x96+819840x8 = 52 MB      
+  allocating: b202/4128  points=511104x96+821376x8 = 53 MB      
+  allocating: b203/4128  points=511896x96+822912x8 = 53 MB      
+  allocating: b204/4128  points=512688x96+824448x8 = 53 MB      
+  allocating: b205/4128  points=513480x96+825984x8 = 53 MB      
+  allocating: b206/4128  points=514272x96+827520x8 = 53 MB      
+  allocating: b207/4128  points=515064x96+829056x8 = 53 MB      
+  allocating: b208/4128  points=515856x96+830592x8 = 53 MB      
+  allocating: b209/4128  points=516648x96+832128x8 = 53 MB      
+  allocating: b210/4128  points=517440x96+833664x8 = 53 MB      
+  allocating: b211/4128  points=518232x96+835200x8 = 53 MB      
+  allocating: b212/4128  points=519024x96+836736x8 = 53 MB      
+  allocating: b213/4128  points=519816x96+838272x8 = 53 MB      
+  allocating: b214/4128  points=520608x96+839808x8 = 54 MB      
+  allocating: b215/4128  points=521400x96+841344x8 = 54 MB      
+  allocating: b216/4128  points=522192x96+842880x8 = 54 MB      
+  allocating: b217/4128  points=522984x96+844416x8 = 54 MB      
+  allocating: b218/4128  points=523776x96+845952x8 = 54 MB      
+  allocating: b219/4128  points=524568x96+847488x8 = 54 MB      
+  allocating: b220/4128  points=525360x96+849024x8 = 54 MB      
+  allocating: b221/4128  points=526152x96+850560x8 = 54 MB      
+  allocating: b222/4128  points=526944x96+852096x8 = 54 MB      
+  allocating: b223/4128  points=527736x96+853632x8 = 54 MB      
+  allocating: b224/4128  points=528528x96+855168x8 = 54 MB      
+  allocating: b225/4128  points=529320x96+856704x8 = 54 MB      
+  allocating: b226/4128  points=530112x96+858240x8 = 55 MB      
+  allocating: b227/4128  points=530904x96+859776x8 = 55 MB      
+  allocating: b228/4128  points=531696x96+861312x8 = 55 MB      
+  allocating: b229/4128  points=532488x96+862848x8 = 55 MB      
+  allocating: b230/4128  points=533280x96+864384x8 = 55 MB      
+  allocating: b231/4128  points=534072x96+865920x8 = 55 MB      
+  allocating: b232/4128  points=534864x96+867456x8 = 55 MB      
+  allocating: b233/4128  points=535656x96+868992x8 = 55 MB      
+  allocating: b234/4128  points=536448x96+870528x8 = 55 MB      
+  allocating: b235/4128  points=537240x96+872064x8 = 55 MB      
+  allocating: b236/4128  points=538032x96+873600x8 = 55 MB      
+  allocating: b237/4128  points=538824x96+875136x8 = 56 MB      
+  allocating: b238/4128  points=539616x96+876672x8 = 56 MB      
+  allocating: b239/4128  points=540408x96+878208x8 = 56 MB      
+  allocating: b240/4128  points=541200x96+879744x8 = 56 MB      
+  allocating: b241/4128  points=541992x96+881280x8 = 56 MB      
+  allocating: b242/4128  points=542784x96+882816x8 = 56 MB      
+  allocating: b243/4128  points=543576x96+884352x8 = 56 MB      
+  allocating: b244/4128  points=544368x96+885888x8 = 56 MB      
+  allocating: b245/4128  points=545160x96+887424x8 = 56 MB      
+  allocating: b246/4128  points=545952x96+888960x8 = 56 MB      
+  allocating: b247/4128  points=546744x96+890496x8 = 56 MB      
+  allocating: b248/4128  points=547536x96+892032x8 = 56 MB      
+  allocating: b249/4128  points=548328x96+893568x8 = 57 MB      
+  allocating: b250/4128  points=549120x96+895104x8 = 57 MB      
+  allocating: b251/4128  points=549912x96+896640x8 = 57 MB      
+  allocating: b252/4128  points=550704x96+898176x8 = 57 MB      
+  allocating: b253/4128  points=551496x96+899712x8 = 57 MB      
+  allocating: b254/4128  points=552288x96+901248x8 = 57 MB      
+  allocating: b255/4128  points=553080x96+902784x8 = 57 MB      
+  allocating: b256/4128  points=553872x96+904320x8 = 57 MB      
+  allocating: b257/4128  points=554664x96+905856x8 = 57 MB      
+  allocating: b258/4128  points=555456x96+907392x8 = 57 MB      
+  allocating: b259/4128  points=556248x96+908928x8 = 57 MB      
+  allocating: b260/4128  points=557040x96+910464x8 = 57 MB      
+  allocating: b261/4128  points=557832x96+912000x8 = 58 MB      
+  allocating: b262/4128  points=558624x96+913536x8 = 58 MB      
+  allocating: b263/4128  points=559416x96+915072x8 = 58 MB      
+  allocating: b264/4128  points=560208x96+916608x8 = 58 MB      
+  allocating: b265/4128  points=561000x96+918144x8 = 58 MB      
+  allocating: b266/4128  points=561792x96+919680x8 = 58 MB      
+  allocating: b267/4128  points=562584x96+921216x8 = 58 MB      
+  allocating: b268/4128  points=563376x96+922752x8 = 58 MB      
+  allocating: b269/4128  points=564168x96+924288x8 = 58 MB      
+  allocating: b270/4128  points=564960x96+925824x8 = 58 MB      
+  allocating: b271/4128  points=565752x96+927360x8 = 58 MB      
+  allocating: b272/4128  points=566544x96+928896x8 = 58 MB      
+  allocating: b273/4128  points=567336x96+930432x8 = 59 MB      
+  allocating: b274/4128  points=568128x96+931968x8 = 59 MB      
+  allocating: b275/4128  points=568920x96+933504x8 = 59 MB      
+  allocating: b276/4128  points=569712x96+935040x8 = 59 MB      
+  allocating: b277/4128  points=570504x96+936576x8 = 59 MB      
+  allocating: b278/4128  points=571296x96+938112x8 = 59 MB      
+  allocating: b279/4128  points=572088x96+939648x8 = 59 MB      
+  allocating: b280/4128  points=572880x96+941184x8 = 59 MB      
+  allocating: b281/4128  points=573672x96+942720x8 = 59 MB      
+  allocating: b282/4128  points=574464x96+944256x8 = 59 MB      
+  allocating: b283/4128  points=575256x96+945792x8 = 59 MB      
+  allocating: b284/4128  points=576048x96+947328x8 = 59 MB      
+  allocating: b285/4128  points=576840x96+948864x8 = 60 MB      
+  allocating: b286/4128  points=577632x96+950400x8 = 60 MB      
+  allocating: b287/4128  points=578424x96+951936x8 = 60 MB      
+  allocating: b288/4128  points=579216x96+953472x8 = 60 MB      
+  allocating: b289/4128  points=580008x96+955008x8 = 60 MB      
+  allocating: b290/4128  points=580800x96+956544x8 = 60 MB      
+  allocating: b291/4128  points=581592x96+958080x8 = 60 MB      
+  allocating: b292/4128  points=582384x96+959616x8 = 60 MB      
+  allocating: b293/4128  points=583176x96+961152x8 = 60 MB      
+  allocating: b294/4128  points=583968x96+962688x8 = 60 MB      
+  allocating: b295/4128  points=584760x96+964224x8 = 60 MB      
+  allocating: b296/4128  points=585552x96+965760x8 = 60 MB      
+  allocating: b297/4128  points=586344x96+967296x8 = 61 MB      
+  allocating: b298/4128  points=587136x96+968832x8 = 61 MB      
+  allocating: b299/4128  points=587928x96+970368x8 = 61 MB      
+  allocating: b300/4128  points=588720x96+971904x8 = 61 MB      
+  allocating: b301/4128  points=589512x96+973440x8 = 61 MB      
+  allocating: b302/4128  points=590304x96+974976x8 = 61 MB      
+  allocating: b303/4128  points=591096x96+976512x8 = 61 MB      
+  allocating: b304/4128  points=591888x96+978048x8 = 61 MB      
+  allocating: b305/4128  points=592680x96+979584x8 = 61 MB      
+  allocating: b306/4128  points=593472x96+981120x8 = 61 MB      
+  allocating: b307/4128  points=594264x96+982656x8 = 61 MB      
+  allocating: b308/4128  points=595056x96+984192x8 = 61 MB      
+  allocating: b309/4128  points=595848x96+985728x8 = 62 MB      
+  allocating: b310/4128  points=596640x96+987264x8 = 62 MB      
+  allocating: b311/4128  points=597432x96+988800x8 = 62 MB      
+  allocating: b312/4128  points=598224x96+990336x8 = 62 MB      
+  allocating: b313/4128  points=599016x96+991872x8 = 62 MB      
+  allocating: b314/4128  points=599808x96+993408x8 = 62 MB      
+  allocating: b315/4128  points=600600x96+994944x8 = 62 MB      
+  allocating: b316/4128  points=601392x96+996480x8 = 62 MB      
+  allocating: b317/4128  points=602184x96+998016x8 = 62 MB      
+  allocating: b318/4128  points=602976x96+999552x8 = 62 MB      
+  allocating: b319/4128  points=603768x96+1001088x8 = 62 MB      
+  allocating: b320/4128  points=604560x96+1002624x8 = 62 MB      
+  allocating: b321/4128  points=605352x96+1004160x8 = 63 MB      
+  allocating: b322/4128  points=606144x96+1005696x8 = 63 MB      
+  allocating: b323/4128  points=606936x96+1007232x8 = 63 MB      
+  allocating: b324/4128  points=607728x96+1008768x8 = 63 MB      
+  allocating: b325/4128  points=608520x96+1010304x8 = 63 MB      
+  allocating: b326/4128  points=609312x96+1011840x8 = 63 MB      
+  allocating: b327/4128  points=610104x96+1013376x8 = 63 MB      
+  allocating: b328/4128  points=610896x96+1014912x8 = 63 MB      
+  allocating: b329/4128  points=611688x96+1016448x8 = 63 MB      
+  allocating: b330/4128  points=612480x96+1017984x8 = 63 MB      
+  allocating: b331/4128  points=613272x96+1019520x8 = 63 MB      
+  allocating: b332/4128  points=614064x96+1021056x8 = 64 MB      
+  allocating: b333/4128  points=614856x96+1022592x8 = 64 MB      
+  allocating: b334/4128  points=615648x96+1024128x8 = 64 MB      
+  allocating: b335/4128  points=616440x96+1025664x8 = 64 MB      
+  allocating: b336/4128  points=617232x96+1027200x8 = 64 MB      
+  allocating: b337/4128  points=618024x96+1028736x8 = 64 MB      
+  allocating: b338/4128  points=618816x96+1030272x8 = 64 MB      
+  allocating: b339/4128  points=619608x96+1031808x8 = 64 MB      
+  allocating: b340/4128  points=620400x96+1033344x8 = 64 MB      
+  allocating: b341/4128  points=621192x96+1034880x8 = 64 MB      
+  allocating: b342/4128  points=621984x96+1036416x8 = 64 MB      
+  allocating: b343/4128  points=622776x96+1037952x8 = 64 MB      
+  allocating: b344/4128  points=623568x96+1039488x8 = 65 MB      
+  allocating: b345/4128  points=624360x96+1041024x8 = 65 MB      
+  allocating: b346/4128  points=625152x96+1042560x8 = 65 MB      
+  allocating: b347/4128  points=625944x96+1044096x8 = 65 MB      
+  allocating: b348/4128  points=626736x96+1045632x8 = 65 MB      
+  allocating: b349/4128  points=627528x96+1047168x8 = 65 MB      
+  allocating: b350/4128  points=628320x96+1048704x8 = 65 MB      
+  allocating: b351/4128  points=629112x96+1050240x8 = 65 MB      
+  allocating: b352/4128  points=629904x96+1051776x8 = 65 MB      
+  allocating: b353/4128  points=630696x96+1053312x8 = 65 MB      
+  allocating: b354/4128  points=631488x96+1054848x8 = 65 MB      
+  allocating: b355/4128  points=632280x96+1056384x8 = 65 MB      
+  allocating: b356/4128  points=633072x96+1057920x8 = 66 MB      
+  allocating: b357/4128  points=633864x96+1059456x8 = 66 MB      
+  allocating: b358/4128  points=634656x96+1060992x8 = 66 MB      
+  allocating: b359/4128  points=635448x96+1062528x8 = 66 MB      
+  allocating: b360/4128  points=636240x96+1064064x8 = 66 MB      
+  allocating: b361/4128  points=637032x96+1065600x8 = 66 MB      
+  allocating: b362/4128  points=637824x96+1067136x8 = 66 MB      
+  allocating: b363/4128  points=638616x96+1068672x8 = 66 MB      
+  allocating: b364/4128  points=639408x96+1070208x8 = 66 MB      
+  allocating: b365/4128  points=640200x96+1071744x8 = 66 MB      
+  allocating: b366/4128  points=640992x96+1073280x8 = 66 MB      
+  allocating: b367/4128  points=641784x96+1074816x8 = 66 MB      
+  allocating: b368/4128  points=642576x96+1076352x8 = 67 MB      
+  allocating: b369/4128  points=643368x96+1077888x8 = 67 MB      
+  allocating: b370/4128  points=644160x96+1079424x8 = 67 MB      
+  allocating: b371/4128  points=644952x96+1080960x8 = 67 MB      
+  allocating: b372/4128  points=645744x96+1082496x8 = 67 MB      
+  allocating: b373/4128  points=646536x96+1084032x8 = 67 MB      
+  allocating: b374/4128  points=647328x96+1085568x8 = 67 MB      
+  allocating: b375/4128  points=648120x96+1087104x8 = 67 MB      
+  allocating: b376/4128  points=648912x96+1088640x8 = 67 MB      
+  allocating: b377/4128  points=649704x96+1090176x8 = 67 MB      
+  allocating: b378/4128  points=650496x96+1091712x8 = 67 MB      
+  allocating: b379/4128  points=651288x96+1093248x8 = 67 MB      
+  allocating: b380/4128  points=652080x96+1094784x8 = 68 MB      
+  allocating: b381/4128  points=652872x96+1096320x8 = 68 MB      
+  allocating: b382/4128  points=653664x96+1097856x8 = 68 MB      
+  allocating: b383/4128  points=654456x96+1099392x8 = 68 MB      
+  allocating: b384/4128  points=655248x96+1100928x8 = 68 MB      
+  allocating: b385/4128  points=656040x96+1102464x8 = 68 MB      
+  allocating: b386/4128  points=656832x96+1104000x8 = 68 MB      
+  allocating: b387/4128  points=657624x96+1105536x8 = 68 MB      
+  allocating: b388/4128  points=878328x96+1426944x8 = 91 MB      
+  allocating: b389/4128  points=879120x96+1428480x8 = 91 MB      
+  allocating: b390/4128  points=879912x96+1430016x8 = 91 MB      
+  allocating: b391/4128  points=880704x96+1431552x8 = 91 MB      
+  allocating: b392/4128  points=881496x96+1433088x8 = 91 MB      
+  allocating: b393/4128  points=882288x96+1434624x8 = 91 MB      
+  allocating: b394/4128  points=883080x96+1436160x8 = 91 MB      
+  allocating: b395/4128  points=883872x96+1437696x8 = 91 MB      
+  allocating: b396/4128  points=884664x96+1439232x8 = 91 MB      
+  allocating: b397/4128  points=950664x96+1535616x8 = 98 MB      
+  allocating: b398/4128  points=1171368x96+1857024x8 = 121 MB      
+  allocating: b399/4128  points=1237368x96+1953408x8 = 128 MB      
+  allocating: b400/4128  points=1238160x96+1954944x8 = 128 MB      
+  allocating: b401/4128  points=1238952x96+1956480x8 = 128 MB      
+  allocating: b402/4128  points=1239744x96+1958016x8 = 128 MB      
+  allocating: b403/4128  points=1240536x96+1959552x8 = 128 MB      
+  allocating: b404/4128  points=1241328x96+1961088x8 = 128 MB      
+  allocating: b405/4128  points=1242120x96+1962624x8 = 128 MB      
+  allocating: b406/4128  points=1242912x96+1964160x8 = 128 MB      
+  allocating: b407/4128  points=1243704x96+1965696x8 = 128 MB      
+  allocating: b408/4128  points=1244496x96+1967232x8 = 128 MB      
+  allocating: b409/4128  points=1245288x96+1968768x8 = 129 MB      
+  allocating: b410/4128  points=1246080x96+1970304x8 = 129 MB      
+  allocating: b411/4128  points=1246872x96+1971840x8 = 129 MB      
+  allocating: b412/4128  points=1247664x96+1973376x8 = 129 MB      
+  allocating: b413/4128  points=1248456x96+1974912x8 = 129 MB      
+  allocating: b414/4128  points=1249248x96+1976448x8 = 129 MB      
+  allocating: b415/4128  points=1250040x96+1977984x8 = 129 MB      
+  allocating: b416/4128  points=1250832x96+1979520x8 = 129 MB      
+  allocating: b417/4128  points=1251624x96+1981056x8 = 129 MB      
+  allocating: b418/4128  points=1252416x96+1982592x8 = 129 MB      
+  allocating: b419/4128  points=1253208x96+1984128x8 = 129 MB      
+  allocating: b420/4128  points=1254000x96+1985664x8 = 129 MB      
+  allocating: b421/4128  points=1254792x96+1987200x8 = 130 MB      
+  allocating: b422/4128  points=1255584x96+1988736x8 = 130 MB      
+  allocating: b423/4128  points=1256376x96+1990272x8 = 130 MB      
+  allocating: b424/4128  points=1257168x96+1991808x8 = 130 MB      
+  allocating: b425/4128  points=1257960x96+1993344x8 = 130 MB      
+  allocating: b426/4128  points=1258752x96+1994880x8 = 130 MB      
+  allocating: b427/4128  points=1259544x96+1996416x8 = 130 MB      
+  allocating: b428/4128  points=1260336x96+1997952x8 = 130 MB      
+  allocating: b429/4128  points=1261128x96+1999488x8 = 130 MB      
+  allocating: b430/4128  points=1261920x96+2001024x8 = 130 MB      
+  allocating: b431/4128  points=1262712x96+2002560x8 = 130 MB      
+  allocating: b432/4128  points=1263504x96+2004096x8 = 130 MB      
+  allocating: b433/4128  points=1264296x96+2005632x8 = 131 MB      
+  allocating: b434/4128  points=1265088x96+2007168x8 = 131 MB      
+  allocating: b435/4128  points=1265880x96+2008704x8 = 131 MB      
+  allocating: b436/4128  points=1266672x96+2010240x8 = 131 MB      
+  allocating: b437/4128  points=1267464x96+2011776x8 = 131 MB      
+  allocating: b438/4128  points=1268256x96+2013312x8 = 131 MB      
+  allocating: b439/4128  points=1269048x96+2014848x8 = 131 MB      
+  allocating: b440/4128  points=1269840x96+2016384x8 = 131 MB      
+  allocating: b441/4128  points=1270632x96+2017920x8 = 131 MB      
+  allocating: b442/4128  points=1271424x96+2019456x8 = 131 MB      
+  allocating: b443/4128  points=1272216x96+2020992x8 = 131 MB      
+  allocating: b444/4128  points=1273008x96+2022528x8 = 131 MB      
+  allocating: b445/4128  points=1273800x96+2024064x8 = 132 MB      
+  allocating: b446/4128  points=1274592x96+2025600x8 = 132 MB      
+  allocating: b447/4128  points=1275384x96+2027136x8 = 132 MB      
+  allocating: b448/4128  points=1276176x96+2028672x8 = 132 MB      
+  allocating: b449/4128  points=1276968x96+2030208x8 = 132 MB      
+  allocating: b450/4128  points=1277760x96+2031744x8 = 132 MB      
+  allocating: b451/4128  points=1278552x96+2033280x8 = 132 MB      
+  allocating: b452/4128  points=1279344x96+2034816x8 = 132 MB      
+  allocating: b453/4128  points=1280136x96+2036352x8 = 132 MB      
+  allocating: b454/4128  points=1280928x96+2037888x8 = 132 MB      
+  allocating: b455/4128  points=1281720x96+2039424x8 = 132 MB      
+  allocating: b456/4128  points=1282512x96+2040960x8 = 132 MB      
+  allocating: b457/4128  points=1283304x96+2042496x8 = 133 MB      
+  allocating: b458/4128  points=1284096x96+2044032x8 = 133 MB      
+  allocating: b459/4128  points=1284888x96+2045568x8 = 133 MB      
+  allocating: b460/4128  points=1285680x96+2047104x8 = 133 MB      
+  allocating: b461/4128  points=1286472x96+2048640x8 = 133 MB      
+  allocating: b462/4128  points=1287264x96+2050176x8 = 133 MB      
+  allocating: b463/4128  points=1288056x96+2051712x8 = 133 MB      
+  allocating: b464/4128  points=1288848x96+2053248x8 = 133 MB      
+  allocating: b465/4128  points=1289640x96+2054784x8 = 133 MB      
+  allocating: b466/4128  points=1290432x96+2056320x8 = 133 MB      
+  allocating: b467/4128  points=1291224x96+2057856x8 = 133 MB      
+  allocating: b468/4128  points=1292016x96+2059392x8 = 133 MB      
+  allocating: b469/4128  points=1292808x96+2060928x8 = 134 MB      
+  allocating: b470/4128  points=1293600x96+2062464x8 = 134 MB      
+  allocating: b471/4128  points=1294392x96+2064000x8 = 134 MB      
+  allocating: b472/4128  points=1295184x96+2065536x8 = 134 MB      
+  allocating: b473/4128  points=1295976x96+2067072x8 = 134 MB      
+  allocating: b474/4128  points=1296768x96+2068608x8 = 134 MB      
+  allocating: b475/4128  points=1297560x96+2070144x8 = 134 MB      
+  allocating: b476/4128  points=1298352x96+2071680x8 = 134 MB      
+  allocating: b477/4128  points=1299144x96+2073216x8 = 134 MB      
+  allocating: b478/4128  points=1299936x96+2074752x8 = 134 MB      
+  allocating: b479/4128  points=1300728x96+2076288x8 = 134 MB      
+  allocating: b480/4128  points=1301520x96+2077824x8 = 135 MB      
+  allocating: b481/4128  points=1302312x96+2079360x8 = 135 MB      
+  allocating: b482/4128  points=1303104x96+2080896x8 = 135 MB      
+  allocating: b483/4128  points=1303896x96+2082432x8 = 135 MB      
+  allocating: b484/4128  points=1304688x96+2083968x8 = 135 MB      
+  allocating: b485/4128  points=1305480x96+2085504x8 = 135 MB      
+  allocating: b486/4128  points=1306272x96+2087040x8 = 135 MB      
+  allocating: b487/4128  points=1307064x96+2088576x8 = 135 MB      
+  allocating: b488/4128  points=1307856x96+2090112x8 = 135 MB      
+  allocating: b489/4128  points=1308648x96+2091648x8 = 135 MB      
+  allocating: b490/4128  points=1309440x96+2093184x8 = 135 MB      
+  allocating: b491/4128  points=1310232x96+2094720x8 = 135 MB      
+  allocating: b492/4128  points=1311024x96+2096256x8 = 136 MB      
+  allocating: b493/4128  points=1311816x96+2097792x8 = 136 MB      
+  allocating: b494/4128  points=1312608x96+2099328x8 = 136 MB      
+  allocating: b495/4128  points=1313400x96+2100864x8 = 136 MB      
+  allocating: b496/4128  points=1314192x96+2102400x8 = 136 MB      
+  allocating: b497/4128  points=1314984x96+2103936x8 = 136 MB      
+  allocating: b498/4128  points=1315776x96+2105472x8 = 136 MB      
+  allocating: b499/4128  points=1316568x96+2107008x8 = 136 MB      
+  allocating: b500/4128  points=1317360x96+2108544x8 = 136 MB      
+  allocating: b501/4128  points=1318152x96+2110080x8 = 136 MB      
+  allocating: b502/4128  points=1318944x96+2111616x8 = 136 MB      
+  allocating: b503/4128  points=1319736x96+2113152x8 = 136 MB      
+  allocating: b504/4128  points=1320528x96+2114688x8 = 137 MB      
+  allocating: b505/4128  points=1321320x96+2116224x8 = 137 MB      
+  allocating: b506/4128  points=1322112x96+2117760x8 = 137 MB      
+  allocating: b507/4128  points=1322904x96+2119296x8 = 137 MB      
+  allocating: b508/4128  points=1323696x96+2120832x8 = 137 MB      
+  allocating: b509/4128  points=1324488x96+2122368x8 = 137 MB      
+  allocating: b510/4128  points=1325280x96+2123904x8 = 137 MB      
+  allocating: b511/4128  points=1326072x96+2125440x8 = 137 MB      
+  allocating: b512/4128  points=1326864x96+2126976x8 = 137 MB      
+  allocating: b513/4128  points=1327656x96+2128512x8 = 137 MB      
+  allocating: b514/4128  points=1328448x96+2130048x8 = 137 MB      
+  allocating: b515/4128  points=1329240x96+2131584x8 = 137 MB      
+  allocating: b516/4128  points=1330032x96+2133120x8 = 138 MB      
+  allocating: b517/4128  points=1330824x96+2134656x8 = 138 MB      
+  allocating: b518/4128  points=1331616x96+2136192x8 = 138 MB      
+  allocating: b519/4128  points=1332408x96+2137728x8 = 138 MB      
+  allocating: b520/4128  points=1333200x96+2139264x8 = 138 MB      
+  allocating: b521/4128  points=1333992x96+2140800x8 = 138 MB      
+  allocating: b522/4128  points=1334784x96+2142336x8 = 138 MB      
+  allocating: b523/4128  points=1335576x96+2143872x8 = 138 MB      
+  allocating: b524/4128  points=1336368x96+2145408x8 = 138 MB      
+  allocating: b525/4128  points=1337160x96+2146944x8 = 138 MB      
+  allocating: b526/4128  points=1337952x96+2148480x8 = 138 MB      
+  allocating: b527/4128  points=1338744x96+2150016x8 = 138 MB      
+  allocating: b528/4128  points=1339536x96+2151552x8 = 139 MB      
+  allocating: b529/4128  points=1340328x96+2153088x8 = 139 MB      
+  allocating: b530/4128  points=1341120x96+2154624x8 = 139 MB      
+  allocating: b531/4128  points=1341912x96+2156160x8 = 139 MB      
+  allocating: b532/4128  points=1342704x96+2157696x8 = 139 MB      
+  allocating: b533/4128  points=1343496x96+2159232x8 = 139 MB      
+  allocating: b534/4128  points=1344288x96+2160768x8 = 139 MB      
+  allocating: b535/4128  points=1345080x96+2162304x8 = 139 MB      
+  allocating: b536/4128  points=1345872x96+2163840x8 = 139 MB      
+  allocating: b537/4128  points=1346664x96+2165376x8 = 139 MB      
+  allocating: b538/4128  points=1347456x96+2166912x8 = 139 MB      
+  allocating: b539/4128  points=1348248x96+2168448x8 = 139 MB      
+  allocating: b540/4128  points=1349040x96+2169984x8 = 140 MB      
+  allocating: b541/4128  points=1349832x96+2171520x8 = 140 MB      
+  allocating: b542/4128  points=1350624x96+2173056x8 = 140 MB      
+  allocating: b543/4128  points=1351416x96+2174592x8 = 140 MB      
+  allocating: b544/4128  points=1352208x96+2176128x8 = 140 MB      
+  allocating: b545/4128  points=1353000x96+2177664x8 = 140 MB      
+  allocating: b546/4128  points=1353792x96+2179200x8 = 140 MB      
+  allocating: b547/4128  points=1354584x96+2180736x8 = 140 MB      
+  allocating: b548/4128  points=1355376x96+2182272x8 = 140 MB      
+  allocating: b549/4128  points=1356168x96+2183808x8 = 140 MB      
+  allocating: b550/4128  points=1356960x96+2185344x8 = 140 MB      
+  allocating: b551/4128  points=1357752x96+2186880x8 = 140 MB      
+  allocating: b552/4128  points=1358544x96+2188416x8 = 141 MB      
+  allocating: b553/4128  points=1359336x96+2189952x8 = 141 MB      
+  allocating: b554/4128  points=1360128x96+2191488x8 = 141 MB      
+  allocating: b555/4128  points=1360920x96+2193024x8 = 141 MB      
+  allocating: b556/4128  points=1361712x96+2194560x8 = 141 MB      
+  allocating: b557/4128  points=1362504x96+2196096x8 = 141 MB      
+  allocating: b558/4128  points=1363296x96+2197632x8 = 141 MB      
+  allocating: b559/4128  points=1364088x96+2199168x8 = 141 MB      
+  allocating: b560/4128  points=1364880x96+2200704x8 = 141 MB      
+  allocating: b561/4128  points=1365672x96+2202240x8 = 141 MB      
+  allocating: b562/4128  points=1366464x96+2203776x8 = 141 MB      
+  allocating: b563/4128  points=1367256x96+2205312x8 = 142 MB      
+  allocating: b564/4128  points=1368048x96+2206848x8 = 142 MB      
+  allocating: b565/4128  points=1368840x96+2208384x8 = 142 MB      
+  allocating: b566/4128  points=1369632x96+2209920x8 = 142 MB      
+  allocating: b567/4128  points=1370424x96+2211456x8 = 142 MB      
+  allocating: b568/4128  points=1371216x96+2212992x8 = 142 MB      
+  allocating: b569/4128  points=1372008x96+2214528x8 = 142 MB      
+  allocating: b570/4128  points=1372800x96+2216064x8 = 142 MB      
+  allocating: b571/4128  points=1373592x96+2217600x8 = 142 MB      
+  allocating: b572/4128  points=1374384x96+2219136x8 = 142 MB      
+  allocating: b573/4128  points=1375176x96+2220672x8 = 142 MB      
+  allocating: b574/4128  points=1375968x96+2222208x8 = 142 MB      
+  allocating: b575/4128  points=1376760x96+2223744x8 = 143 MB      
+  allocating: b576/4128  points=1377552x96+2225280x8 = 143 MB      
+  allocating: b577/4128  points=1378344x96+2226816x8 = 143 MB      
+  allocating: b578/4128  points=1379136x96+2228352x8 = 143 MB      
+  allocating: b579/4128  points=1379928x96+2229888x8 = 143 MB      
+  allocating: b580/4128  points=1380720x96+2231424x8 = 143 MB      
+  allocating: b581/4128  points=1381512x96+2232960x8 = 143 MB      
+  allocating: b582/4128  points=1382304x96+2234496x8 = 143 MB      
+  allocating: b583/4128  points=1383096x96+2236032x8 = 143 MB      
+  allocating: b584/4128  points=1383888x96+2237568x8 = 143 MB      
+  allocating: b585/4128  points=1384680x96+2239104x8 = 143 MB      
+  allocating: b586/4128  points=1385472x96+2240640x8 = 143 MB      
+  allocating: b587/4128  points=1386264x96+2242176x8 = 144 MB      
+  allocating: b588/4128  points=1387056x96+2243712x8 = 144 MB      
+  allocating: b589/4128  points=1387848x96+2245248x8 = 144 MB      
+  allocating: b590/4128  points=1388640x96+2246784x8 = 144 MB      
+  allocating: b591/4128  points=1389432x96+2248320x8 = 144 MB      
+  allocating: b592/4128  points=1390224x96+2249856x8 = 144 MB      
+  allocating: b593/4128  points=1391016x96+2251392x8 = 144 MB      
+  allocating: b594/4128  points=1391808x96+2252928x8 = 144 MB      
+  allocating: b595/4128  points=1392600x96+2254464x8 = 144 MB      
+  allocating: b596/4128  points=1393392x96+2256000x8 = 144 MB      
+  allocating: b597/4128  points=1394184x96+2257536x8 = 144 MB      
+  allocating: b598/4128  points=1394976x96+2259072x8 = 144 MB      
+  allocating: b599/4128  points=1395768x96+2260608x8 = 145 MB      
+  allocating: b600/4128  points=1396560x96+2262144x8 = 145 MB      
+  allocating: b601/4128  points=1397352x96+2263680x8 = 145 MB      
+  allocating: b602/4128  points=1398144x96+2265216x8 = 145 MB      
+  allocating: b603/4128  points=1398936x96+2266752x8 = 145 MB      
+  allocating: b604/4128  points=1399728x96+2268288x8 = 145 MB      
+  allocating: b605/4128  points=1400520x96+2269824x8 = 145 MB      
+  allocating: b606/4128  points=1401312x96+2271360x8 = 145 MB      
+  allocating: b607/4128  points=1402104x96+2272896x8 = 145 MB      
+  allocating: b608/4128  points=1402896x96+2274432x8 = 145 MB      
+  allocating: b609/4128  points=1403688x96+2275968x8 = 145 MB      
+  allocating: b610/4128  points=1404480x96+2277504x8 = 145 MB      
+  allocating: b611/4128  points=1405272x96+2279040x8 = 146 MB      
+  allocating: b612/4128  points=1406064x96+2280576x8 = 146 MB      
+  allocating: b613/4128  points=1406856x96+2282112x8 = 146 MB      
+  allocating: b614/4128  points=1407648x96+2283648x8 = 146 MB      
+  allocating: b615/4128  points=1408440x96+2285184x8 = 146 MB      
+  allocating: b616/4128  points=1409232x96+2286720x8 = 146 MB      
+  allocating: b617/4128  points=1410024x96+2288256x8 = 146 MB      
+  allocating: b618/4128  points=1410816x96+2289792x8 = 146 MB      
+  allocating: b619/4128  points=1411608x96+2291328x8 = 146 MB      
+  allocating: b620/4128  points=1412400x96+2292864x8 = 146 MB      
+  allocating: b621/4128  points=1413192x96+2294400x8 = 146 MB      
+  allocating: b622/4128  points=1413984x96+2295936x8 = 146 MB      
+  allocating: b623/4128  points=1414776x96+2297472x8 = 147 MB      
+  allocating: b624/4128  points=1415568x96+2299008x8 = 147 MB      
+  allocating: b625/4128  points=1416360x96+2300544x8 = 147 MB      
+  allocating: b626/4128  points=1417152x96+2302080x8 = 147 MB      
+  allocating: b627/4128  points=1417944x96+2303616x8 = 147 MB      
+  allocating: b628/4128  points=1418736x96+2305152x8 = 147 MB      
+  allocating: b629/4128  points=1419528x96+2306688x8 = 147 MB      
+  allocating: b630/4128  points=1420320x96+2308224x8 = 147 MB      
+  allocating: b631/4128  points=1421112x96+2309760x8 = 147 MB      
+  allocating: b632/4128  points=1421904x96+2311296x8 = 147 MB      
+  allocating: b633/4128  points=1422696x96+2312832x8 = 147 MB      
+  allocating: b634/4128  points=1423488x96+2314368x8 = 147 MB      
+  allocating: b635/4128  points=1424280x96+2315904x8 = 148 MB      
+  allocating: b636/4128  points=1425072x96+2317440x8 = 148 MB      
+  allocating: b637/4128  points=1425864x96+2318976x8 = 148 MB      
+  allocating: b638/4128  points=1426656x96+2320512x8 = 148 MB      
+  allocating: b639/4128  points=1427448x96+2322048x8 = 148 MB      
+  allocating: b640/4128  points=1428240x96+2323584x8 = 148 MB      
+  allocating: b641/4128  points=1429032x96+2325120x8 = 148 MB      
+  allocating: b642/4128  points=1429824x96+2326656x8 = 148 MB      
+  allocating: b643/4128  points=1430616x96+2328192x8 = 148 MB      
+  allocating: b644/4128  points=1431408x96+2329728x8 = 148 MB      
+  allocating: b645/4128  points=1432200x96+2331264x8 = 148 MB      
+  allocating: b646/4128  points=1432992x96+2332800x8 = 148 MB      
+  allocating: b647/4128  points=1433784x96+2334336x8 = 149 MB      
+  allocating: b648/4128  points=1434576x96+2335872x8 = 149 MB      
+  allocating: b649/4128  points=1435368x96+2337408x8 = 149 MB      
+  allocating: b650/4128  points=1436160x96+2338944x8 = 149 MB      
+  allocating: b651/4128  points=1436952x96+2340480x8 = 149 MB      
+  allocating: b652/4128  points=1437744x96+2342016x8 = 149 MB      
+  allocating: b653/4128  points=1438536x96+2343552x8 = 149 MB      
+  allocating: b654/4128  points=1439328x96+2345088x8 = 149 MB      
+  allocating: b655/4128  points=1440120x96+2346624x8 = 149 MB      
+  allocating: b656/4128  points=1440912x96+2348160x8 = 149 MB      
+  allocating: b657/4128  points=1441704x96+2349696x8 = 149 MB      
+  allocating: b658/4128  points=1442496x96+2351232x8 = 150 MB      
+  allocating: b659/4128  points=1443288x96+2352768x8 = 150 MB      
+  allocating: b660/4128  points=1444080x96+2354304x8 = 150 MB      
+  allocating: b661/4128  points=1444872x96+2355840x8 = 150 MB      
+  allocating: b662/4128  points=1445664x96+2357376x8 = 150 MB      
+  allocating: b663/4128  points=1446456x96+2358912x8 = 150 MB      
+  allocating: b664/4128  points=1447248x96+2360448x8 = 150 MB      
+  allocating: b665/4128  points=1448040x96+2361984x8 = 150 MB      
+  allocating: b666/4128  points=1448832x96+2363520x8 = 150 MB      
+  allocating: b667/4128  points=1449624x96+2365056x8 = 150 MB      
+  allocating: b668/4128  points=1450416x96+2366592x8 = 150 MB      
+  allocating: b669/4128  points=1451208x96+2368128x8 = 150 MB      
+  allocating: b670/4128  points=1452000x96+2369664x8 = 151 MB      
+  allocating: b671/4128  points=1452792x96+2371200x8 = 151 MB      
+  allocating: b672/4128  points=1453584x96+2372736x8 = 151 MB      
+  allocating: b673/4128  points=1454376x96+2374272x8 = 151 MB      
+  allocating: b674/4128  points=1455168x96+2375808x8 = 151 MB      
+  allocating: b675/4128  points=1455960x96+2377344x8 = 151 MB      
+  allocating: b676/4128  points=1456752x96+2378880x8 = 151 MB      
+  allocating: b677/4128  points=1457544x96+2380416x8 = 151 MB      
+  allocating: b678/4128  points=1458336x96+2381952x8 = 151 MB      
+  allocating: b679/4128  points=1459128x96+2383488x8 = 151 MB      
+  allocating: b680/4128  points=1459920x96+2385024x8 = 151 MB      
+  allocating: b681/4128  points=1460712x96+2386560x8 = 151 MB      
+  allocating: b682/4128  points=1461504x96+2388096x8 = 152 MB      
+  allocating: b683/4128  points=1462296x96+2389632x8 = 152 MB      
+  allocating: b684/4128  points=1463088x96+2391168x8 = 152 MB      
+  allocating: b685/4128  points=1463880x96+2392704x8 = 152 MB      
+  allocating: b686/4128  points=1464672x96+2394240x8 = 152 MB      
+  allocating: b687/4128  points=1465464x96+2395776x8 = 152 MB      
+  allocating: b688/4128  points=1466256x96+2397312x8 = 152 MB      
+  allocating: b689/4128  points=1467048x96+2398848x8 = 152 MB      
+  allocating: b690/4128  points=1467840x96+2400384x8 = 152 MB      
+  allocating: b691/4128  points=1468632x96+2401920x8 = 152 MB      
+  allocating: b692/4128  points=1469424x96+2403456x8 = 152 MB      
+  allocating: b693/4128  points=1470216x96+2404992x8 = 152 MB      
+  allocating: b694/4128  points=1471008x96+2406528x8 = 153 MB      
+  allocating: b695/4128  points=1471800x96+2408064x8 = 153 MB      
+  allocating: b696/4128  points=1472592x96+2409600x8 = 153 MB      
+  allocating: b697/4128  points=1473384x96+2411136x8 = 153 MB      
+  allocating: b698/4128  points=1474176x96+2412672x8 = 153 MB      
+  allocating: b699/4128  points=1474968x96+2414208x8 = 153 MB      
+  allocating: b700/4128  points=1475760x96+2415744x8 = 153 MB      
+  allocating: b701/4128  points=1476552x96+2417280x8 = 153 MB      
+  allocating: b702/4128  points=1477344x96+2418816x8 = 153 MB      
+  allocating: b703/4128  points=1478136x96+2420352x8 = 153 MB      
+  allocating: b704/4128  points=1478928x96+2421888x8 = 153 MB      
+  allocating: b705/4128  points=1479720x96+2423424x8 = 153 MB      
+  allocating: b706/4128  points=1480512x96+2424960x8 = 154 MB      
+  allocating: b707/4128  points=1481304x96+2426496x8 = 154 MB      
+  allocating: b708/4128  points=1482096x96+2428032x8 = 154 MB      
+  allocating: b709/4128  points=1482888x96+2429568x8 = 154 MB      
+  allocating: b710/4128  points=1483680x96+2431104x8 = 154 MB      
+  allocating: b711/4128  points=1484472x96+2432640x8 = 154 MB      
+  allocating: b712/4128  points=1485264x96+2434176x8 = 154 MB      
+  allocating: b713/4128  points=1486056x96+2435712x8 = 154 MB      
+  allocating: b714/4128  points=1486848x96+2437248x8 = 154 MB      
+  allocating: b715/4128  points=1487640x96+2438784x8 = 154 MB      
+  allocating: b716/4128  points=1488432x96+2440320x8 = 154 MB      
+  allocating: b717/4128  points=1489224x96+2441856x8 = 154 MB      
+  allocating: b718/4128  points=1490016x96+2443392x8 = 155 MB      
+  allocating: b719/4128  points=1490808x96+2444928x8 = 155 MB      
+  allocating: b720/4128  points=1491600x96+2446464x8 = 155 MB      
+  allocating: b721/4128  points=1492392x96+2448000x8 = 155 MB      
+  allocating: b722/4128  points=1493184x96+2449536x8 = 155 MB      
+  allocating: b723/4128  points=1493976x96+2451072x8 = 155 MB      
+  allocating: b724/4128  points=1494768x96+2452608x8 = 155 MB      
+  allocating: b725/4128  points=1495560x96+2454144x8 = 155 MB      
+  allocating: b726/4128  points=1496352x96+2455680x8 = 155 MB      
+  allocating: b727/4128  points=1497144x96+2457216x8 = 155 MB      
+  allocating: b728/4128  points=1497936x96+2458752x8 = 155 MB      
+  allocating: b729/4128  points=1498728x96+2460288x8 = 155 MB      
+  allocating: b730/4128  points=1499520x96+2461824x8 = 156 MB      
+  allocating: b731/4128  points=1500312x96+2463360x8 = 156 MB      
+  allocating: b732/4128  points=1501104x96+2464896x8 = 156 MB      
+  allocating: b733/4128  points=1501896x96+2466432x8 = 156 MB      
+  allocating: b734/4128  points=1502688x96+2467968x8 = 156 MB      
+  allocating: b735/4128  points=1503480x96+2469504x8 = 156 MB      
+  allocating: b736/4128  points=1504272x96+2471040x8 = 156 MB      
+  allocating: b737/4128  points=1505064x96+2472576x8 = 156 MB      
+  allocating: b738/4128  points=1505856x96+2474112x8 = 156 MB      
+  allocating: b739/4128  points=1506648x96+2475648x8 = 156 MB      
+  allocating: b740/4128  points=1507440x96+2477184x8 = 156 MB      
+  allocating: b741/4128  points=1508232x96+2478720x8 = 156 MB      
+  allocating: b742/4128  points=1509024x96+2480256x8 = 157 MB      
+  allocating: b743/4128  points=1509816x96+2481792x8 = 157 MB      
+  allocating: b744/4128  points=1510608x96+2483328x8 = 157 MB      
+  allocating: b745/4128  points=1511400x96+2484864x8 = 157 MB      
+  allocating: b746/4128  points=1512192x96+2486400x8 = 157 MB      
+  allocating: b747/4128  points=1512984x96+2487936x8 = 157 MB      
+  allocating: b748/4128  points=1513776x96+2489472x8 = 157 MB      
+  allocating: b749/4128  points=1514568x96+2491008x8 = 157 MB      
+  allocating: b750/4128  points=1515360x96+2492544x8 = 157 MB      
+  allocating: b751/4128  points=1516152x96+2494080x8 = 157 MB      
+  allocating: b752/4128  points=1516944x96+2495616x8 = 157 MB      
+  allocating: b753/4128  points=1517736x96+2497152x8 = 158 MB      
+  allocating: b754/4128  points=1518528x96+2498688x8 = 158 MB      
+  allocating: b755/4128  points=1519320x96+2500224x8 = 158 MB      
+  allocating: b756/4128  points=1520112x96+2501760x8 = 158 MB      
+  allocating: b757/4128  points=1520904x96+2503296x8 = 158 MB      
+  allocating: b758/4128  points=1521696x96+2504832x8 = 158 MB      
+  allocating: b759/4128  points=1522488x96+2506368x8 = 158 MB      
+  allocating: b760/4128  points=1523280x96+2507904x8 = 158 MB      
+  allocating: b761/4128  points=1524072x96+2509440x8 = 158 MB      
+  allocating: b762/4128  points=1524864x96+2510976x8 = 158 MB      
+  allocating: b763/4128  points=1525656x96+2512512x8 = 158 MB      
+  allocating: b764/4128  points=1526448x96+2514048x8 = 158 MB      
+  allocating: b765/4128  points=1527240x96+2515584x8 = 159 MB      
+  allocating: b766/4128  points=1528032x96+2517120x8 = 159 MB      
+  allocating: b767/4128  points=1528824x96+2518656x8 = 159 MB      
+  allocating: b768/4128  points=1529616x96+2520192x8 = 159 MB      
+  allocating: b769/4128  points=1530408x96+2521728x8 = 159 MB      
+  allocating: b770/4128  points=1531200x96+2523264x8 = 159 MB      
+  allocating: b771/4128  points=1531992x96+2524800x8 = 159 MB      
+  allocating: b772/4128  points=1532784x96+2526336x8 = 159 MB      
+  allocating: b773/4128  points=1533576x96+2527872x8 = 159 MB      
+  allocating: b774/4128  points=1534368x96+2529408x8 = 159 MB      
+  allocating: b775/4128  points=1535160x96+2530944x8 = 159 MB      
+  allocating: b776/4128  points=1535952x96+2532480x8 = 159 MB      
+  allocating: b777/4128  points=1756656x96+2853888x8 = 182 MB      
+  allocating: b778/4128  points=1757448x96+2855424x8 = 182 MB      
+  allocating: b779/4128  points=1758240x96+2856960x8 = 182 MB      
+  allocating: b780/4128  points=1759032x96+2858496x8 = 182 MB      
+  allocating: b781/4128  points=1759824x96+2860032x8 = 182 MB      
+  allocating: b782/4128  points=1760616x96+2861568x8 = 183 MB      
+  allocating: b783/4128  points=1761408x96+2863104x8 = 183 MB      
+  allocating: b784/4128  points=1762200x96+2864640x8 = 183 MB      
+  allocating: b785/4128  points=1762992x96+2866176x8 = 183 MB      
+  allocating: b786/4128  points=1828992x96+2962560x8 = 190 MB      
+  allocating: b787/4128  points=2049696x96+3283968x8 = 212 MB      
+  allocating: b788/4128  points=2115696x96+3380352x8 = 219 MB      
+  allocating: b789/4128  points=2116488x96+3381888x8 = 219 MB      
+  allocating: b790/4128  points=2117280x96+3383424x8 = 219 MB      
+  allocating: b791/4128  points=2118072x96+3384960x8 = 219 MB      
+  allocating: b792/4128  points=2118864x96+3386496x8 = 219 MB      
+  allocating: b793/4128  points=2119656x96+3388032x8 = 219 MB      
+  allocating: b794/4128  points=2120448x96+3389568x8 = 219 MB      
+  allocating: b795/4128  points=2121240x96+3391104x8 = 220 MB      
+  allocating: b796/4128  points=2122032x96+3392640x8 = 220 MB      
+  allocating: b797/4128  points=2122824x96+3394176x8 = 220 MB      
+  allocating: b798/4128  points=2123616x96+3395712x8 = 220 MB      
+  allocating: b799/4128  points=2124408x96+3397248x8 = 220 MB      
+  allocating: b800/4128  points=2125200x96+3398784x8 = 220 MB      
+  allocating: b801/4128  points=2125992x96+3400320x8 = 220 MB      
+  allocating: b802/4128  points=2126784x96+3401856x8 = 220 MB      
+  allocating: b803/4128  points=2127576x96+3403392x8 = 220 MB      
+  allocating: b804/4128  points=2128368x96+3404928x8 = 220 MB      
+  allocating: b805/4128  points=2129160x96+3406464x8 = 220 MB      
+  allocating: b806/4128  points=2129952x96+3408000x8 = 221 MB      
+  allocating: b807/4128  points=2130744x96+3409536x8 = 221 MB      
+  allocating: b808/4128  points=2131536x96+3411072x8 = 221 MB      
+  allocating: b809/4128  points=2132328x96+3412608x8 = 221 MB      
+  allocating: b810/4128  points=2133120x96+3414144x8 = 221 MB      
+  allocating: b811/4128  points=2133912x96+3415680x8 = 221 MB      
+  allocating: b812/4128  points=2134704x96+3417216x8 = 221 MB      
+  allocating: b813/4128  points=2135496x96+3418752x8 = 221 MB      
+  allocating: b814/4128  points=2136288x96+3420288x8 = 221 MB      
+  allocating: b815/4128  points=2137080x96+3421824x8 = 221 MB      
+  allocating: b816/4128  points=2137872x96+3423360x8 = 221 MB      
+  allocating: b817/4128  points=2138664x96+3424896x8 = 221 MB      
+  allocating: b818/4128  points=2139456x96+3426432x8 = 222 MB      
+  allocating: b819/4128  points=2140248x96+3427968x8 = 222 MB      
+  allocating: b820/4128  points=2141040x96+3429504x8 = 222 MB      
+  allocating: b821/4128  points=2141832x96+3431040x8 = 222 MB      
+  allocating: b822/4128  points=2142624x96+3432576x8 = 222 MB      
+  allocating: b823/4128  points=2143416x96+3434112x8 = 222 MB      
+  allocating: b824/4128  points=2144208x96+3435648x8 = 222 MB      
+  allocating: b825/4128  points=2145000x96+3437184x8 = 222 MB      
+  allocating: b826/4128  points=2145792x96+3438720x8 = 222 MB      
+  allocating: b827/4128  points=2146584x96+3440256x8 = 222 MB      
+  allocating: b828/4128  points=2147376x96+3441792x8 = 222 MB      
+  allocating: b829/4128  points=2148168x96+3443328x8 = 222 MB      
+  allocating: b830/4128  points=2148960x96+3444864x8 = 223 MB      
+  allocating: b831/4128  points=2149752x96+3446400x8 = 223 MB      
+  allocating: b832/4128  points=2150544x96+3447936x8 = 223 MB      
+  allocating: b833/4128  points=2151336x96+3449472x8 = 223 MB      
+  allocating: b834/4128  points=2152128x96+3451008x8 = 223 MB      
+  allocating: b835/4128  points=2152920x96+3452544x8 = 223 MB      
+  allocating: b836/4128  points=2153712x96+3454080x8 = 223 MB      
+  allocating: b837/4128  points=2154504x96+3455616x8 = 223 MB      
+  allocating: b838/4128  points=2155296x96+3457152x8 = 223 MB      
+  allocating: b839/4128  points=2156088x96+3458688x8 = 223 MB      
+  allocating: b840/4128  points=2156880x96+3460224x8 = 223 MB      
+  allocating: b841/4128  points=2157672x96+3461760x8 = 223 MB      
+  allocating: b842/4128  points=2158464x96+3463296x8 = 224 MB      
+  allocating: b843/4128  points=2159256x96+3464832x8 = 224 MB      
+  allocating: b844/4128  points=2160048x96+3466368x8 = 224 MB      
+  allocating: b845/4128  points=2160840x96+3467904x8 = 224 MB      
+  allocating: b846/4128  points=2161632x96+3469440x8 = 224 MB      
+  allocating: b847/4128  points=2162424x96+3470976x8 = 224 MB      
+  allocating: b848/4128  points=2163216x96+3472512x8 = 224 MB      
+  allocating: b849/4128  points=2164008x96+3474048x8 = 224 MB      
+  allocating: b850/4128  points=2164800x96+3475584x8 = 224 MB      
+  allocating: b851/4128  points=2165592x96+3477120x8 = 224 MB      
+  allocating: b852/4128  points=2166384x96+3478656x8 = 224 MB      
+  allocating: b853/4128  points=2167176x96+3480192x8 = 224 MB      
+  allocating: b854/4128  points=2167968x96+3481728x8 = 225 MB      
+  allocating: b855/4128  points=2168760x96+3483264x8 = 225 MB      
+  allocating: b856/4128  points=2169552x96+3484800x8 = 225 MB      
+  allocating: b857/4128  points=2170344x96+3486336x8 = 225 MB      
+  allocating: b858/4128  points=2171136x96+3487872x8 = 225 MB      
+  allocating: b859/4128  points=2171928x96+3489408x8 = 225 MB      
+  allocating: b860/4128  points=2172720x96+3490944x8 = 225 MB      
+  allocating: b861/4128  points=2173512x96+3492480x8 = 225 MB      
+  allocating: b862/4128  points=2174304x96+3494016x8 = 225 MB      
+  allocating: b863/4128  points=2175096x96+3495552x8 = 225 MB      
+  allocating: b864/4128  points=2175888x96+3497088x8 = 225 MB      
+  allocating: b865/4128  points=2176680x96+3498624x8 = 225 MB      
+  allocating: b866/4128  points=2177472x96+3500160x8 = 226 MB      
+  allocating: b867/4128  points=2178264x96+3501696x8 = 226 MB      
+  allocating: b868/4128  points=2179056x96+3503232x8 = 226 MB      
+  allocating: b869/4128  points=2179848x96+3504768x8 = 226 MB      
+  allocating: b870/4128  points=2180640x96+3506304x8 = 226 MB      
+  allocating: b871/4128  points=2181432x96+3507840x8 = 226 MB      
+  allocating: b872/4128  points=2182224x96+3509376x8 = 226 MB      
+  allocating: b873/4128  points=2183016x96+3510912x8 = 226 MB      
+  allocating: b874/4128  points=2183808x96+3512448x8 = 226 MB      
+  allocating: b875/4128  points=2184600x96+3513984x8 = 226 MB      
+  allocating: b876/4128  points=2185392x96+3515520x8 = 226 MB      
+  allocating: b877/4128  points=2186184x96+3517056x8 = 226 MB      
+  allocating: b878/4128  points=2186976x96+3518592x8 = 227 MB      
+  allocating: b879/4128  points=2187768x96+3520128x8 = 227 MB      
+  allocating: b880/4128  points=2188560x96+3521664x8 = 227 MB      
+  allocating: b881/4128  points=2189352x96+3523200x8 = 227 MB      
+  allocating: b882/4128  points=2190144x96+3524736x8 = 227 MB      
+  allocating: b883/4128  points=2190936x96+3526272x8 = 227 MB      
+  allocating: b884/4128  points=2191728x96+3527808x8 = 227 MB      
+  allocating: b885/4128  points=2192520x96+3529344x8 = 227 MB      
+  allocating: b886/4128  points=2193312x96+3530880x8 = 227 MB      
+  allocating: b887/4128  points=2194104x96+3532416x8 = 227 MB      
+  allocating: b888/4128  points=2194896x96+3533952x8 = 227 MB      
+  allocating: b889/4128  points=2195688x96+3535488x8 = 227 MB      
+  allocating: b890/4128  points=2196480x96+3537024x8 = 228 MB      
+  allocating: b891/4128  points=2197272x96+3538560x8 = 228 MB      
+  allocating: b892/4128  points=2198064x96+3540096x8 = 228 MB      
+  allocating: b893/4128  points=2198856x96+3541632x8 = 228 MB      
+  allocating: b894/4128  points=2199648x96+3543168x8 = 228 MB      
+  allocating: b895/4128  points=2200440x96+3544704x8 = 228 MB      
+  allocating: b896/4128  points=2201232x96+3546240x8 = 228 MB      
+  allocating: b897/4128  points=2202024x96+3547776x8 = 228 MB      
+  allocating: b898/4128  points=2202816x96+3549312x8 = 228 MB      
+  allocating: b899/4128  points=2203608x96+3550848x8 = 228 MB      
+  allocating: b900/4128  points=2204400x96+3552384x8 = 228 MB      
+  allocating: b901/4128  points=2205192x96+3553920x8 = 229 MB      
+  allocating: b902/4128  points=2205984x96+3555456x8 = 229 MB      
+  allocating: b903/4128  points=2206776x96+3556992x8 = 229 MB      
+  allocating: b904/4128  points=2207568x96+3558528x8 = 229 MB      
+  allocating: b905/4128  points=2208360x96+3560064x8 = 229 MB      
+  allocating: b906/4128  points=2209152x96+3561600x8 = 229 MB      
+  allocating: b907/4128  points=2209944x96+3563136x8 = 229 MB      
+  allocating: b908/4128  points=2210736x96+3564672x8 = 229 MB      
+  allocating: b909/4128  points=2211528x96+3566208x8 = 229 MB      
+  allocating: b910/4128  points=2212320x96+3567744x8 = 229 MB      
+  allocating: b911/4128  points=2213112x96+3569280x8 = 229 MB      
+  allocating: b912/4128  points=2213904x96+3570816x8 = 229 MB      
+  allocating: b913/4128  points=2214696x96+3572352x8 = 230 MB      
+  allocating: b914/4128  points=2215488x96+3573888x8 = 230 MB      
+  allocating: b915/4128  points=2216280x96+3575424x8 = 230 MB      
+  allocating: b916/4128  points=2217072x96+3576960x8 = 230 MB      
+  allocating: b917/4128  points=2217864x96+3578496x8 = 230 MB      
+  allocating: b918/4128  points=2218656x96+3580032x8 = 230 MB      
+  allocating: b919/4128  points=2219448x96+3581568x8 = 230 MB      
+  allocating: b920/4128  points=2220240x96+3583104x8 = 230 MB      
+  allocating: b921/4128  points=2221032x96+3584640x8 = 230 MB      
+  allocating: b922/4128  points=2221824x96+3586176x8 = 230 MB      
+  allocating: b923/4128  points=2222616x96+3587712x8 = 230 MB      
+  allocating: b924/4128  points=2223408x96+3589248x8 = 230 MB      
+  allocating: b925/4128  points=2224200x96+3590784x8 = 231 MB      
+  allocating: b926/4128  points=2224992x96+3592320x8 = 231 MB      
+  allocating: b927/4128  points=2225784x96+3593856x8 = 231 MB      
+  allocating: b928/4128  points=2226576x96+3595392x8 = 231 MB      
+  allocating: b929/4128  points=2227368x96+3596928x8 = 231 MB      
+  allocating: b930/4128  points=2228160x96+3598464x8 = 231 MB      
+  allocating: b931/4128  points=2228952x96+3600000x8 = 231 MB      
+  allocating: b932/4128  points=2229744x96+3601536x8 = 231 MB      
+  allocating: b933/4128  points=2230536x96+3603072x8 = 231 MB      
+  allocating: b934/4128  points=2231328x96+3604608x8 = 231 MB      
+  allocating: b935/4128  points=2232120x96+3606144x8 = 231 MB      
+  allocating: b936/4128  points=2232912x96+3607680x8 = 231 MB      
+  allocating: b937/4128  points=2233704x96+3609216x8 = 232 MB      
+  allocating: b938/4128  points=2234496x96+3610752x8 = 232 MB      
+  allocating: b939/4128  points=2235288x96+3612288x8 = 232 MB      
+  allocating: b940/4128  points=2236080x96+3613824x8 = 232 MB      
+  allocating: b941/4128  points=2236872x96+3615360x8 = 232 MB      
+  allocating: b942/4128  points=2237664x96+3616896x8 = 232 MB      
+  allocating: b943/4128  points=2238456x96+3618432x8 = 232 MB      
+  allocating: b944/4128  points=2239248x96+3619968x8 = 232 MB      
+  allocating: b945/4128  points=2240040x96+3621504x8 = 232 MB      
+  allocating: b946/4128  points=2240832x96+3623040x8 = 232 MB      
+  allocating: b947/4128  points=2241624x96+3624576x8 = 232 MB      
+  allocating: b948/4128  points=2242416x96+3626112x8 = 232 MB      
+  allocating: b949/4128  points=2243208x96+3627648x8 = 233 MB      
+  allocating: b950/4128  points=2244000x96+3629184x8 = 233 MB      
+  allocating: b951/4128  points=2244792x96+3630720x8 = 233 MB      
+  allocating: b952/4128  points=2245584x96+3632256x8 = 233 MB      
+  allocating: b953/4128  points=2246376x96+3633792x8 = 233 MB      
+  allocating: b954/4128  points=2247168x96+3635328x8 = 233 MB      
+  allocating: b955/4128  points=2247960x96+3636864x8 = 233 MB      
+  allocating: b956/4128  points=2248752x96+3638400x8 = 233 MB      
+  allocating: b957/4128  points=2249544x96+3639936x8 = 233 MB      
+  allocating: b958/4128  points=2250336x96+3641472x8 = 233 MB      
+  allocating: b959/4128  points=2251128x96+3643008x8 = 233 MB      
+  allocating: b960/4128  points=2251920x96+3644544x8 = 233 MB      
+  allocating: b961/4128  points=2252712x96+3646080x8 = 234 MB      
+  allocating: b962/4128  points=2253504x96+3647616x8 = 234 MB      
+  allocating: b963/4128  points=2254296x96+3649152x8 = 234 MB      
+  allocating: b964/4128  points=2255088x96+3650688x8 = 234 MB      
+  allocating: b965/4128  points=2255880x96+3652224x8 = 234 MB      
+  allocating: b966/4128  points=2256672x96+3653760x8 = 234 MB      
+  allocating: b967/4128  points=2257464x96+3655296x8 = 234 MB      
+  allocating: b968/4128  points=2258256x96+3656832x8 = 234 MB      
+  allocating: b969/4128  points=2259048x96+3658368x8 = 234 MB      
+  allocating: b970/4128  points=2259840x96+3659904x8 = 234 MB      
+  allocating: b971/4128  points=2260632x96+3661440x8 = 234 MB      
+  allocating: b972/4128  points=2261424x96+3662976x8 = 234 MB      
+  allocating: b973/4128  points=2262216x96+3664512x8 = 235 MB      
+  allocating: b974/4128  points=2263008x96+3666048x8 = 235 MB      
+  allocating: b975/4128  points=2263800x96+3667584x8 = 235 MB      
+  allocating: b976/4128  points=2264592x96+3669120x8 = 235 MB      
+  allocating: b977/4128  points=2265384x96+3670656x8 = 235 MB      
+  allocating: b978/4128  points=2266176x96+3672192x8 = 235 MB      
+  allocating: b979/4128  points=2266968x96+3673728x8 = 235 MB      
+  allocating: b980/4128  points=2267760x96+3675264x8 = 235 MB      
+  allocating: b981/4128  points=2268552x96+3676800x8 = 235 MB      
+  allocating: b982/4128  points=2269344x96+3678336x8 = 235 MB      
+  allocating: b983/4128  points=2270136x96+3679872x8 = 235 MB      
+  allocating: b984/4128  points=2270928x96+3681408x8 = 235 MB      
+  allocating: b985/4128  points=2271720x96+3682944x8 = 236 MB      
+  allocating: b986/4128  points=2272512x96+3684480x8 = 236 MB      
+  allocating: b987/4128  points=2273304x96+3686016x8 = 236 MB      
+  allocating: b988/4128  points=2274096x96+3687552x8 = 236 MB      
+  allocating: b989/4128  points=2274888x96+3689088x8 = 236 MB      
+  allocating: b990/4128  points=2275680x96+3690624x8 = 236 MB      
+  allocating: b991/4128  points=2276472x96+3692160x8 = 236 MB      
+  allocating: b992/4128  points=2277264x96+3693696x8 = 236 MB      
+  allocating: b993/4128  points=2278056x96+3695232x8 = 236 MB      
+  allocating: b994/4128  points=2278848x96+3696768x8 = 236 MB      
+  allocating: b995/4128  points=2279640x96+3698304x8 = 236 MB      
+  allocating: b996/4128  points=2280432x96+3699840x8 = 237 MB      
+  allocating: b997/4128  points=2281224x96+3701376x8 = 237 MB      
+  allocating: b998/4128  points=2282016x96+3702912x8 = 237 MB      
+  allocating: b999/4128  points=2282808x96+3704448x8 = 237 MB      
+  allocating: b1000/4128  points=2283600x96+3705984x8 = 237 MB      
+  allocating: b1001/4128  points=2284392x96+3707520x8 = 237 MB      
+  allocating: b1002/4128  points=2285184x96+3709056x8 = 237 MB      
+  allocating: b1003/4128  points=2285976x96+3710592x8 = 237 MB      
+  allocating: b1004/4128  points=2286768x96+3712128x8 = 237 MB      
+  allocating: b1005/4128  points=2287560x96+3713664x8 = 237 MB      
+  allocating: b1006/4128  points=2288352x96+3715200x8 = 237 MB      
+  allocating: b1007/4128  points=2289144x96+3716736x8 = 237 MB      
+  allocating: b1008/4128  points=2289936x96+3718272x8 = 238 MB      
+  allocating: b1009/4128  points=2290728x96+3719808x8 = 238 MB      
+  allocating: b1010/4128  points=2291520x96+3721344x8 = 238 MB      
+  allocating: b1011/4128  points=2292312x96+3722880x8 = 238 MB      
+  allocating: b1012/4128  points=2293104x96+3724416x8 = 238 MB      
+  allocating: b1013/4128  points=2293896x96+3725952x8 = 238 MB      
+  allocating: b1014/4128  points=2294688x96+3727488x8 = 238 MB      
+  allocating: b1015/4128  points=2295480x96+3729024x8 = 238 MB      
+  allocating: b1016/4128  points=2296272x96+3730560x8 = 238 MB      
+  allocating: b1017/4128  points=2297064x96+3732096x8 = 238 MB      
+  allocating: b1018/4128  points=2297856x96+3733632x8 = 238 MB      
+  allocating: b1019/4128  points=2298648x96+3735168x8 = 238 MB      
+  allocating: b1020/4128  points=2299440x96+3736704x8 = 239 MB      
+  allocating: b1021/4128  points=2300232x96+3738240x8 = 239 MB      
+  allocating: b1022/4128  points=2301024x96+3739776x8 = 239 MB      
+  allocating: b1023/4128  points=2301816x96+3741312x8 = 239 MB      
+  allocating: b1024/4128  points=2302608x96+3742848x8 = 239 MB      
+  allocating: b1025/4128  points=2303400x96+3744384x8 = 239 MB      
+  allocating: b1026/4128  points=2304192x96+3745920x8 = 239 MB      
+  allocating: b1027/4128  points=2304984x96+3747456x8 = 239 MB      
+  allocating: b1028/4128  points=2305776x96+3748992x8 = 239 MB      
+  allocating: b1029/4128  points=2306568x96+3750528x8 = 239 MB      
+  allocating: b1030/4128  points=2307360x96+3752064x8 = 239 MB      
+  allocating: b1031/4128  points=2308152x96+3753600x8 = 239 MB      
+  allocating: b1032/4128  points=2308944x96+3755136x8 = 240 MB      
+  allocating: b1033/4128  points=2309736x96+3756672x8 = 240 MB      
+  allocating: b1034/4128  points=2310528x96+3758208x8 = 240 MB      
+  allocating: b1035/4128  points=2311320x96+3759744x8 = 240 MB      
+  allocating: b1036/4128  points=2312112x96+3761280x8 = 240 MB      
+  allocating: b1037/4128  points=2312904x96+3762816x8 = 240 MB      
+  allocating: b1038/4128  points=2313696x96+3764352x8 = 240 MB      
+  allocating: b1039/4128  points=2314488x96+3765888x8 = 240 MB      
+  allocating: b1040/4128  points=2315280x96+3767424x8 = 240 MB      
+  allocating: b1041/4128  points=2316072x96+3768960x8 = 240 MB      
+  allocating: b1042/4128  points=2316864x96+3770496x8 = 240 MB      
+  allocating: b1043/4128  points=2317656x96+3772032x8 = 240 MB      
+  allocating: b1044/4128  points=2318448x96+3773568x8 = 241 MB      
+  allocating: b1045/4128  points=2319240x96+3775104x8 = 241 MB      
+  allocating: b1046/4128  points=2320032x96+3776640x8 = 241 MB      
+  allocating: b1047/4128  points=2320824x96+3778176x8 = 241 MB      
+  allocating: b1048/4128  points=2321616x96+3779712x8 = 241 MB      
+  allocating: b1049/4128  points=2322408x96+3781248x8 = 241 MB      
+  allocating: b1050/4128  points=2323200x96+3782784x8 = 241 MB      
+  allocating: b1051/4128  points=2323992x96+3784320x8 = 241 MB      
+  allocating: b1052/4128  points=2324784x96+3785856x8 = 241 MB      
+  allocating: b1053/4128  points=2325576x96+3787392x8 = 241 MB      
+  allocating: b1054/4128  points=2326368x96+3788928x8 = 241 MB      
+  allocating: b1055/4128  points=2327160x96+3790464x8 = 241 MB      
+  allocating: b1056/4128  points=2327952x96+3792000x8 = 242 MB      
+  allocating: b1057/4128  points=2328744x96+3793536x8 = 242 MB      
+  allocating: b1058/4128  points=2329536x96+3795072x8 = 242 MB      
+  allocating: b1059/4128  points=2330328x96+3796608x8 = 242 MB      
+  allocating: b1060/4128  points=2331120x96+3798144x8 = 242 MB      
+  allocating: b1061/4128  points=2331912x96+3799680x8 = 242 MB      
+  allocating: b1062/4128  points=2332704x96+3801216x8 = 242 MB      
+  allocating: b1063/4128  points=2333496x96+3802752x8 = 242 MB      
+  allocating: b1064/4128  points=2334288x96+3804288x8 = 242 MB      
+  allocating: b1065/4128  points=2335080x96+3805824x8 = 242 MB      
+  allocating: b1066/4128  points=2335872x96+3807360x8 = 242 MB      
+  allocating: b1067/4128  points=2336664x96+3808896x8 = 242 MB      
+  allocating: b1068/4128  points=2337456x96+3810432x8 = 243 MB      
+  allocating: b1069/4128  points=2338248x96+3811968x8 = 243 MB      
+  allocating: b1070/4128  points=2339040x96+3813504x8 = 243 MB      
+  allocating: b1071/4128  points=2339832x96+3815040x8 = 243 MB      
+  allocating: b1072/4128  points=2340624x96+3816576x8 = 243 MB      
+  allocating: b1073/4128  points=2341416x96+3818112x8 = 243 MB      
+  allocating: b1074/4128  points=2342208x96+3819648x8 = 243 MB      
+  allocating: b1075/4128  points=2343000x96+3821184x8 = 243 MB      
+  allocating: b1076/4128  points=2343792x96+3822720x8 = 243 MB      
+  allocating: b1077/4128  points=2344584x96+3824256x8 = 243 MB      
+  allocating: b1078/4128  points=2345376x96+3825792x8 = 243 MB      
+  allocating: b1079/4128  points=2346168x96+3827328x8 = 243 MB      
+  allocating: b1080/4128  points=2346960x96+3828864x8 = 244 MB      
+  allocating: b1081/4128  points=2347752x96+3830400x8 = 244 MB      
+  allocating: b1082/4128  points=2348544x96+3831936x8 = 244 MB      
+  allocating: b1083/4128  points=2349336x96+3833472x8 = 244 MB      
+  allocating: b1084/4128  points=2350128x96+3835008x8 = 244 MB      
+  allocating: b1085/4128  points=2350920x96+3836544x8 = 244 MB      
+  allocating: b1086/4128  points=2351712x96+3838080x8 = 244 MB      
+  allocating: b1087/4128  points=2352504x96+3839616x8 = 244 MB      
+  allocating: b1088/4128  points=2353296x96+3841152x8 = 244 MB      
+  allocating: b1089/4128  points=2354088x96+3842688x8 = 244 MB      
+  allocating: b1090/4128  points=2354880x96+3844224x8 = 244 MB      
+  allocating: b1091/4128  points=2355672x96+3845760x8 = 245 MB      
+  allocating: b1092/4128  points=2356464x96+3847296x8 = 245 MB      
+  allocating: b1093/4128  points=2357256x96+3848832x8 = 245 MB      
+  allocating: b1094/4128  points=2358048x96+3850368x8 = 245 MB      
+  allocating: b1095/4128  points=2358840x96+3851904x8 = 245 MB      
+  allocating: b1096/4128  points=2359632x96+3853440x8 = 245 MB      
+  allocating: b1097/4128  points=2360424x96+3854976x8 = 245 MB      
+  allocating: b1098/4128  points=2361216x96+3856512x8 = 245 MB      
+  allocating: b1099/4128  points=2362008x96+3858048x8 = 245 MB      
+  allocating: b1100/4128  points=2362800x96+3859584x8 = 245 MB      
+  allocating: b1101/4128  points=2363592x96+3861120x8 = 245 MB      
+  allocating: b1102/4128  points=2364384x96+3862656x8 = 245 MB      
+  allocating: b1103/4128  points=2365176x96+3864192x8 = 246 MB      
+  allocating: b1104/4128  points=2365968x96+3865728x8 = 246 MB      
+  allocating: b1105/4128  points=2366760x96+3867264x8 = 246 MB      
+  allocating: b1106/4128  points=2367552x96+3868800x8 = 246 MB      
+  allocating: b1107/4128  points=2368344x96+3870336x8 = 246 MB      
+  allocating: b1108/4128  points=2369136x96+3871872x8 = 246 MB      
+  allocating: b1109/4128  points=2369928x96+3873408x8 = 246 MB      
+  allocating: b1110/4128  points=2370720x96+3874944x8 = 246 MB      
+  allocating: b1111/4128  points=2371512x96+3876480x8 = 246 MB      
+  allocating: b1112/4128  points=2372304x96+3878016x8 = 246 MB      
+  allocating: b1113/4128  points=2373096x96+3879552x8 = 246 MB      
+  allocating: b1114/4128  points=2373888x96+3881088x8 = 246 MB      
+  allocating: b1115/4128  points=2374680x96+3882624x8 = 247 MB      
+  allocating: b1116/4128  points=2375472x96+3884160x8 = 247 MB      
+  allocating: b1117/4128  points=2376264x96+3885696x8 = 247 MB      
+  allocating: b1118/4128  points=2377056x96+3887232x8 = 247 MB      
+  allocating: b1119/4128  points=2377848x96+3888768x8 = 247 MB      
+  allocating: b1120/4128  points=2378640x96+3890304x8 = 247 MB      
+  allocating: b1121/4128  points=2379432x96+3891840x8 = 247 MB      
+  allocating: b1122/4128  points=2380224x96+3893376x8 = 247 MB      
+  allocating: b1123/4128  points=2381016x96+3894912x8 = 247 MB      
+  allocating: b1124/4128  points=2381808x96+3896448x8 = 247 MB      
+  allocating: b1125/4128  points=2382600x96+3897984x8 = 247 MB      
+  allocating: b1126/4128  points=2383392x96+3899520x8 = 247 MB      
+  allocating: b1127/4128  points=2384184x96+3901056x8 = 248 MB      
+  allocating: b1128/4128  points=2384976x96+3902592x8 = 248 MB      
+  allocating: b1129/4128  points=2385768x96+3904128x8 = 248 MB      
+  allocating: b1130/4128  points=2386560x96+3905664x8 = 248 MB      
+  allocating: b1131/4128  points=2387352x96+3907200x8 = 248 MB      
+  allocating: b1132/4128  points=2388144x96+3908736x8 = 248 MB      
+  allocating: b1133/4128  points=2388936x96+3910272x8 = 248 MB      
+  allocating: b1134/4128  points=2389728x96+3911808x8 = 248 MB      
+  allocating: b1135/4128  points=2390520x96+3913344x8 = 248 MB      
+  allocating: b1136/4128  points=2391312x96+3914880x8 = 248 MB      
+  allocating: b1137/4128  points=2392104x96+3916416x8 = 248 MB      
+  allocating: b1138/4128  points=2392896x96+3917952x8 = 248 MB      
+  allocating: b1139/4128  points=2393688x96+3919488x8 = 249 MB      
+  allocating: b1140/4128  points=2394480x96+3921024x8 = 249 MB      
+  allocating: b1141/4128  points=2395272x96+3922560x8 = 249 MB      
+  allocating: b1142/4128  points=2396064x96+3924096x8 = 249 MB      
+  allocating: b1143/4128  points=2396856x96+3925632x8 = 249 MB      
+  allocating: b1144/4128  points=2397648x96+3927168x8 = 249 MB      
+  allocating: b1145/4128  points=2398440x96+3928704x8 = 249 MB      
+  allocating: b1146/4128  points=2399232x96+3930240x8 = 249 MB      
+  allocating: b1147/4128  points=2400024x96+3931776x8 = 249 MB      
+  allocating: b1148/4128  points=2400816x96+3933312x8 = 249 MB      
+  allocating: b1149/4128  points=2401608x96+3934848x8 = 249 MB      
+  allocating: b1150/4128  points=2402400x96+3936384x8 = 249 MB      
+  allocating: b1151/4128  points=2403192x96+3937920x8 = 250 MB      
+  allocating: b1152/4128  points=2403984x96+3939456x8 = 250 MB      
+  allocating: b1153/4128  points=2404776x96+3940992x8 = 250 MB      
+  allocating: b1154/4128  points=2405568x96+3942528x8 = 250 MB      
+  allocating: b1155/4128  points=2406360x96+3944064x8 = 250 MB      
+  allocating: b1156/4128  points=2407152x96+3945600x8 = 250 MB      
+  allocating: b1157/4128  points=2407944x96+3947136x8 = 250 MB      
+  allocating: b1158/4128  points=2408736x96+3948672x8 = 250 MB      
+  allocating: b1159/4128  points=2409528x96+3950208x8 = 250 MB      
+  allocating: b1160/4128  points=2410320x96+3951744x8 = 250 MB      
+  allocating: b1161/4128  points=2411112x96+3953280x8 = 250 MB      
+  allocating: b1162/4128  points=2411904x96+3954816x8 = 250 MB      
+  allocating: b1163/4128  points=2412696x96+3956352x8 = 251 MB      
+  allocating: b1164/4128  points=2413488x96+3957888x8 = 251 MB      
+  allocating: b1165/4128  points=2414280x96+3959424x8 = 251 MB      
+  allocating: b1166/4128  points=2634984x96+4280832x8 = 273 MB      
+  allocating: b1167/4128  points=2635776x96+4282368x8 = 273 MB      
+  allocating: b1168/4128  points=2636568x96+4283904x8 = 274 MB      
+  allocating: b1169/4128  points=2637360x96+4285440x8 = 274 MB      
+  allocating: b1170/4128  points=2638152x96+4286976x8 = 274 MB      
+  allocating: b1171/4128  points=2638944x96+4288512x8 = 274 MB      
+  allocating: b1172/4128  points=2639736x96+4290048x8 = 274 MB      
+  allocating: b1173/4128  points=2640528x96+4291584x8 = 274 MB      
+  allocating: b1174/4128  points=2641320x96+4293120x8 = 274 MB      
+  allocating: b1175/4128  points=2707320x96+4389504x8 = 281 MB      
+  allocating: b1176/4128  points=2928024x96+4710912x8 = 304 MB      
+  allocating: b1177/4128  points=2994024x96+4807296x8 = 310 MB      
+  allocating: b1178/4128  points=2994816x96+4808832x8 = 310 MB      
+  allocating: b1179/4128  points=2995608x96+4810368x8 = 310 MB      
+  allocating: b1180/4128  points=2996400x96+4811904x8 = 311 MB      
+  allocating: b1181/4128  points=2997192x96+4813440x8 = 311 MB      
+  allocating: b1182/4128  points=2997984x96+4814976x8 = 311 MB      
+  allocating: b1183/4128  points=2998776x96+4816512x8 = 311 MB      
+  allocating: b1184/4128  points=2999568x96+4818048x8 = 311 MB      
+  allocating: b1185/4128  points=3000360x96+4819584x8 = 311 MB      
+  allocating: b1186/4128  points=3001152x96+4821120x8 = 311 MB      
+  allocating: b1187/4128  points=3001944x96+4822656x8 = 311 MB      
+  allocating: b1188/4128  points=3002736x96+4824192x8 = 311 MB      
+  allocating: b1189/4128  points=3003528x96+4825728x8 = 311 MB      
+  allocating: b1190/4128  points=3004320x96+4827264x8 = 311 MB      
+  allocating: b1191/4128  points=3005112x96+4828800x8 = 311 MB      
+  allocating: b1192/4128  points=3005904x96+4830336x8 = 312 MB      
+  allocating: b1193/4128  points=3006696x96+4831872x8 = 312 MB      
+  allocating: b1194/4128  points=3007488x96+4833408x8 = 312 MB      
+  allocating: b1195/4128  points=3008280x96+4834944x8 = 312 MB      
+  allocating: b1196/4128  points=3009072x96+4836480x8 = 312 MB      
+  allocating: b1197/4128  points=3009864x96+4838016x8 = 312 MB      
+  allocating: b1198/4128  points=3010656x96+4839552x8 = 312 MB      
+  allocating: b1199/4128  points=3011448x96+4841088x8 = 312 MB      
+  allocating: b1200/4128  points=3012240x96+4842624x8 = 312 MB      
+  allocating: b1201/4128  points=3013032x96+4844160x8 = 312 MB      
+  allocating: b1202/4128  points=3013824x96+4845696x8 = 312 MB      
+  allocating: b1203/4128  points=3014616x96+4847232x8 = 312 MB      
+  allocating: b1204/4128  points=3015408x96+4848768x8 = 313 MB      
+  allocating: b1205/4128  points=3016200x96+4850304x8 = 313 MB      
+  allocating: b1206/4128  points=3016992x96+4851840x8 = 313 MB      
+  allocating: b1207/4128  points=3017784x96+4853376x8 = 313 MB      
+  allocating: b1208/4128  points=3018576x96+4854912x8 = 313 MB      
+  allocating: b1209/4128  points=3019368x96+4856448x8 = 313 MB      
+  allocating: b1210/4128  points=3020160x96+4857984x8 = 313 MB      
+  allocating: b1211/4128  points=3020952x96+4859520x8 = 313 MB      
+  allocating: b1212/4128  points=3021744x96+4861056x8 = 313 MB      
+  allocating: b1213/4128  points=3022536x96+4862592x8 = 313 MB      
+  allocating: b1214/4128  points=3023328x96+4864128x8 = 313 MB      
+  allocating: b1215/4128  points=3024120x96+4865664x8 = 313 MB      
+  allocating: b1216/4128  points=3024912x96+4867200x8 = 314 MB      
+  allocating: b1217/4128  points=3025704x96+4868736x8 = 314 MB      
+  allocating: b1218/4128  points=3026496x96+4870272x8 = 314 MB      
+  allocating: b1219/4128  points=3027288x96+4871808x8 = 314 MB      
+  allocating: b1220/4128  points=3028080x96+4873344x8 = 314 MB      
+  allocating: b1221/4128  points=3028872x96+4874880x8 = 314 MB      
+  allocating: b1222/4128  points=3029664x96+4876416x8 = 314 MB      
+  allocating: b1223/4128  points=3030456x96+4877952x8 = 314 MB      
+  allocating: b1224/4128  points=3031248x96+4879488x8 = 314 MB      
+  allocating: b1225/4128  points=3032040x96+4881024x8 = 314 MB      
+  allocating: b1226/4128  points=3032832x96+4882560x8 = 314 MB      
+  allocating: b1227/4128  points=3033624x96+4884096x8 = 314 MB      
+  allocating: b1228/4128  points=3034416x96+4885632x8 = 315 MB      
+  allocating: b1229/4128  points=3035208x96+4887168x8 = 315 MB      
+  allocating: b1230/4128  points=3036000x96+4888704x8 = 315 MB      
+  allocating: b1231/4128  points=3036792x96+4890240x8 = 315 MB      
+  allocating: b1232/4128  points=3037584x96+4891776x8 = 315 MB      
+  allocating: b1233/4128  points=3038376x96+4893312x8 = 315 MB      
+  allocating: b1234/4128  points=3039168x96+4894848x8 = 315 MB      
+  allocating: b1235/4128  points=3039960x96+4896384x8 = 315 MB      
+  allocating: b1236/4128  points=3040752x96+4897920x8 = 315 MB      
+  allocating: b1237/4128  points=3041544x96+4899456x8 = 315 MB      
+  allocating: b1238/4128  points=3042336x96+4900992x8 = 315 MB      
+  allocating: b1239/4128  points=3043128x96+4902528x8 = 316 MB      
+  allocating: b1240/4128  points=3043920x96+4904064x8 = 316 MB      
+  allocating: b1241/4128  points=3044712x96+4905600x8 = 316 MB      
+  allocating: b1242/4128  points=3045504x96+4907136x8 = 316 MB      
+  allocating: b1243/4128  points=3046296x96+4908672x8 = 316 MB      
+  allocating: b1244/4128  points=3047088x96+4910208x8 = 316 MB      
+  allocating: b1245/4128  points=3047880x96+4911744x8 = 316 MB      
+  allocating: b1246/4128  points=3048672x96+4913280x8 = 316 MB      
+  allocating: b1247/4128  points=3049464x96+4914816x8 = 316 MB      
+  allocating: b1248/4128  points=3050256x96+4916352x8 = 316 MB      
+  allocating: b1249/4128  points=3051048x96+4917888x8 = 316 MB      
+  allocating: b1250/4128  points=3051840x96+4919424x8 = 316 MB      
+  allocating: b1251/4128  points=3052632x96+4920960x8 = 317 MB      
+  allocating: b1252/4128  points=3053424x96+4922496x8 = 317 MB      
+  allocating: b1253/4128  points=3054216x96+4924032x8 = 317 MB      
+  allocating: b1254/4128  points=3055008x96+4925568x8 = 317 MB      
+  allocating: b1255/4128  points=3055800x96+4927104x8 = 317 MB      
+  allocating: b1256/4128  points=3056592x96+4928640x8 = 317 MB      
+  allocating: b1257/4128  points=3057384x96+4930176x8 = 317 MB      
+  allocating: b1258/4128  points=3058176x96+4931712x8 = 317 MB      
+  allocating: b1259/4128  points=3058968x96+4933248x8 = 317 MB      
+  allocating: b1260/4128  points=3059760x96+4934784x8 = 317 MB      
+  allocating: b1261/4128  points=3060552x96+4936320x8 = 317 MB      
+  allocating: b1262/4128  points=3061344x96+4937856x8 = 317 MB      
+  allocating: b1263/4128  points=3062136x96+4939392x8 = 318 MB      
+  allocating: b1264/4128  points=3062928x96+4940928x8 = 318 MB      
+  allocating: b1265/4128  points=3063720x96+4942464x8 = 318 MB      
+  allocating: b1266/4128  points=3064512x96+4944000x8 = 318 MB      
+  allocating: b1267/4128  points=3065304x96+4945536x8 = 318 MB      
+  allocating: b1268/4128  points=3066096x96+4947072x8 = 318 MB      
+  allocating: b1269/4128  points=3066888x96+4948608x8 = 318 MB      
+  allocating: b1270/4128  points=3067680x96+4950144x8 = 318 MB      
+  allocating: b1271/4128  points=3068472x96+4951680x8 = 318 MB      
+  allocating: b1272/4128  points=3069264x96+4953216x8 = 318 MB      
+  allocating: b1273/4128  points=3070056x96+4954752x8 = 318 MB      
+  allocating: b1274/4128  points=3070848x96+4956288x8 = 318 MB      
+  allocating: b1275/4128  points=3071640x96+4957824x8 = 319 MB      
+  allocating: b1276/4128  points=3072432x96+4959360x8 = 319 MB      
+  allocating: b1277/4128  points=3073224x96+4960896x8 = 319 MB      
+  allocating: b1278/4128  points=3074016x96+4962432x8 = 319 MB      
+  allocating: b1279/4128  points=3074808x96+4963968x8 = 319 MB      
+  allocating: b1280/4128  points=3075600x96+4965504x8 = 319 MB      
+  allocating: b1281/4128  points=3076392x96+4967040x8 = 319 MB      
+  allocating: b1282/4128  points=3077184x96+4968576x8 = 319 MB      
+  allocating: b1283/4128  points=3077976x96+4970112x8 = 319 MB      
+  allocating: b1284/4128  points=3078768x96+4971648x8 = 319 MB      
+  allocating: b1285/4128  points=3079560x96+4973184x8 = 319 MB      
+  allocating: b1286/4128  points=3080352x96+4974720x8 = 319 MB      
+  allocating: b1287/4128  points=3081144x96+4976256x8 = 320 MB      
+  allocating: b1288/4128  points=3081936x96+4977792x8 = 320 MB      
+  allocating: b1289/4128  points=3082728x96+4979328x8 = 320 MB      
+  allocating: b1290/4128  points=3083520x96+4980864x8 = 320 MB      
+  allocating: b1291/4128  points=3084312x96+4982400x8 = 320 MB      
+  allocating: b1292/4128  points=3085104x96+4983936x8 = 320 MB      
+  allocating: b1293/4128  points=3085896x96+4985472x8 = 320 MB      
+  allocating: b1294/4128  points=3086688x96+4987008x8 = 320 MB      
+  allocating: b1295/4128  points=3087480x96+4988544x8 = 320 MB      
+  allocating: b1296/4128  points=3088272x96+4990080x8 = 320 MB      
+  allocating: b1297/4128  points=3089064x96+4991616x8 = 320 MB      
+  allocating: b1298/4128  points=3089856x96+4993152x8 = 320 MB      
+  allocating: b1299/4128  points=3090648x96+4994688x8 = 321 MB      
+  allocating: b1300/4128  points=3091440x96+4996224x8 = 321 MB      
+  allocating: b1301/4128  points=3092232x96+4997760x8 = 321 MB      
+  allocating: b1302/4128  points=3093024x96+4999296x8 = 321 MB      
+  allocating: b1303/4128  points=3093816x96+5000832x8 = 321 MB      
+  allocating: b1304/4128  points=3094608x96+5002368x8 = 321 MB      
+  allocating: b1305/4128  points=3095400x96+5003904x8 = 321 MB      
+  allocating: b1306/4128  points=3096192x96+5005440x8 = 321 MB      
+  allocating: b1307/4128  points=3096984x96+5006976x8 = 321 MB      
+  allocating: b1308/4128  points=3097776x96+5008512x8 = 321 MB      
+  allocating: b1309/4128  points=3098568x96+5010048x8 = 321 MB      
+  allocating: b1310/4128  points=3099360x96+5011584x8 = 321 MB      
+  allocating: b1311/4128  points=3100152x96+5013120x8 = 322 MB      
+  allocating: b1312/4128  points=3100944x96+5014656x8 = 322 MB      
+  allocating: b1313/4128  points=3101736x96+5016192x8 = 322 MB      
+  allocating: b1314/4128  points=3102528x96+5017728x8 = 322 MB      
+  allocating: b1315/4128  points=3103320x96+5019264x8 = 322 MB      
+  allocating: b1316/4128  points=3104112x96+5020800x8 = 322 MB      
+  allocating: b1317/4128  points=3104904x96+5022336x8 = 322 MB      
+  allocating: b1318/4128  points=3105696x96+5023872x8 = 322 MB      
+  allocating: b1319/4128  points=3106488x96+5025408x8 = 322 MB      
+  allocating: b1320/4128  points=3107280x96+5026944x8 = 322 MB      
+  allocating: b1321/4128  points=3108072x96+5028480x8 = 322 MB      
+  allocating: b1322/4128  points=3108864x96+5030016x8 = 323 MB      
+  allocating: b1323/4128  points=3109656x96+5031552x8 = 323 MB      
+  allocating: b1324/4128  points=3110448x96+5033088x8 = 323 MB      
+  allocating: b1325/4128  points=3111240x96+5034624x8 = 323 MB      
+  allocating: b1326/4128  points=3112032x96+5036160x8 = 323 MB      
+  allocating: b1327/4128  points=3112824x96+5037696x8 = 323 MB      
+  allocating: b1328/4128  points=3113616x96+5039232x8 = 323 MB      
+  allocating: b1329/4128  points=3114408x96+5040768x8 = 323 MB      
+  allocating: b1330/4128  points=3115200x96+5042304x8 = 323 MB      
+  allocating: b1331/4128  points=3115992x96+5043840x8 = 323 MB      
+  allocating: b1332/4128  points=3116784x96+5045376x8 = 323 MB      
+  allocating: b1333/4128  points=3117576x96+5046912x8 = 323 MB      
+  allocating: b1334/4128  points=3118368x96+5048448x8 = 324 MB      
+  allocating: b1335/4128  points=3119160x96+5049984x8 = 324 MB      
+  allocating: b1336/4128  points=3119952x96+5051520x8 = 324 MB      
+  allocating: b1337/4128  points=3120744x96+5053056x8 = 324 MB      
+  allocating: b1338/4128  points=3121536x96+5054592x8 = 324 MB      
+  allocating: b1339/4128  points=3122328x96+5056128x8 = 324 MB      
+  allocating: b1340/4128  points=3123120x96+5057664x8 = 324 MB      
+  allocating: b1341/4128  points=3123912x96+5059200x8 = 324 MB      
+  allocating: b1342/4128  points=3124704x96+5060736x8 = 324 MB      
+  allocating: b1343/4128  points=3125496x96+5062272x8 = 324 MB      
+  allocating: b1344/4128  points=3126288x96+5063808x8 = 324 MB      
+  allocating: b1345/4128  points=3127080x96+5065344x8 = 324 MB      
+  allocating: b1346/4128  points=3127872x96+5066880x8 = 325 MB      
+  allocating: b1347/4128  points=3128664x96+5068416x8 = 325 MB      
+  allocating: b1348/4128  points=3129456x96+5069952x8 = 325 MB      
+  allocating: b1349/4128  points=3130248x96+5071488x8 = 325 MB      
+  allocating: b1350/4128  points=3131040x96+5073024x8 = 325 MB      
+  allocating: b1351/4128  points=3131832x96+5074560x8 = 325 MB      
+  allocating: b1352/4128  points=3132624x96+5076096x8 = 325 MB      
+  allocating: b1353/4128  points=3133416x96+5077632x8 = 325 MB      
+  allocating: b1354/4128  points=3134208x96+5079168x8 = 325 MB      
+  allocating: b1355/4128  points=3135000x96+5080704x8 = 325 MB      
+  allocating: b1356/4128  points=3135792x96+5082240x8 = 325 MB      
+  allocating: b1357/4128  points=3136584x96+5083776x8 = 325 MB      
+  allocating: b1358/4128  points=3137376x96+5085312x8 = 326 MB      
+  allocating: b1359/4128  points=3138168x96+5086848x8 = 326 MB      
+  allocating: b1360/4128  points=3138960x96+5088384x8 = 326 MB      
+  allocating: b1361/4128  points=3139752x96+5089920x8 = 326 MB      
+  allocating: b1362/4128  points=3140544x96+5091456x8 = 326 MB      
+  allocating: b1363/4128  points=3141336x96+5092992x8 = 326 MB      
+  allocating: b1364/4128  points=3142128x96+5094528x8 = 326 MB      
+  allocating: b1365/4128  points=3142920x96+5096064x8 = 326 MB      
+  allocating: b1366/4128  points=3143712x96+5097600x8 = 326 MB      
+  allocating: b1367/4128  points=3144504x96+5099136x8 = 326 MB      
+  allocating: b1368/4128  points=3145296x96+5100672x8 = 326 MB      
+  allocating: b1369/4128  points=3146088x96+5102208x8 = 326 MB      
+  allocating: b1370/4128  points=3146880x96+5103744x8 = 327 MB      
+  allocating: b1371/4128  points=3147672x96+5105280x8 = 327 MB      
+  allocating: b1372/4128  points=3148464x96+5106816x8 = 327 MB      
+  allocating: b1373/4128  points=3149256x96+5108352x8 = 327 MB      
+  allocating: b1374/4128  points=3150048x96+5109888x8 = 327 MB      
+  allocating: b1375/4128  points=3150840x96+5111424x8 = 327 MB      
+  allocating: b1376/4128  points=3151632x96+5112960x8 = 327 MB      
+  allocating: b1377/4128  points=3152424x96+5114496x8 = 327 MB      
+  allocating: b1378/4128  points=3153216x96+5116032x8 = 327 MB      
+  allocating: b1379/4128  points=3154008x96+5117568x8 = 327 MB      
+  allocating: b1380/4128  points=3154800x96+5119104x8 = 327 MB      
+  allocating: b1381/4128  points=3155592x96+5120640x8 = 327 MB      
+  allocating: b1382/4128  points=3156384x96+5122176x8 = 328 MB      
+  allocating: b1383/4128  points=3157176x96+5123712x8 = 328 MB      
+  allocating: b1384/4128  points=3157968x96+5125248x8 = 328 MB      
+  allocating: b1385/4128  points=3158760x96+5126784x8 = 328 MB      
+  allocating: b1386/4128  points=3159552x96+5128320x8 = 328 MB      
+  allocating: b1387/4128  points=3160344x96+5129856x8 = 328 MB      
+  allocating: b1388/4128  points=3161136x96+5131392x8 = 328 MB      
+  allocating: b1389/4128  points=3161928x96+5132928x8 = 328 MB      
+  allocating: b1390/4128  points=3162720x96+5134464x8 = 328 MB      
+  allocating: b1391/4128  points=3163512x96+5136000x8 = 328 MB      
+  allocating: b1392/4128  points=3164304x96+5137536x8 = 328 MB      
+  allocating: b1393/4128  points=3165096x96+5139072x8 = 328 MB      
+  allocating: b1394/4128  points=3165888x96+5140608x8 = 329 MB      
+  allocating: b1395/4128  points=3166680x96+5142144x8 = 329 MB      
+  allocating: b1396/4128  points=3167472x96+5143680x8 = 329 MB      
+  allocating: b1397/4128  points=3168264x96+5145216x8 = 329 MB      
+  allocating: b1398/4128  points=3169056x96+5146752x8 = 329 MB      
+  allocating: b1399/4128  points=3169848x96+5148288x8 = 329 MB      
+  allocating: b1400/4128  points=3170640x96+5149824x8 = 329 MB      
+  allocating: b1401/4128  points=3171432x96+5151360x8 = 329 MB      
+  allocating: b1402/4128  points=3172224x96+5152896x8 = 329 MB      
+  allocating: b1403/4128  points=3173016x96+5154432x8 = 329 MB      
+  allocating: b1404/4128  points=3173808x96+5155968x8 = 329 MB      
+  allocating: b1405/4128  points=3174600x96+5157504x8 = 329 MB      
+  allocating: b1406/4128  points=3175392x96+5159040x8 = 330 MB      
+  allocating: b1407/4128  points=3176184x96+5160576x8 = 330 MB      
+  allocating: b1408/4128  points=3176976x96+5162112x8 = 330 MB      
+  allocating: b1409/4128  points=3177768x96+5163648x8 = 330 MB      
+  allocating: b1410/4128  points=3178560x96+5165184x8 = 330 MB      
+  allocating: b1411/4128  points=3179352x96+5166720x8 = 330 MB      
+  allocating: b1412/4128  points=3180144x96+5168256x8 = 330 MB      
+  allocating: b1413/4128  points=3180936x96+5169792x8 = 330 MB      
+  allocating: b1414/4128  points=3181728x96+5171328x8 = 330 MB      
+  allocating: b1415/4128  points=3182520x96+5172864x8 = 330 MB      
+  allocating: b1416/4128  points=3183312x96+5174400x8 = 330 MB      
+  allocating: b1417/4128  points=3184104x96+5175936x8 = 331 MB      
+  allocating: b1418/4128  points=3184896x96+5177472x8 = 331 MB      
+  allocating: b1419/4128  points=3185688x96+5179008x8 = 331 MB      
+  allocating: b1420/4128  points=3186480x96+5180544x8 = 331 MB      
+  allocating: b1421/4128  points=3187272x96+5182080x8 = 331 MB      
+  allocating: b1422/4128  points=3188064x96+5183616x8 = 331 MB      
+  allocating: b1423/4128  points=3188856x96+5185152x8 = 331 MB      
+  allocating: b1424/4128  points=3189648x96+5186688x8 = 331 MB      
+  allocating: b1425/4128  points=3190440x96+5188224x8 = 331 MB      
+  allocating: b1426/4128  points=3191232x96+5189760x8 = 331 MB      
+  allocating: b1427/4128  points=3192024x96+5191296x8 = 331 MB      
+  allocating: b1428/4128  points=3192816x96+5192832x8 = 331 MB      
+  allocating: b1429/4128  points=3193608x96+5194368x8 = 332 MB      
+  allocating: b1430/4128  points=3194400x96+5195904x8 = 332 MB      
+  allocating: b1431/4128  points=3195192x96+5197440x8 = 332 MB      
+  allocating: b1432/4128  points=3195984x96+5198976x8 = 332 MB      
+  allocating: b1433/4128  points=3196776x96+5200512x8 = 332 MB      
+  allocating: b1434/4128  points=3197568x96+5202048x8 = 332 MB      
+  allocating: b1435/4128  points=3198360x96+5203584x8 = 332 MB      
+  allocating: b1436/4128  points=3199152x96+5205120x8 = 332 MB      
+  allocating: b1437/4128  points=3199944x96+5206656x8 = 332 MB      
+  allocating: b1438/4128  points=3200736x96+5208192x8 = 332 MB      
+  allocating: b1439/4128  points=3201528x96+5209728x8 = 332 MB      
+  allocating: b1440/4128  points=3202320x96+5211264x8 = 332 MB      
+  allocating: b1441/4128  points=3203112x96+5212800x8 = 333 MB      
+  allocating: b1442/4128  points=3203904x96+5214336x8 = 333 MB      
+  allocating: b1443/4128  points=3204696x96+5215872x8 = 333 MB      
+  allocating: b1444/4128  points=3205488x96+5217408x8 = 333 MB      
+  allocating: b1445/4128  points=3206280x96+5218944x8 = 333 MB      
+  allocating: b1446/4128  points=3207072x96+5220480x8 = 333 MB      
+  allocating: b1447/4128  points=3207864x96+5222016x8 = 333 MB      
+  allocating: b1448/4128  points=3208656x96+5223552x8 = 333 MB      
+  allocating: b1449/4128  points=3209448x96+5225088x8 = 333 MB      
+  allocating: b1450/4128  points=3210240x96+5226624x8 = 333 MB      
+  allocating: b1451/4128  points=3211032x96+5228160x8 = 333 MB      
+  allocating: b1452/4128  points=3211824x96+5229696x8 = 333 MB      
+  allocating: b1453/4128  points=3212616x96+5231232x8 = 334 MB      
+  allocating: b1454/4128  points=3213408x96+5232768x8 = 334 MB      
+  allocating: b1455/4128  points=3214200x96+5234304x8 = 334 MB      
+  allocating: b1456/4128  points=3214992x96+5235840x8 = 334 MB      
+  allocating: b1457/4128  points=3215784x96+5237376x8 = 334 MB      
+  allocating: b1458/4128  points=3216576x96+5238912x8 = 334 MB      
+  allocating: b1459/4128  points=3217368x96+5240448x8 = 334 MB      
+  allocating: b1460/4128  points=3218160x96+5241984x8 = 334 MB      
+  allocating: b1461/4128  points=3218952x96+5243520x8 = 334 MB      
+  allocating: b1462/4128  points=3219744x96+5245056x8 = 334 MB      
+  allocating: b1463/4128  points=3220536x96+5246592x8 = 334 MB      
+  allocating: b1464/4128  points=3221328x96+5248128x8 = 334 MB      
+  allocating: b1465/4128  points=3222120x96+5249664x8 = 335 MB      
+  allocating: b1466/4128  points=3222912x96+5251200x8 = 335 MB      
+  allocating: b1467/4128  points=3223704x96+5252736x8 = 335 MB      
+  allocating: b1468/4128  points=3224496x96+5254272x8 = 335 MB      
+  allocating: b1469/4128  points=3225288x96+5255808x8 = 335 MB      
+  allocating: b1470/4128  points=3226080x96+5257344x8 = 335 MB      
+  allocating: b1471/4128  points=3226872x96+5258880x8 = 335 MB      
+  allocating: b1472/4128  points=3227664x96+5260416x8 = 335 MB      
+  allocating: b1473/4128  points=3228456x96+5261952x8 = 335 MB      
+  allocating: b1474/4128  points=3229248x96+5263488x8 = 335 MB      
+  allocating: b1475/4128  points=3230040x96+5265024x8 = 335 MB      
+  allocating: b1476/4128  points=3230832x96+5266560x8 = 335 MB      
+  allocating: b1477/4128  points=3231624x96+5268096x8 = 336 MB      
+  allocating: b1478/4128  points=3232416x96+5269632x8 = 336 MB      
+  allocating: b1479/4128  points=3233208x96+5271168x8 = 336 MB      
+  allocating: b1480/4128  points=3234000x96+5272704x8 = 336 MB      
+  allocating: b1481/4128  points=3234792x96+5274240x8 = 336 MB      
+  allocating: b1482/4128  points=3235584x96+5275776x8 = 336 MB      
+  allocating: b1483/4128  points=3236376x96+5277312x8 = 336 MB      
+  allocating: b1484/4128  points=3237168x96+5278848x8 = 336 MB      
+  allocating: b1485/4128  points=3237960x96+5280384x8 = 336 MB      
+  allocating: b1486/4128  points=3238752x96+5281920x8 = 336 MB      
+  allocating: b1487/4128  points=3239544x96+5283456x8 = 336 MB      
+  allocating: b1488/4128  points=3240336x96+5284992x8 = 336 MB      
+  allocating: b1489/4128  points=3241128x96+5286528x8 = 337 MB      
+  allocating: b1490/4128  points=3241920x96+5288064x8 = 337 MB      
+  allocating: b1491/4128  points=3242712x96+5289600x8 = 337 MB      
+  allocating: b1492/4128  points=3243504x96+5291136x8 = 337 MB      
+  allocating: b1493/4128  points=3244296x96+5292672x8 = 337 MB      
+  allocating: b1494/4128  points=3245088x96+5294208x8 = 337 MB      
+  allocating: b1495/4128  points=3245880x96+5295744x8 = 337 MB      
+  allocating: b1496/4128  points=3246672x96+5297280x8 = 337 MB      
+  allocating: b1497/4128  points=3247464x96+5298816x8 = 337 MB      
+  allocating: b1498/4128  points=3248256x96+5300352x8 = 337 MB      
+  allocating: b1499/4128  points=3249048x96+5301888x8 = 337 MB      
+  allocating: b1500/4128  points=3249840x96+5303424x8 = 337 MB      
+  allocating: b1501/4128  points=3250632x96+5304960x8 = 338 MB      
+  allocating: b1502/4128  points=3251424x96+5306496x8 = 338 MB      
+  allocating: b1503/4128  points=3252216x96+5308032x8 = 338 MB      
+  allocating: b1504/4128  points=3253008x96+5309568x8 = 338 MB      
+  allocating: b1505/4128  points=3253800x96+5311104x8 = 338 MB      
+  allocating: b1506/4128  points=3254592x96+5312640x8 = 338 MB      
+  allocating: b1507/4128  points=3255384x96+5314176x8 = 338 MB      
+  allocating: b1508/4128  points=3256176x96+5315712x8 = 338 MB      
+  allocating: b1509/4128  points=3256968x96+5317248x8 = 338 MB      
+  allocating: b1510/4128  points=3257760x96+5318784x8 = 338 MB      
+  allocating: b1511/4128  points=3258552x96+5320320x8 = 338 MB      
+  allocating: b1512/4128  points=3259344x96+5321856x8 = 339 MB      
+  allocating: b1513/4128  points=3260136x96+5323392x8 = 339 MB      
+  allocating: b1514/4128  points=3260928x96+5324928x8 = 339 MB      
+  allocating: b1515/4128  points=3261720x96+5326464x8 = 339 MB      
+  allocating: b1516/4128  points=3262512x96+5328000x8 = 339 MB      
+  allocating: b1517/4128  points=3263304x96+5329536x8 = 339 MB      
+  allocating: b1518/4128  points=3264096x96+5331072x8 = 339 MB      
+  allocating: b1519/4128  points=3264888x96+5332608x8 = 339 MB      
+  allocating: b1520/4128  points=3265680x96+5334144x8 = 339 MB      
+  allocating: b1521/4128  points=3266472x96+5335680x8 = 339 MB      
+  allocating: b1522/4128  points=3267264x96+5337216x8 = 339 MB      
+  allocating: b1523/4128  points=3268056x96+5338752x8 = 339 MB      
+  allocating: b1524/4128  points=3268848x96+5340288x8 = 340 MB      
+  allocating: b1525/4128  points=3269640x96+5341824x8 = 340 MB      
+  allocating: b1526/4128  points=3270432x96+5343360x8 = 340 MB      
+  allocating: b1527/4128  points=3271224x96+5344896x8 = 340 MB      
+  allocating: b1528/4128  points=3272016x96+5346432x8 = 340 MB      
+  allocating: b1529/4128  points=3272808x96+5347968x8 = 340 MB      
+  allocating: b1530/4128  points=3273600x96+5349504x8 = 340 MB      
+  allocating: b1531/4128  points=3274392x96+5351040x8 = 340 MB      
+  allocating: b1532/4128  points=3275184x96+5352576x8 = 340 MB      
+  allocating: b1533/4128  points=3275976x96+5354112x8 = 340 MB      
+  allocating: b1534/4128  points=3276768x96+5355648x8 = 340 MB      
+  allocating: b1535/4128  points=3277560x96+5357184x8 = 340 MB      
+  allocating: b1536/4128  points=3278352x96+5358720x8 = 341 MB      
+  allocating: b1537/4128  points=3279144x96+5360256x8 = 341 MB      
+  allocating: b1538/4128  points=3279936x96+5361792x8 = 341 MB      
+  allocating: b1539/4128  points=3280728x96+5363328x8 = 341 MB      
+  allocating: b1540/4128  points=3281520x96+5364864x8 = 341 MB      
+  allocating: b1541/4128  points=3282312x96+5366400x8 = 341 MB      
+  allocating: b1542/4128  points=3283104x96+5367936x8 = 341 MB      
+  allocating: b1543/4128  points=3283896x96+5369472x8 = 341 MB      
+  allocating: b1544/4128  points=3284688x96+5371008x8 = 341 MB      
+  allocating: b1545/4128  points=3285480x96+5372544x8 = 341 MB      
+  allocating: b1546/4128  points=3286272x96+5374080x8 = 341 MB      
+  allocating: b1547/4128  points=3287064x96+5375616x8 = 341 MB      
+  allocating: b1548/4128  points=3287856x96+5377152x8 = 342 MB      
+  allocating: b1549/4128  points=3288648x96+5378688x8 = 342 MB      
+  allocating: b1550/4128  points=3289440x96+5380224x8 = 342 MB      
+  allocating: b1551/4128  points=3290232x96+5381760x8 = 342 MB      
+  allocating: b1552/4128  points=3291024x96+5383296x8 = 342 MB      
+  allocating: b1553/4128  points=3291816x96+5384832x8 = 342 MB      
+  allocating: b1554/4128  points=3292608x96+5386368x8 = 342 MB      
+  allocating: b1555/4128  points=3513312x96+5707776x8 = 365 MB      
+  allocating: b1556/4128  points=4129312x96+6406560x8 = 426 MB      
+  allocating: b1557/4128  points=4136704x96+6417696x8 = 427 MB      
+  allocating: b1558/4128  points=4144096x96+6428832x8 = 428 MB      
+  allocating: b1559/4128  points=4151488x96+6439968x8 = 429 MB      
+  allocating: b1560/4128  points=4158880x96+6451104x8 = 429 MB      
+  allocating: b1561/4128  points=4166272x96+6462240x8 = 430 MB      
+  allocating: b1562/4128  points=4173664x96+6473376x8 = 431 MB      
+  allocating: b1563/4128  points=4181056x96+6484512x8 = 432 MB      
+  allocating: b1564/4128  points=4188448x96+6495648x8 = 433 MB      
+  allocating: b1565/4128  points=4195840x96+6506784x8 = 433 MB      
+  allocating: b1566/4128  points=4203232x96+6517920x8 = 434 MB      
+  allocating: b1567/4128  points=4210624x96+6529056x8 = 435 MB      
+  allocating: b1568/4128  points=4218016x96+6540192x8 = 436 MB      
+  allocating: b1569/4128  points=4225408x96+6551328x8 = 436 MB      
+  allocating: b1570/4128  points=4232800x96+6562464x8 = 437 MB      
+  allocating: b1571/4128  points=4240192x96+6573600x8 = 438 MB      
+  allocating: b1572/4128  points=4247584x96+6584736x8 = 439 MB      
+  allocating: b1573/4128  points=4254976x96+6595872x8 = 439 MB      
+  allocating: b1574/4128  points=4262368x96+6607008x8 = 440 MB      
+  allocating: b1575/4128  points=4269760x96+6618144x8 = 441 MB      
+  allocating: b1576/4128  points=4277152x96+6629280x8 = 442 MB      
+  allocating: b1577/4128  points=4284544x96+6640416x8 = 442 MB      
+  allocating: b1578/4128  points=4291936x96+6651552x8 = 443 MB      
+  allocating: b1579/4128  points=4299328x96+6662688x8 = 444 MB      
+  allocating: b1580/4128  points=4306720x96+6673824x8 = 445 MB      
+  allocating: b1581/4128  points=4314112x96+6684960x8 = 445 MB      
+  allocating: b1582/4128  points=4321504x96+6696096x8 = 446 MB      
+  allocating: b1583/4128  points=4328896x96+6707232x8 = 447 MB      
+  allocating: b1584/4128  points=4336288x96+6718368x8 = 448 MB      
+  allocating: b1585/4128  points=4343680x96+6729504x8 = 449 MB      
+  allocating: b1586/4128  points=4351072x96+6740640x8 = 449 MB      
+  allocating: b1587/4128  points=4358464x96+6751776x8 = 450 MB      
+  allocating: b1588/4128  points=4365856x96+6762912x8 = 451 MB      
+  allocating: b1589/4128  points=4373248x96+6774048x8 = 452 MB      
+  allocating: b1590/4128  points=4380640x96+6785184x8 = 452 MB      
+  allocating: b1591/4128  points=4388032x96+6796320x8 = 453 MB      
+  allocating: b1592/4128  points=6447936x96+9126528x8 = 659 MB      
