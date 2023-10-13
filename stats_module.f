@@ -124,7 +124,7 @@ c *****************************************************
         endif
 
       enddo
-      if (us3d_debug) write(olun,*) '-- update_stats() called'
+      !if (us3d_debug) write(olun,*) '-- update_stats() called'
       return
       end subroutine update_stats
 
@@ -167,7 +167,7 @@ c***********************************************************************
        !usgs = max(ukmgv,sqrt(2*ksgs/3.0d0))        ! subgrid velocity
        !tsgs = max(tkmgv,delta/usgs)                ! subgrid time scale
        !tmix = sqrt(tkmgv*tsgs)                     ! mixing time, or something
-       if (us3d_debug) write(olun,*) '-- subscales() called'
+       !if (us3d_debug) write(olun,*) '-- subscales() called'
        end Subroutine subscales
 
 c***********************************************************************
@@ -202,7 +202,7 @@ c***********************************************************************
           delta(cell) = maxlength ! Find delta in thismodule's scope
           maxlength = -1.0d0
       enddo
-      if (us3d_debug) write(olun,*) '-- filterwidth() called'
+      !if (us3d_debug) write(olun,*) '-- filterwidth() called'
       end Subroutine filterwidth
 
 c *****************************************************
@@ -521,11 +521,11 @@ c        *** Attributes stored for this run
          qdum(1:nmvar,i) = mean_var(1:nmvar,i)
          !rdum(1:nsvar,i) = stat_var(1:nsvar,i)
       enddo
-      if (us3d_debug) write(olun,*) '-- Did the do'
+      !if (us3d_debug) write(olun,*) '-- Did the do'
 
       !call us3d_h5data_pw('stats-mean',ugrid%nc,qdum,ige,nel,.false.,icomw,new,ier,hid=rid)
       call write_us3d_qvals(dpath,qdum,.false.,new,.false.,ier)
-      if (us3d_debug) write(olun,*) '-- Writing mean'
+      !if (us3d_debug) write(olun,*) '-- Writing mean'
       if (ier/=0) goto 999
 
       if (allocated(qdum)) deallocate(qdum)

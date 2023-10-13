@@ -425,41 +425,198 @@ c **** Output
 c **** ------
 c **** ier   - Return nonzero on an error
 c ****
+c **** 13/10/2023 - This is an accumulation of stats_dataio, stats_read, 
+c ****              and stats_write bc hdf5 files weren't being written 
+c **** Sarah M      properly. It may be destilled into appropriate 
+c ****              subfunctions at a later data. 
 cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 
-      Subroutine my_user_dataio(cio,fname,irnum,ier)
+      subroutine my_user_dataio(cio,fname,irnum,ier)
+
+      use MPI
+      use HDF5
+      use H5_EXTRAS
+      use US3D_EXTRAS
+
+      use us3d_global
+      use us3d_varkinds
       use userdata_stats
-      use mpivars
       use stats
 
+      use mpivars
+      use switches
+      use restartio, only : read_us3d_qvals,write_us3d_qvals
+      use connect, only : ugrid
+      use sizing, only : nel,neg
+
       Implicit none
-      Integer, intent(IN)          :: irnum
-      Integer, intent(OUT)         :: ier
+      integer, intent(IN)          :: irnum
+      integer, intent(OUT)         :: ier
       character(LEN=1), intent(IN) :: cio
       character(LEN=*), intent(IN) :: fname
 
+      integer :: i
+      integer :: hdf_err,ihave,irnumg,istat
+      integer(HID_T) :: rid
+      logical :: new
+      type(us3d_sfile) :: sfile
+
+      real*8 :: testval
+      real*8, pointer, dimension(:,:) :: dump
+
+      integer :: epg,global_epg
+      real*8, allocatable, dimension(:,:) :: myqdum
+      integer, allocatable, dimension(:) :: ige
+
+      integer :: have_mydata
+      integer, parameter :: nuv=1  ! CHANGE NUMBER OF USER VARIABLES HERE
+      character(LEN=200) :: rpath,dpath
+      character(40) :: dname
+      integer, private :: olun= 6
+
+      ! -- Set the name of your dataset here
+      dname= 'stats-mean'
+
       ier= 0
+      dpath(:)= ' '
+      
+      if (id==0) write(6,*) '-- Inside user_dataio, case: '//trim(cio)
 
-      SELECT CASE(cio)
+      do while (id==0)
 
-      CASE('w')
+         ! -- Initialize solution file
+         new= .false.
+         if (us3d_debug) write(6,*) '-- Initializing solution file: "'//trim(fname)//'"'
+         call us3d_sfile_init(fname,new,sfile,ier)
+         if (ier/=0) exit
 
-         if(istats.gt.0) then
-            call stats_dataio(fname,cio,irnum,.false.,ier)
-            if (ier/=0) goto 999
+         if (irnum>sfile%nruns) then
+            write(6,*) '*** Run ',irnum,' does not yet exist in this file'
+            ier= 1
+            exit
          endif
 
-      CASE('r')
+         ! ---Open current run group
+         irnumg= irnum
+         call us3d_sfile_orun(sfile,irnumg,rid,ier,rpath=rpath)
+         if (ier/=0) exit
 
-         if(istats.gt.0) then
-            call stats_dataio(fname,cio,irnum,.false.,ier)
-            if (ier/=0) goto 999
+         call h5ex_att_getd(rid,'have_'//trim(dname),0,ihave,ier)
+         if (ier/=0) exit
+
+         write(6,*) '-- Have my data? ',ihave
+         if (ihave==1) then
+            new= .false.
+         else
+            new= .true.
          endif
 
-      END SELECT
+         if (cio=='w') then
+            ihave= 1
+            call h5ex_att_add(rid,'have_'//trim(dname),ihave,ier)
+            call h5ex_att_add(rid,'stats_time',stat_time,ier)
+            call h5ex_att_add(rid,'unst_time',unst_time,ier)
+            call h5ex_att_add(rid,'stats_mean_vars',nmvar,ier)
+            if (ier/=0) exit
+         endif
+
+         if (cio=='r'.and.ihave==1) then
+            call h5ex_att_get(rid,'stats_time',stat_time,ier)
+            call h5ex_att_get(rid,'unst_time',unst_time,ier)
+            call h5ex_att_get(rid,'stats_mean_vars',nmvar,ier)
+            if (ier/=0) exit
+         endif
+
+         ! --- Close run group and solution file
+         call h5gclose_f(rid, hdf_err)
+         call us3d_sfile_cnd(sfile,ier)
+
+         exit
+      enddo
+
+      call us3d_check_int(icomw,MPI_MAX,ier)
+      if (ier/=0) goto 999
+
+      call MPI_BCAST(new,1,MPI_LOGICAL,0,icomw,ier)
+      call MPI_BCAST(ihave,1,MPI_INTEGER,0,icomw,ier)
+      call MPI_BCAST(rpath,len(rpath),MPI_CHARACTER,0,icomw,ier)
+
+      dpath= trim(rpath)//'/'//trim(dname)
+
+      write(6,*) '-- dpath= "'//trim(dpath)//'"'
+
+      ! --- Add any required IO here
+      Select Case(cio)
+      Case('w')
+
+         ! -- Write cell-based data.  Assume sized mydata(my_nv,epg) on each processor
+         !!epg= nel + neg                   ! This processor number of interior plus shared/ghost
+         !!global_epg= ugrid%nc + ugrid%ng  ! number of interior + ghost cells in global grid
+         allocate(myqdum(nmvar,nel),ige(nel),STAT=istat)
+
+         if (istat/=0) ier= 1
+         call us3d_check_int(icomw,MPI_MAX,ier)
+         if (ier/=0) goto 901
+
+         do i= 1,nel
+            ige(i)= ugrid%ige(i)
+
+            myqdum(1:nmvar,i) = mean_var(1:nmvar,i)
+            !rdum(1:nsvar,i) = stat_var(1:nsvar,i)
+         enddo
+
+         ! -- Called with rpath, we expect to open and close the file in us3d_h5data_pw
+         call write_us3d_qvals(dpath,myqdum,.false.,new,.false.,ier)
+         if (ier/=0) goto 999
+
+         if (allocated(myqdum)) deallocate(myqdum)
+         if (allocated(ige)) deallocate(ige)
+         if (id==0) write(6,*) '== Successfully wrote "'//trim(dname)//'"'
+
+      Case('r')
+
+         if (ihave==1) then
+
+            !epg= nel + neg                   ! This processor number of interior plus shared/ghost
+            allocate(myqdum(nmvar,nel),ige(nel),STAT=istat)
+
+            write(6,*) 'size(qva)= ',size(myqdum)
+            write(6,*) 'size(qva)= ',size(ige)
+
+            if (us3d_debug.and.id==0) write(olun,*) 'Reading solution variables in parallel'
+            !*** Read solution data globally according to the global map
+            ige(1:nel)= ugrid%ige(1:nel)
+
+            dump => read_us3d_qvals(dpath,nuv,.false.,ier,qva=myqdum)
+            !dump => read_us3d_qvals(dpath,nuv,.false.,ier,qva=ige)
+
+            if (ier/=0) goto 999
+
+            ! -- Do something with the data you read.  For now we just test that we
+            ! -- read it properly.
+            do i=1,nel
+               testval = myqdum(1,i) - dble(ugrid%ige(i))
+               if (abs(testval).gt.1.0d-20) then
+                  write(6,*) '*** Failed to properly load data: ',
+     &               myqdum(1,i),dble(ugrid%ige(i)),abs(testval)
+                  ier= 1
+               endif
+            enddo
+            write(6,*) id,' read all data properly'
+
+            if (allocated(myqdum)) deallocate(myqdum)
+            if (allocated(ige)) deallocate(ige)
+            if (id==0) write(6,*) '== Successfully read "'//trim(dname)//'"'
+
+         else
+            if (id==0) write(6,*) '-- No "'//trim(dname)//'" present for reading'
+         endif
+
+      end select
 
       return
- 999  if (id==0) write(6,*) '*** Error in subroutine user_dataio'
+ 901  if (id==0) write(olun,*) '*** Error allocating memory in subroutine stats_read'
+ 999  if (id==0) write(6,*) '*** Error in subroutine my_user_dataio'
       ier= 1
       return
       end subroutine my_user_dataio
@@ -1166,7 +1323,12 @@ c  *****************************************************************************
       user_bc_init => my_user_bc_init
       user_startup => my_user_startup    
       user_main_postupdate =>  my_user_update_post 
-      user_dataio_post => my_user_dataio
+
+      ! Trying this to collect stats
+      if(istats.gt.0) then
+            user_dataio_post => my_user_dataio 
+      endif
+      
       user_finalize => my_user_finalize
       user_main_postpar => my_user_main_postpar
 
