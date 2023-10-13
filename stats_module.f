@@ -205,359 +205,370 @@ c***********************************************************************
       !if (us3d_debug) write(olun,*) '-- filterwidth() called'
       end Subroutine filterwidth
 
-c *****************************************************
-c  Subroutine to co-ordinate IO for stats data
-c  @curator: Nick Gibbons
-c  Notes: I inherited this from Rolf, but I beleive it
-c  to have originateed from someone at UoM
-c *****************************************************
-      subroutine stats_dataio(solf,cio,inum,h5oc,ier)
-      use MPI
-      use HDF5
-      use us3d_logging
-      use US3D_EXTRAS
-      use switches, only : us3d_debug
-      implicit none
+! c *****************************************************
+! c  Subroutine to co-ordinate IO for stats data
+! c  @curator: Nick Gibbons
+! c  Notes: I inherited this from Rolf, but I beleive it
+! c  to have originateed from someone at UoM
+! c *****************************************************
+!       subroutine stats_dataio(cio,fname,inum,ier)
+!       use MPI
+!       use HDF5
+!       use H5_EXTRAS
+!       use US3D_EXTRAS
 
-      Integer, intent(IN) :: inum
-      Integer, intent(OUT) :: ier
-      character(LEN=*), intent(IN) :: solf
-      character(LEN=1), intent(IN) :: cio
-      logical, intent(IN) :: h5oc
-      Integer :: id
-      Integer :: loglun
-      integer :: istat,hdf_err
-      real(8) :: rtime
+!       use us3d_global
+!       use us3d_varkinds
+!       use us3d_logging
 
-      ier= 0
+!       use mpivars
+!       use switches, only : us3d_debug
+!       use restartio, only: read_us3d_qvals, write_us3d_qvals
+!       use connect, only: ugrid
+!       use sizing, only : nel,neg
 
-      if (h5oc) then
-         call h5open_f(hdf_err)
-         if (hdf_err<0) stop
-      endif
+!       implicit none
+!       Integer, intent(IN) :: inum
+!       Integer, intent(OUT) :: ier
+!       character(LEN=*), intent(IN) :: solf
+!       character(LEN=1), intent(IN) :: cio
+!       logical, intent(IN) :: h5oc
+!       Integer :: id
+!       Integer :: loglun
+!       integer :: istat,hdf_err
+!       real(8) :: rtime
 
-c
-c *** Read or write the solution
-c
-      rtime = MPI_WTIME()
+!       ier= 0
 
-      Select Case(cio)
+!       if (h5oc) then
+!          call h5open_f(hdf_err)
+!          if (hdf_err<0) stop
+!       endif
 
-      Case('w')
-         call us3d_wlog('== Writing stats HDF5 solution to: '//trim(solf),
-     &      l=LOG_STATE,i=0,aei=0,e=olun)
-         call stats_write(solf,inum,ier)
-         if (ier/=0) goto 999
+! c
+! c *** Read or write the solution
+! c
+!       rtime = MPI_WTIME()
 
-      Case('r')
-         call us3d_wlog('== Reading stats HDF5 solution from: '//trim(solf),
-     &      l=LOG_STATE,i=0,aei=0,e=olun)
-         call stats_read(solf,inum,ier)
-         if (ier/=0) goto 999
+!       Select Case(cio)
 
-      End Select
+!       Case('w')
+!          call us3d_wlog('== Writing stats HDF5 solution to: '//trim(solf),
+!      &      l=LOG_STATE,i=0,aei=0,e=olun)
+!          call stats_write(solf,inum,ier)
+!          if (ier/=0) goto 999
 
-      rtime = MPI_WTIME() - rtime
-      if (us3d_cklog(i=0,l=LOG_TIMING)) then
-         write(loglun,fmt='(1x,a,g15.5,1x,a)') '-- Data IO took ',rtime,'seconds'
-      endif
+!       Case('r')
+!          call us3d_wlog('== Reading stats HDF5 solution from: '//trim(solf),
+!      &      l=LOG_STATE,i=0,aei=0,e=olun)
+!          call stats_read(solf,inum,ier)
+!          if (ier/=0) goto 999
 
-      if (h5oc) then
-         call h5close_f(hdf_err)
-      endif
+!       End Select
 
-      call flush(olun)
+!       rtime = MPI_WTIME() - rtime
+!       if (us3d_cklog(i=0,l=LOG_TIMING)) then
+!          write(loglun,fmt='(1x,a,g15.5,1x,a)') '-- Data IO took ',rtime,'seconds'
+!       endif
 
-      return
- 999  if (id==0) write(olun,*) '*** Error in subroutine stats_dataio'
-      ier= 1
-      if (us3d_debug) write(olun,*) '-- stats_dataio() finished'
-      return
-      end Subroutine stats_dataio
-c *****************************************************
-c     Routine to read the stats solution file in HDF5
-c     format.  Note, only interior cells are read.
-c
-c     Input
-c     -----
-c     fname   - The HDF5 filename to read
-c     inum    - (Optional) solution number.  Defaults to 1.
-c
-c     Output
-c     ------
-c     ier     - Returns nonzero on an error
-c *****************************************************
-      subroutine stats_read(fname,inum,ier)
-      use MPI
-      use HDF5
-      use connect, only: ugrid
-      use sizing, only : nel
-      use us3d_extras
-      use mpivars, only: icomw, id
-      use switches, only : us3d_debug
-      use restartio, only : read_us3d_qvals
-      implicit none
-      character(LEN=*) :: fname
-      integer, intent(OUT) :: ier
-      integer, intent(IN) :: inum
+!       if (h5oc) then
+!          call h5close_f(hdf_err)
+!       endif
 
-      integer :: n,e,s,hdf_err,istat,ihave_stats
-      integer :: global_nbf,ier2
-      integer :: old_nmvar,old_nsvar,iw
-      integer(HID_T) :: rid
-      logical :: new,attr_exists
-      integer :: mpistat(MPI_STATUS_SIZE)
-      integer, allocatable, dimension(:) :: ige
+!       call flush(olun)
 
-      type(us3d_sfile) :: sfile
+!       return
+!  999  if (id==0) write(olun,*) '*** Error in subroutine stats_dataio'
+!       ier= 1
+!       if (us3d_debug) write(olun,*) '-- stats_dataio() finished'
+!       return
+!       end Subroutine stats_dataio
+! c *****************************************************
+! c     Routine to read the stats solution file in HDF5
+! c     format.  Note, only interior cells are read.
+! c
+! c     Input
+! c     -----
+! c     fname   - The HDF5 filename to read
+! c     inum    - (Optional) solution number.  Defaults to 1.
+! c
+! c     Output
+! c     ------
+! c     ier     - Returns nonzero on an error
+! c *****************************************************
+!       subroutine stats_read(fname,inum,ier)
+!       use MPI
+!       use HDF5
+!       use connect, only: ugrid
+!       use sizing, only : nel
+!       use us3d_extras
+!       use mpivars, only: icomw, id
+!       use switches, only : us3d_debug
+!       use restartio, only : read_us3d_qvals
+!       implicit none
+!       character(LEN=*) :: fname
+!       integer, intent(OUT) :: ier
+!       integer, intent(IN) :: inum
 
-      ier= 0
+!       integer :: n,e,s,hdf_err,istat,ihave_stats
+!       integer :: global_nbf,ier2
+!       integer :: old_nmvar,old_nsvar,iw
+!       integer(HID_T) :: rid
+!       logical :: new,attr_exists
+!       integer :: mpistat(MPI_STATUS_SIZE)
+!       integer, allocatable, dimension(:) :: ige
 
-c     *** Each node stores their cell mapping
-      allocate(ige(nel),STAT=istat)        ! Local to global cell mapping
-      if (istat/=0) ier= 1
+!       type(us3d_sfile) :: sfile
 
-      call us3d_check_int(icomw,MPI_MAX,ier)
-      if (ier/=0) goto 901
+!       ier= 0
 
-c     *** Set the solution number integer and string
-      if (us3d_debug.and.id==0) write(olun,*) '-- Will read solution from run: ',inum
-c'
-c     *** Initializes file and groups
-      new= .false.
-      if (us3d_debug.and.id==0) write(olun,*) '-- Opening solution file'
-      call us3d_sfile_init(fname,new,sfile,ier)
-      if (ier/=0) goto 999
+! c     *** Each node stores their cell mapping
+!       allocate(ige(nel),STAT=istat)        ! Local to global cell mapping
+!       if (istat/=0) ier= 1
 
-c     *** Open or create group for this run
-      call us3d_sfile_orun(sfile,inum,rid,ier)
-      if (ier/=0) goto 999
+!       call us3d_check_int(icomw,MPI_MAX,ier)
+!       if (ier/=0) goto 901
 
-      if (sfile%nruns<inum) then
-         if (id==0) then
-            write(olun,*) '*** Unable to restart from run ',inum
-            write(olun,*) '*** when solution file says it has ',sfile%nruns
-         endif
-         goto 999
-      endif
+! c     *** Set the solution number integer and string
+!       if (us3d_debug.and.id==0) write(olun,*) '-- Will read solution from run: ',inum
+! c'
+! c     *** Initializes file and groups
+!       new= .false.
+!       if (us3d_debug.and.id==0) write(olun,*) '-- Opening solution file'
+!       call us3d_sfile_init(fname,new,sfile,ier)
+!       if (ier/=0) goto 999
 
-      ihave_stats= 0
-      call h5aexists_by_name_f(rid,'.','ihave_stats',attr_exists,hdf_err)
-      if (attr_exists) then
-         call h5ex_att_get(rid,'ihave_stats',ihave_stats,ier)
-      endif
+! c     *** Open or create group for this run
+!       call us3d_sfile_orun(sfile,inum,rid,ier)
+!       if (ier/=0) goto 999
 
-      if (ihave_stats/=1) then
-         if (id==0) then
-            write(olun,*) ' -- Run not listed as having a stats solution to read'
-            write(olun,*) ' -- Will wait till next data_write to create h5 tree'
-         endif
-         return
-      endif
+!       if (sfile%nruns<inum) then
+!          if (id==0) then
+!             write(olun,*) '*** Unable to restart from run ',inum
+!             write(olun,*) '*** when solution file says it has ',sfile%nruns
+!          endif
+!          goto 999
+!       endif
 
-c     *** Read solution attributes
-      call h5ex_att_get(rid,'stats_time',stat_time,ier)
-      call h5ex_att_get(rid,'unst_time',unst_time,ier)
-      call h5ex_att_get(rid,'stats_mean_vars',old_nmvar,ier)
-      !call h5ex_att_get(rid,'stats_stat_vars',old_nsvar,ier)
+!       ihave_stats= 0
+!       call h5aexists_by_name_f(rid,'.','ihave_stats',attr_exists,hdf_err)
+!       if (attr_exists) then
+!          call h5ex_att_get(rid,'ihave_stats',ihave_stats,ier)
+!       endif
 
-      if (old_nmvar/=nmvar ) then !.or. old_nsvar/=nsvar) then
-         if (id==0) then
-            write(olun,*) '*** Mismatch in number of variables'
-            write(olun,*) '*** Old solution had nmvar= ',old_nmvar
-            write(olun,*) '*** New solution has nmvar= ',nmvar
-            !write(olun,*) '*** Old solution had nsvar= ',old_nsvar
-            !write(olun,*) '*** New solution has nsvar= ',nsvar
-            write(olun,*) '*** Unable to restart!'
-         endif
-         goto 999
-      endif
+!       if (ihave_stats/=1) then
+!          if (id==0) then
+!             write(olun,*) ' -- Run not listed as having a stats solution to read'
+!             write(olun,*) ' -- Will wait till next data_write to create h5 tree'
+!          endif
+!          return
+!       endif
 
-c     *** Read solution data globally according to the global map
-      ige(1:nel)= ugrid%ige(1:nel)
+! c     *** Read solution attributes
+!       call h5ex_att_get(rid,'stats_time',stat_time,ier)
+!       call h5ex_att_get(rid,'unst_time',unst_time,ier)
+!       call h5ex_att_get(rid,'stats_mean_vars',old_nmvar,ier)
+!       !call h5ex_att_get(rid,'stats_stat_vars',old_nsvar,ier)
 
-      if (us3d_debug.and.id==0) write(olun,*) 'Reading solution variables in parallel'
-c'
-      call us3d_data_r(rid,'stats-mean',ugrid%nc,nel,mean_var,ige,0,ier)
-      if (ier/=0) goto 999
-      !call us3d_data_r(rid,'stats-stat',ugrid%nc,nel,stat_var,ige,0,ier)
-      !if (ier/=0) goto 999
+!       if (old_nmvar/=nmvar ) then !.or. old_nsvar/=nsvar) then
+!          if (id==0) then
+!             write(olun,*) '*** Mismatch in number of variables'
+!             write(olun,*) '*** Old solution had nmvar= ',old_nmvar
+!             write(olun,*) '*** New solution has nmvar= ',nmvar
+!             !write(olun,*) '*** Old solution had nsvar= ',old_nsvar
+!             !write(olun,*) '*** New solution has nsvar= ',nsvar
+!             write(olun,*) '*** Unable to restart!'
+!          endif
+!          goto 999
+!       endif
 
-      call MPI_BARRIER(icomw,ier2)
+! c     *** Read solution data globally according to the global map
+!       ige(1:nel)= ugrid%ige(1:nel)
 
-      if (us3d_debug.and.id==0) write(olun,*) '-- Finished reading stats'
-c'
-c     *** Check for any errors in above section
- 802  call us3d_check_int(icomw,MPI_MAX,ier)
-      if (ier/=0) goto 999
+!       if (us3d_debug.and.id==0) write(olun,*) 'Reading solution variables in parallel'
+! c'
+!       call us3d_data_r(rid,'stats-mean',ugrid%nc,nel,mean_var,ige,0,ier)
+!       if (ier/=0) goto 999
+!       !call us3d_data_r(rid,'stats-stat',ugrid%nc,nel,stat_var,ige,0,ier)
+!       !if (ier/=0) goto 999
 
-c     *** Close run group
-      call h5gclose_f(rid, hdf_err)
-      if (hdf_err<0) goto 999
+!       call MPI_BARRIER(icomw,ier2)
 
-c     *** Close file
-      if (id==0.and.us3d_debug) write(olun,*) '-- Closing solution file'
-      call us3d_sfile_cnd(sfile,ier)
+!       if (us3d_debug.and.id==0) write(olun,*) '-- Finished reading stats'
+! c'
+! c     *** Check for any errors in above section
+!  802  call us3d_check_int(icomw,MPI_MAX,ier)
+!       if (ier/=0) goto 999
 
-c     *** Cleanup
-      if (allocated(ige)) deallocate(ige)
+! c     *** Close run group
+!       call h5gclose_f(rid, hdf_err)
+!       if (hdf_err<0) goto 999
 
-      return
- 901  if (id==0) write(olun,*) '*** Error allocating memory in subroutine stats_read'
-c'
-      call finalize(2)
- 999  if (id==0) write(olun,*) '*** Error in subroutine stats_read'
-      ier= 1
-      return
-      end subroutine stats_read
-c *****************************************************
-c     Routine to write the stats solution file in HDF5
-c     format.  Note, only interior cells are written.
-c
-c     Input
-c     -----
-c     fname   - The HDF5 filename to write
-c     inum    - (Optional) solution number.  Defaults to 1.
-c
-c     Output
-c     ------
-c     ier     - Returns nonzero on an error
-c *****************************************************
-      subroutine stats_write(fname,inum,ier)
-      use MPI
-      use HDF5
-      use connect, only: ugrid
-      use sizing, only : nel
-      use us3d_extras
-      use mpivars, only: icomw, id
-      use switches, only : us3d_debug
-      use restartio, only : write_us3d_qvals
-      implicit none
-      integer, intent(IN) :: inum
-      character(LEN=*), intent(IN) :: fname
-      integer, intent(OUT) :: ier
+! c     *** Close file
+!       if (id==0.and.us3d_debug) write(olun,*) '-- Closing solution file'
+!       call us3d_sfile_cnd(sfile,ier)
 
-      integer :: i,n,e,s,is,hdf_err,nel_max,istat,iw,ie1,ie2,ict,ist,iemax
-      integer :: ier2
-      logical :: new,attr_exists,iexist
-      integer :: ihave_stats,mpistat(MPI_STATUS_SIZE)
-      integer, allocatable, dimension(:) :: ige
-      integer(HID_T) :: rid
-      real(8), allocatable, dimension(:,:) :: qdum!, rdum
-      character(LEN=200) :: rpath,dpath
-      character(40) :: dname
-      type(us3d_sfile) :: sfile
+! c     *** Cleanup
+!       if (allocated(ige)) deallocate(ige)
 
-      ier= 0
-      hdf_err= 0
-      dpath(:)= ' '
-      dname = 'stats-mean'
+!       return
+!  901  if (id==0) write(olun,*) '*** Error allocating memory in subroutine stats_read'
+! c'
+!       call finalize(2)
+!  999  if (id==0) write(olun,*) '*** Error in subroutine stats_read'
+!       ier= 1
+!       return
+!       end subroutine stats_read
+! c *****************************************************
+! c     Routine to write the stats solution file in HDF5
+! c     format.  Note, only interior cells are written.
+! c
+! c     Input
+! c     -----
+! c     fname   - The HDF5 filename to write
+! c     inum    - (Optional) solution number.  Defaults to 1.
+! c
+! c     Output
+! c     ------
+! c     ier     - Returns nonzero on an error
+! c *****************************************************
+!       subroutine stats_write(fname,inum,ier)
+!       use MPI
+!       use HDF5
+!       use connect, only: ugrid
+!       use sizing, only : nel
+!       use us3d_extras
+!       use mpivars, only: icomw, id
+!       use switches, only : us3d_debug
+!       use restartio, only : write_us3d_qvals
+!       implicit none
+!       integer, intent(IN) :: inum
+!       character(LEN=*), intent(IN) :: fname
+!       integer, intent(OUT) :: ier
 
-c     *** Node zero initializes file and groups
-      if (id==0) then
+!       integer :: i,n,e,s,is,hdf_err,nel_max,istat,iw,ie1,ie2,ict,ist,iemax
+!       integer :: ier2
+!       logical :: new,attr_exists,iexist
+!       integer :: ihave_stats,mpistat(MPI_STATUS_SIZE)
+!       integer, allocatable, dimension(:) :: ige
+!       integer(HID_T) :: rid
+!       real(8), allocatable, dimension(:,:) :: qdum!, rdum
+!       character(LEN=200) :: rpath,dpath
+!       character(40) :: dname
+!       type(us3d_sfile) :: sfile
 
-c        *** Set the solution number integer and string
-         if (us3d_debug) write(olun,*) '-- Will write solution to run: ',inum
+!       ier= 0
+!       hdf_err= 0
+!       dpath(:)= ' '
+!       dname = 'stats-mean'
 
-c        *** Decide whether to create a new solution file
-         new= .true.
-         inquire(file=fname, exist=iexist)
-         if (iexist) new= .false.
+!       if (id==0) write(6,*) '-- Inside user_dataio, case: '//trim(cio)
 
-         if (us3d_debug) write(olun,*) '-- Initializing solution file: "'//trim(fname)//'"'
-         call us3d_sfile_init(fname,new,sfile,ier)
-         if (ier/=0) goto 201
+! c     *** Node zero initializes file and groups
+!       if (id==0) then
 
-c        *** Open or create group for this run '
-         call us3d_sfile_orun(sfile,inum,rid,ier,rpath=rpath)
-         if (ier/=0) goto 201
+! c        *** Set the solution number integer and string
+!          if (us3d_debug) write(olun,*) '-- Will write solution to run: ',inum
 
-c        *** Determine whether this run has a stats solution in it
-         ihave_stats= 0
-         new= .true.
-         call h5aexists_by_name_f(rid,'.','ihave_stats',attr_exists,hdf_err)
-         if (attr_exists) then
-            call h5ex_att_get(rid,'ihave_stats',ihave_stats,ier)
-         endif
+! c        *** Decide whether to create a new solution file
+!          new= .true.
+!          inquire(file=fname, exist=iexist)
+!          if (iexist) new= .false.
+
+!          if (us3d_debug) write(olun,*) '-- Initializing solution file: "'//trim(fname)//'"'
+!          call us3d_sfile_init(fname,new,sfile,ier)
+!          if (ier/=0) goto 201
+
+! c        *** Open or create group for this run '
+!          call us3d_sfile_orun(sfile,inum,rid,ier,rpath=rpath)
+!          if (ier/=0) goto 201
+
+! c        *** Determine whether this run has a stats solution in it
+!          ihave_stats= 0
+!          new= .true.
+!          call h5aexists_by_name_f(rid,'.','ihave_stats',attr_exists,hdf_err)
+!          if (attr_exists) then
+!             call h5ex_att_get(rid,'ihave_stats',ihave_stats,ier)
+!          endif
          
-         if (ihave_stats==1) then
-            new= .false.
-         else
-            new= .true.
-         endif
+!          if (ihave_stats==1) then
+!             new= .false.
+!          else
+!             new= .true.
+!          endif
          
-c        *** Store solution attributes
-         if (us3d_debug) write(olun,*) '-- Storing attributes'
+! c        *** Store solution attributes
+!          if (us3d_debug) write(olun,*) '-- Storing attributes'
 
-c        *** Attributes stored for this run
-         call h5ex_att_add(rid,'ihave_stats',1,ier)
-         call h5ex_att_add(rid,'stats_time',stat_time,ier)
-         call h5ex_att_add(rid,'unst_time',unst_time,ier)
-         call h5ex_att_add(rid,'stats_mean_vars',nmvar,ier)
-         !call h5ex_att_add(rid,'stats_stat_vars',nsvar,ier)
-         if (us3d_debug) write(olun,*) '-- Stored attributes'
+! c        *** Attributes stored for this run
+!          call h5ex_att_add(rid,'ihave_stats',1,ier)
+!          call h5ex_att_add(rid,'stats_time',stat_time,ier)
+!          call h5ex_att_add(rid,'unst_time',unst_time,ier)
+!          call h5ex_att_add(rid,'stats_mean_vars',nmvar,ier)
+!          !call h5ex_att_add(rid,'stats_stat_vars',nsvar,ier)
+!          if (us3d_debug) write(olun,*) '-- Stored attributes'
 
-      endif
+!       endif
 
- 201  if (hdf_err<0) ier= 1
-      call us3d_check_int(icomw,MPI_MAX,ier)
-      if (us3d_debug) write(olun,*) '-- us3d_check_int(icomw,MPI_MAX..)'
-      if (ier/=0) goto 999
+!  201  if (hdf_err<0) ier= 1
+!       call us3d_check_int(icomw,MPI_MAX,ier)
+!       if (us3d_debug) write(olun,*) '-- us3d_check_int(icomw,MPI_MAX..)'
+!       if (ier/=0) goto 999
 
-      !allocate(qdum(nmvar,nel),rdum(nsvar,nel),ige(nel),STAT=istat)
-      allocate(qdum(nmvar,nel),ige(nel),STAT=istat)
-      if (us3d_debug) write(olun,*) '-- Allocated stats'
-      if (istat/=0) ier= 1
-      call us3d_check_int(icomw,MPI_MAX,ier)
-      if (ier/=0) goto 901
+!       !allocate(qdum(nmvar,nel),rdum(nsvar,nel),ige(nel),STAT=istat)
+!       allocate(qdum(nmvar,nel),ige(nel),STAT=istat)
+!       if (us3d_debug) write(olun,*) '-- Allocated stats'
+!       if (istat/=0) ier= 1
+!       call us3d_check_int(icomw,MPI_MAX,ier)
+!       if (ier/=0) goto 901
       
-      dpath=trim(rpath)//'/'//trim(dname)
-!      write(6,*) '-- dpath= "'//trim(dpath)//'"'
+!       dpath=trim(rpath)//'/'//trim(dname)
+! !      write(6,*) '-- dpath= "'//trim(dpath)//'"'
 
 
-      do i= 1,nel
-         ige(i)= ugrid%ige(i)
+!       do i= 1,nel
+!          ige(i)= ugrid%ige(i)
 
-         qdum(1:nmvar,i) = mean_var(1:nmvar,i)
-         !rdum(1:nsvar,i) = stat_var(1:nsvar,i)
-      enddo
-      !if (us3d_debug) write(olun,*) '-- Did the do'
+!          qdum(1:nmvar,i) = mean_var(1:nmvar,i)
+!          !rdum(1:nsvar,i) = stat_var(1:nsvar,i)
+!       enddo
+!       !if (us3d_debug) write(olun,*) '-- Did the do'
 
-      !call us3d_h5data_pw('stats-mean',ugrid%nc,qdum,ige,nel,.false.,icomw,new,ier,hid=rid)
-      call write_us3d_qvals(dpath,qdum,.false.,new,.false.,ier)
-      !if (us3d_debug) write(olun,*) '-- Writing mean'
-      if (ier/=0) goto 999
+!       !call us3d_h5data_pw('stats-mean',ugrid%nc,qdum,ige,nel,.false.,icomw,new,ier,hid=rid)
+!       call write_us3d_qvals(dpath,qdum,.false.,new,.false.,ier)
+!       !if (us3d_debug) write(olun,*) '-- Writing mean'
+!       if (ier/=0) goto 999
 
-      if (allocated(qdum)) deallocate(qdum)
-      if (allocated(ige)) deallocate(ige)
+!       if (allocated(qdum)) deallocate(qdum)
+!       if (allocated(ige)) deallocate(ige)
 
-      if (us3d_debug.and.id==0) write(olun,*) '-- Finished writing stats'
-c'
-c     *** Check for any errors in above section
- 801  call us3d_check_int(icomw,MPI_MAX,ier)
-      if (ier/=0) goto 999
+!       if (us3d_debug.and.id==0) write(olun,*) '-- Finished writing stats'
+! c'
+! c     *** Check for any errors in above section
+!  801  call us3d_check_int(icomw,MPI_MAX,ier)
+!       if (ier/=0) goto 999
 
-c     *** Cleanup
-      if (id==0) then
+! c     *** Cleanup
+!       if (id==0) then
 
-c        *** Close run group
-         call h5gclose_f(rid, hdf_err)
-         if (hdf_err<0) goto 999
+! c        *** Close run group
+!          call h5gclose_f(rid, hdf_err)
+!          if (hdf_err<0) goto 999
 
-c        *** Close file
-         if (us3d_debug) write(olun,*) '-- Closing solution file'
-         call us3d_sfile_cnd(sfile,ier)
+! c        *** Close file
+!          if (us3d_debug) write(olun,*) '-- Closing solution file'
+!          call us3d_sfile_cnd(sfile,ier)
 
-      endif
+!       endif
 
-      return
- 901  if (id==0) write(olun,*) '*** Error allocating memory in subroutine stats_write'
-c'
-      call finalize(2)
- 999  if (id==0) write(olun,*) '*** Error in subroutine stats_write'
-      ier= 1
-      return
-      end subroutine stats_write
+!       return
+!  901  if (id==0) write(olun,*) '*** Error allocating memory in subroutine stats_write'
+! c'
+!       call finalize(2)
+!  999  if (id==0) write(olun,*) '*** Error in subroutine stats_write'
+!       ier= 1
+!       return
+!       end subroutine stats_write
 c *****************************************************
       function exv_stats(pob,np,ige,s,nexv,exv_names) result (stats)
       !use POB_MODULE
@@ -589,7 +600,7 @@ c *****************************************************
       if (ier/=0) stop
            write(*,*) 'Time of statistics taken is:',stat_time,'seconds'
 
-      call us3d_data_r(pob%rid,'stats_mean',pob%nel,np,sm,ige,0,ier)      
+      call us3d_data_r(pob%rid,'stats-mean',pob%nel,np,sm,ige,0,ier)      
       if (ier/=0) stop
 
       !call us3d_data_r(pob%rid,'stats-stat',pob%nel,np,sp,ige,0,ier)

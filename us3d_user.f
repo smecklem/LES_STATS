@@ -472,7 +472,7 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
       integer, parameter :: nuv=1  ! CHANGE NUMBER OF USER VARIABLES HERE
       character(LEN=200) :: rpath,dpath
       character(40) :: dname
-      integer, private :: olun= 6
+      integer :: olun= 6
 
       ! -- Set the name of your dataset here
       dname= 'stats-mean'
