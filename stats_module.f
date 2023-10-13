@@ -41,7 +41,7 @@ c *****************************************************
       stat_time = 0.0d0
       unst_time = 0.0d0
       mean_var(:,:) = 0.0d0
-      if (us3d_debug) write(olun,*) '-- init_stats() called'
+!     if (us3d_debug) write(olun,*) '-- init_stats() called'
       return
       end subroutine init_stats
 

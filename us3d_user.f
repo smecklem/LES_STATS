@@ -578,16 +578,16 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
          if (ihave==1) then
 
             !epg= nel + neg                   ! This processor number of interior plus shared/ghost
-            allocate(myqdum(nmvar,nel),ige(nel),STAT=istat)
+            allocate(myqdum(nmvar,nel),STAT=istat)
 
             write(6,*) 'size(qva)= ',size(myqdum)
-            write(6,*) 'size(qva)= ',size(ige)
+            write(6,*) 'size(ige)= ',size(ige)
 
             if (us3d_debug.and.id==0) write(olun,*) 'Reading solution variables in parallel'
             !*** Read solution data globally according to the global map
-            ige(1:nel)= ugrid%ige(1:nel)
+            !ige(1:nel)= ugrid%ige(1:nel)
 
-            dump => read_us3d_qvals(dpath,nuv,.false.,ier,qva=myqdum)
+            dump => read_us3d_qvals(dpath,nmvar,.false.,ier,qva=myqdum)
             !dump => read_us3d_qvals(dpath,nuv,.false.,ier,qva=ige)
 
             if (ier/=0) goto 999
@@ -605,7 +605,7 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
             write(6,*) id,' read all data properly'
 
             if (allocated(myqdum)) deallocate(myqdum)
-            if (allocated(ige)) deallocate(ige)
+            !if (allocated(ige)) deallocate(ige)
             if (id==0) write(6,*) '== Successfully read "'//trim(dname)//'"'
 
          else
