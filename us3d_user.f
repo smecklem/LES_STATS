@@ -569,7 +569,7 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
          call write_us3d_qvals(dpath,myqdum,.false.,new,.false.,ier)
          if (ier/=0) goto 999
 
-         deallocate(myqdum)
+         if (allocated(myqdum)) deallocate(myqdum)
          !if (allocated(ige)) deallocate(ige)
          if (id==0) write(6,*) '== Successfully wrote "'//trim(dname)//'"'
 
@@ -581,6 +581,9 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
             allocate(myqdum(nmvar,nel),STAT=istat)
 
             write(6,*) 'size(qva)= ',size(myqdum)
+            write(6,*) nmvar
+            write(6,*) nel
+            write(6,*) istat
             !write(6,*) 'size(ige)= ',size(ige)
 
             if (us3d_debug.and.id==0) write(olun,*) 'Reading solution variables in parallel'
@@ -602,9 +605,9 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
             !      ier= 1
             !   endif
             !enddo
-            write(6,*) id,' read all data properly'
+            if (ier==0) write(6,*) id,' read all data properly'
 
-            deallocate(myqdum)
+            if (allocated(myqdum)) deallocate(myqdum)
             !if (allocated(ige)) deallocate(ige)
             if (id==0) write(6,*) '== Successfully read "'//trim(dname)//'"'
 
