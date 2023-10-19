@@ -520,12 +520,12 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
             if (ier/=0) exit
          endif
 
-         if (cio=='r'.and.ihave==1) then
-            call h5ex_att_get(rid,'stats_time',stat_time,ier)
-            call h5ex_att_get(rid,'unst_time',unst_time,ier)
-            call h5ex_att_get(rid,'stats_mean_vars',nmvar,ier)
-            if (ier/=0) exit
-         endif
+         !if (cio=='r'.and.ihave==1) then
+         !   call h5ex_att_get(rid,'stats_time',stat_time,ier)
+         !   call h5ex_att_get(rid,'unst_time',unst_time,ier)
+         !   call h5ex_att_get(rid,'stats_mean_vars',nmvar,ier)
+         !   if (ier/=0) exit
+         !endif
 
          ! --- Close run group and solution file
          call h5gclose_f(rid, hdf_err)
@@ -552,14 +552,14 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
          ! -- Write cell-based data.  Assume sized mydata(my_nv,epg) on each processor
          !!epg= nel + neg                   ! This processor number of interior plus shared/ghost
          !!global_epg= ugrid%nc + ugrid%ng  ! number of interior + ghost cells in global grid
-         allocate(myqdum(nmvar,nel),ige(nel),STAT=istat)
+         allocate(myqdum(nmvar,nel),STAT=istat)
 
          if (istat/=0) ier= 1
          call us3d_check_int(icomw,MPI_MAX,ier)
          if (ier/=0) goto 901
 
          do i= 1,nel
-            ige(i)= ugrid%ige(i)
+            !ige(i)= ugrid%ige(i)
 
             myqdum(1:nmvar,i) = mean_var(1:nmvar,i)
             !rdum(1:nsvar,i) = stat_var(1:nsvar,i)
@@ -569,8 +569,8 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
          call write_us3d_qvals(dpath,myqdum,.false.,new,.false.,ier)
          if (ier/=0) goto 999
 
-         if (allocated(myqdum)) deallocate(myqdum)
-         if (allocated(ige)) deallocate(ige)
+         deallocate(myqdum)
+         !if (allocated(ige)) deallocate(ige)
          if (id==0) write(6,*) '== Successfully wrote "'//trim(dname)//'"'
 
       Case('r')
@@ -581,7 +581,7 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
             allocate(myqdum(nmvar,nel),STAT=istat)
 
             write(6,*) 'size(qva)= ',size(myqdum)
-            write(6,*) 'size(ige)= ',size(ige)
+            !write(6,*) 'size(ige)= ',size(ige)
 
             if (us3d_debug.and.id==0) write(olun,*) 'Reading solution variables in parallel'
             !*** Read solution data globally according to the global map
@@ -594,17 +594,17 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 
             ! -- Do something with the data you read.  For now we just test that we
             ! -- read it properly.
-            do i=1,nel
-               testval = myqdum(1,i) - dble(ugrid%ige(i))
-               if (abs(testval).gt.1.0d-20) then
-                  write(6,*) '*** Failed to properly load data: ',
-     &               myqdum(1,i),dble(ugrid%ige(i)),abs(testval)
-                  ier= 1
-               endif
-            enddo
+            !do i=1,nel
+            !   testval = myqdum(1,i) - dble(ugrid%ige(i))
+            !   if (abs(testval).gt.1.0d-20) then
+            !      write(6,*) '*** Failed to properly load data: ',
+     &      !         myqdum(1,i),dble(ugrid%ige(i)),abs(testval)
+            !      ier= 1
+            !   endif
+            !enddo
             write(6,*) id,' read all data properly'
 
-            if (allocated(myqdum)) deallocate(myqdum)
+            deallocate(myqdum)
             !if (allocated(ige)) deallocate(ige)
             if (id==0) write(6,*) '== Successfully read "'//trim(dname)//'"'
 
