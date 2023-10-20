@@ -482,167 +482,117 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
       dpath(:)= ' '
       
       if (id==0) write(6,*) '-- Inside user_dataio, case: '//trim(cio)
-      dpath= trim(rpath)//'/'//trim(dname)
-      write(6,*) '-- dpath= "'//trim(dpath)//'"'
+
+      do while (id==0)
+
+         ! -- Initialize solution file
+         new= .false.
+         if (us3d_debug) write(6,*) '-- Initializing solution file: "'//trim(fname)//'"'
+         call us3d_sfile_init(fname,new,sfile,ier)
+         if (ier/=0) exit
+
+         if (irnum>sfile%nruns) then
+            write(6,*) '*** Run ',irnum,' does not yet exist in this file'
+            ier= 1
+            exit
+         endif
+
+         ! ---Open current run group
+         irnumg= irnum
+         call us3d_sfile_orun(sfile,irnumg,rid,ier,rpath=rpath)
+         if (ier/=0) exit
+
+         call h5ex_att_getd(rid,'have_'//trim(dname),0,ihave,ier)
+         if (ier/=0) exit
+
+         write(6,*) '-- Have my data? ',ihave
+         if (ihave==1) then
+            new= .false.
+         else
+            new= .true.
+         endif
+
+         ! Store solution attributes for this run
+         if (us3d_debug) write(olun,*) '-- Storing attributes'
+         if (cio=='w') then
+            ihave = 1
+            call h5ex_att_add(rid,'have_'//trim(dname),1,ier)
+            call h5ex_att_add(rid,'stats_time',stat_time,ier)
+            call h5ex_att_add(rid,'unst_time',unst_time,ier)
+            call h5ex_att_add(rid,'stats_mean_vars',nmvar,ier)
+            if (ier/=0) exit
+         endif
+
+         ! --- Close run group and solution file
+         call h5gclose_f(rid, hdf_err)
+         call us3d_sfile_cnd(sfile,ier)
+
+         exit
+      enddo
+
+      call us3d_check_int(icomw,MPI_MAX,ier)
+      if (ier/=0) goto 999
+
+      call MPI_BCAST(new,1,MPI_LOGICAL,0,icomw,ier)
+      call MPI_BCAST(ihave,1,MPI_INTEGER,0,icomw,ier)
+      call MPI_BCAST(rpath,len(rpath),MPI_CHARACTER,0,icomw,ier)
+
+      dpath = trim(rpath)//'/'//trim(dname)
+
+      !write(6,*) '-- dpath= "'//trim(dpath)//'"'
 
 
       Select Case(cio)
       Case('w')
             
-            do while (id==0)
+         ! -- Write cell-based data.  Assume sized mydata(my_nv,epg) on each processor
+         !epg= nel + neg                   ! This processor number of interior plus shared/ghost
+         !global_epg= ugrid%nc + ugrid%ng  ! number of interior + ghost cells in global grid
+         allocate(myqdum(nmvar,nel), ige(nel),STAT=istat)
+         write(6,*) '-- nmvar ', nmvar
+         write(6,*) '-- nel ', nel
+         write(6,*) '-- size myqdum', size(myqdum)
 
-                  ! -- Initialize solution file
-                  new= .false.
-                  if (us3d_debug) write(6,*) '-- Initializing solution file: "'//trim(fname)//'"'
-                  call us3d_sfile_init(fname,new,sfile,ier)
-                  if (ier/=0) exit
-
-                  if (irnum>sfile%nruns) then
-                        write(6,*) '*** Run ',irnum,' does not yet exist in this file'
-                        ier= 1
-                        exit
-                  endif
-
-                  ! ---Open current run group
-                  irnumg = irnum
-                  call us3d_sfile_orun(sfile,irnumg,rid,ier,rpath=rpath)
-                  if (ier/=0) exit
-
-                  call h5ex_att_getd(rid,'have_'//trim(dname),0,ihave,ier)
-                  if (ier/=0) exit
-
-                  write(6,*) '-- Have my data? ',ihave
-                  if (ihave==1) then
-                        new= .false.
-                  else
-                        new= .true.
-                  endif
-
-                  ihave = 1
-
-                  call h5ex_att_add(rid,'have_'//trim(dname),ihave,ier)
-                  call h5ex_att_add(rid,'stats_time',stat_time,ier)
-                  call h5ex_att_add(rid,'unst_time',unst_time,ier)
-                  call h5ex_att_add(rid,'stats_mean_vars',nmvar,ier)
-                  if (ier/=0) exit
-
-                  ! --- Close run group and solution file
-                  call h5gclose_f(rid, hdf_err)
-                  call us3d_sfile_cnd(sfile,ier)
-
-                  exit
-      
-            enddo
-
-            call us3d_check_int(icomw,MPI_MAX,ier)
-            if (ier/=0) goto 999
-
-            call MPI_BCAST(new,1,MPI_LOGICAL,0,icomw,ier)
-            call MPI_BCAST(ihave,1,MPI_INTEGER,0,icomw,ier)
-            call MPI_BCAST(rpath,len(rpath),MPI_CHARACTER,0,icomw,ier)
-
-            ! -- Write cell-based data.  Assume sized mydata(my_nv,epg) on each processor
-            !!epg= nel + neg                   ! This processor number of interior plus shared/ghost
-            !!global_epg= ugrid%nc + ugrid%ng  ! number of interior + ghost cells in global grid
-            allocate(myqdum(nmvar,nel),STAT=istat)
-
-            if (istat/=0) ier= 1
-            call us3d_check_int(icomw,MPI_MAX,ier)
-            if (ier/=0) goto 901
-
-            do i= 1,nel
-                  !ige(i)= ugrid%ige(i)
-
-                  myqdum(1:nmvar,i) = mean_var(1:nmvar,i)
-                  !rdum(1:nsvar,i) = stat_var(1:nsvar,i)
-            enddo
+         ! -- Add the data
+         do i=1,nel
+            ige(i) = ugrid%ige(i)
+            myqdum(1:nmvar,i) = mean_var(1:nmvar,i)
+         enddo
+         write(6,*) '-- added data to myqdum'
 
          ! -- Called with rpath, we expect to open and close the file in us3d_h5data_pw
          call write_us3d_qvals(dpath,myqdum,.false.,new,.false.,ier)
+         if (ier/=0) write(6,*) 'issue in write_us3d_qvals'
          if (ier/=0) goto 999
 
-         if (allocated(myqdum)) deallocate(myqdum)
-         !if (allocated(ige)) deallocate(ige)
+         if (allocated(myqdum)) deallocate(myqdum,STAT=istat)
+         if (allocated(ige)) deallocate(ige)
+         if (istat/=0) write(6,*) 'issue in deallocation myqdum' 
          if (id==0) write(6,*) '== Successfully wrote "'//trim(dname)//'"'
 
       Case('r')
 
-            ! -- Initialize solution file
-            new= .false.
-            if (us3d_debug) write(6,*) '-- Initializing solution file: "'//trim(fname)//'"'
-            call us3d_sfile_init(fname,new,sfile,ier)
-            call us3d_check_int(icomw,MPI_MAX,ier)
-            if (ier/=0) goto 999
-
-            if (irnum>sfile%nruns) then
-                  write(6,*) '*** Run ',irnum,' does not yet exist in this file'
-                  goto 999
-            endif
-
-            ! ---Open current run group
-            irnumg = irnum
-            call us3d_sfile_orun(sfile,irnumg,rid,ier,rpath=rpath)
-            call us3d_check_int(icomw,MPI_MAX,ier)
-            if (ier/=0) goto 999
-
-            if (id==0) then
-                  call h5ex_att_getd(rid,'have_'//trim(dname),0,ihave,ier)
-                  write(6,*) '-- Have my data? ',ihave
-                  if (ihave==1) then
-                        new= .false.
-                  else
-                        new= .true.
-                  endif
-            endif
-            call us3d_check_int(icomw,MPI_MAX,ier)
-            if (ier/=0) goto 999
-
-            call MPI_BCAST(new,1,MPI_LOGICAL,0,icomw,ier)
-            call MPI_BCAST(ihave,1,MPI_INTEGER,0,icomw,ier)
-            call MPI_BCAST(rpath,len(rpath),MPI_CHARACTER,0,icomw,ier)
-
             if (ihave==1) then
+   
+               !epg= nel + neg                   ! This processor number of interior plus shared/ghost
+               allocate(myqdum(nmvar,nel),STAT=istat)
+   
+               write(6,*) 'epg, size(qva)= ',epg,size(myqdum)
+   
+               dump => read_us3d_qvals(dpath,nuv,.false.,ier,qva=myqdum)
+               if (ier/=0) goto 999
 
-                  !epg= nel + neg                   ! This processor number of interior plus shared/ghost
-                  allocate(myqdum(nmvar,nel),STAT=istat) !nmvar=20,nel=cells/processor
-
-                  write(6,*) 'size(qva)= ',size(myqdum)
-                  write(6,*) nmvar
-                  write(6,*) nel
-                  write(6,*) istat
-                  !write(6,*) 'size(ige)= ',size(ige)
-
-                  if (us3d_debug.and.id==0) write(olun,*) 'Reading solution variables in parallel'
-                  !*** Read solution data globally according to the global map
-                  !ige(1:nel)= ugrid%ige(1:nel)
-
-                  dump => read_us3d_qvals(dpath,nmvar,.false.,ier,hid=rid,qva=myqdum)
-                  if (ier/=0) goto 999
-
-                  ! -- Do something with the data you read.  For now we just test that we
-                  ! -- read it properly.
-                  !do i=1,nel
-                  !   testval = myqdum(1,i) - dble(ugrid%ige(i))
-                  !   if (abs(testval).gt.1.0d-20) then
-                  !      write(6,*) '*** Failed to properly load data: ',
-                  !    &     myqdum(1,i),dble(ugrid%ige(i)),abs(testval)
-                  !      ier= 1
-                  !   endif
-                  !enddo
-                  if (ier==0) write(6,*) id,' read all data properly'
-
-                  deallocate(myqdum)
-                  !if (allocated(ige)) deallocate(ige)
-                  if (id==0) write(6,*) '== Successfully read "'//trim(dname)//'"'
-
+   
+               deallocate(myqdum)
+               if (id==0) write(6,*) '== Successfully read "'//trim(dname)//'"'
+   
             else
-                  if (id==0) write(6,*) '-- No "'//trim(dname)//'" present for reading'
+               if (id==0) write(6,*) '-- No "'//trim(dname)//'" present for reading'
             endif
-
-      end select
+   
+         end select
 
       return
- 901  if (id==0) write(olun,*) '*** Error allocating memory in subroutine stats_read'
  999  if (id==0) write(6,*) '*** Error in subroutine my_user_dataio'
       ier= 1
       return
