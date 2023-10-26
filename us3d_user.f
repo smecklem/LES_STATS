@@ -546,11 +546,12 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
       Case('w')
             
          ! -- Write cell-based data.  Assume sized mydata(my_nv,epg) on each processor
-         !epg= nel + neg                   ! This processor number of interior plus shared/ghost
+         epg= nel + neg                   ! This processor number of interior plus shared/ghost
          !global_epg= ugrid%nc + ugrid%ng  ! number of interior + ghost cells in global grid
          allocate(myqdum(nmvar,nel), ige(nel),STAT=istat)
          write(6,*) '-- nmvar ', nmvar
          write(6,*) '-- nel ', nel
+         write(6,*) '-- neg ', neg
          write(6,*) '-- size myqdum', size(myqdum)
 
          ! -- Add the data
@@ -574,12 +575,15 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 
             if (ihave==1) then
    
-               !epg= nel + neg                   ! This processor number of interior plus shared/ghost
-               allocate(myqdum(nmvar,nel),STAT=istat)
+               epg= nel + neg                   ! This processor number of interior plus shared/ghost
+               allocate(myqdum(nmvar,epg),STAT=istat)
    
-               write(6,*) 'epg, size(qva)= ',epg,size(myqdum)
+               write(6,*) 'epg, size(qva)= ',epg,size(myqdum) !538976288      293888
+               write(6,*) 'nmvar= ',nmvar !14
+               write(6,*) 'nel = ',nel    !20992 -- number of cells
+               write(6,*) 'istat=',istat  !0
    
-               dump => read_us3d_qvals(dpath,nuv,.false.,ier,qva=myqdum)
+               dump => read_us3d_qvals(dpath,nmvar,.false.,ier,qva=myqdum)
                if (ier/=0) goto 999
 
    
