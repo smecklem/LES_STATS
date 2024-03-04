@@ -1150,6 +1150,21 @@ c     @Curator: Nick N. Gibbons (n.gibbons@uq.edu.au)
 cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 
       subroutine my_user_flux_debug(ibs,ibc,ibt,j,grdxl,grdxr,grdxl2,grdxr2,sss,ssx,vf,fxi)
+      use MPI
+      use HDF5
+      use H5_EXTRAS
+      use US3D_EXTRAS
+
+      use us3d_global
+      use us3d_varkinds
+      use userdata_stats
+      use stats
+
+      use mpivars
+      use switches
+      use connect
+      use sizing
+      
       integer, intent(IN) :: ibs,ibc,ibt,j
       Real(8), integer(IN) :: sss, vf
       Real(8), dimension(:), intent(IN) :: grdxl,grdxr,grdxl2,grdxr2
@@ -1312,7 +1327,6 @@ c  *****************************************************************************
       use us3d_user_module, only : user_dataio_post
       use us3d_user_module, only : user_finalize
       use us3d_user_module, only : user_flux
-      use us3d_user_module, only : user_dswitch
       use POST_MODULE, only : user_main_postpar 
 
 !      use GASPROPS, only : user_transport
