@@ -1130,6 +1130,32 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 
       return
       end subroutine my_user_flux
+      
+cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+c     Subroutine that is called in calcrate() to set the inviscid fluxes
+c     when ibase=4.
+c
+c     Input
+c     -----
+c     k    - Current index in jmaster
+c     j    - Current face
+c     i    - Left neighbor cell
+c     ii   - Right neighbor cell
+c
+c     Output
+c     ------
+c     fxi - The fluxes
+c
+c     @Curator: Nick N. Gibbons (n.gibbons@uq.edu.au)
+cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+      subroutine my_user_flux_debug(ibs,ibc,ibt,j,grdxl,grdxr,grdxl2,grdxr2,sss,ssx,vf,fxi)
+      integer, intent(IN) :: ibs,ibc,ibt,j
+      Real(8), integer(IN) :: sss, vf
+      Real(8), dimension(:), intent(IN) :: grdxl,grdxr,grdxl2,grdxr2
+      Real(8), dimension(3), intent(IN) :: ssx
+      Real(8), dimension(:), intent(OUT) :: fxi
+      end subroutine my_user_flux_debug
 
 c  ***********************************************************************************
 c     Use this routine if you want to change the blending function that is used to
@@ -1314,8 +1340,8 @@ c  *****************************************************************************
       
       user_finalize => my_user_finalize
       user_main_postpar => my_user_main_postpar
-      user_flux => my_user_flux
-      user_dswitch => my_user_dswitch
+      user_flux => my_user_flux_debug
+      !user_dswitch => my_user_dswitch !start with user_flux debug
 
       return
       end subroutine user_initialize
