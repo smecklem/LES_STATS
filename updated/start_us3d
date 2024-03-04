@@ -1,0 +1,2 @@
+module use /software/projects/pawsey0422/smecklem/fresh-1.1.8/
+module load us3d-module 
