@@ -1195,6 +1195,16 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
       Integer :: n,m,nn,idx
       Logical :: hackflag
 
+      fxi(:) = 0.0d0  ! VERY IMPORTANT TO INITIALISE THIS (maybe)
+      hackflag = .false.
+
+      rfl = 0.0d0
+      rfr = 0.0d0
+      evfl= 0.0d0
+      evfr= 0.0d0
+      rntfl= 0.0d0
+      rntfr= 0.0d0
+
       end subroutine my_user_flux_debug
 
 c  ***********************************************************************************
