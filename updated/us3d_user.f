@@ -1205,6 +1205,47 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
       rntfl= 0.0d0
       rntfr= 0.0d0
 
+      select case(order)
+      case(4)
+          do n=1,ns
+            rhosfl(n) = rsl(n) + grdxl(n)*beta
+            rhosfr(n) = rsr(n) + grdxr(n)*beta
+            if(rhosfl(n) .lt. 0.0d0) rhosfl(n) = rsl(n)
+            if(rhosfr(n) .lt. 0.0d0) rhosfr(n) = rsr(n)
+            rfl       = rfl + rhosfl(n)
+            rfr       = rfr + rhosfr(n)
+          enddo
+          csfl(:) = rhosfl(:)/rfl
+          csfr(:) = rhosfr(:)/rfr
+
+          ufl = ul + grdxl(ns+1)*beta
+          ufr = ur + grdxr(ns+1)*beta
+          vfl = vl + grdxl(ns+2)*beta
+          vfr = vr + grdxr(ns+2)*beta
+          wfl = wl + grdxl(ns+3)*beta
+          wfr = wr + grdxr(ns+3)*beta
+
+          tfl = tl + grdxl(ns+4)*beta
+          tfr = tr + grdxr(ns+4)*beta
+          if(tfl .lt. 0.0d0) tfl = tl
+          if(tfr .lt. 0.0d0) tfr = tr
+
+          do n=1,nv
+              evfl= evl + grdxl(ns+5+n)*beta
+              evfr= evr + grdxr(ns+5+n)*beta
+              if(evfl .lt. 0.0d0) evfl = evl
+              if(evfr .lt. 0.0d0) evfr = evr
+          enddo
+
+          do n=1,nt
+              nn = ns+5+nv+nv+n 
+              rntfl(n) = rntl(n) + grdxl(nn)*beta
+              rntfr(n) = rntr(n) + grdxr(nn)*beta
+              if(rntfl(n) .lt. 0.0d0) rntfl(n) = rntl(n)
+              if(rntfr(n) .lt. 0.0d0) rntfr(n) = rntr(n)
+          enddo
+      end select
+
       end subroutine my_user_flux_debug
 
 c  ***********************************************************************************
