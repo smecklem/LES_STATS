@@ -1149,7 +1149,11 @@ c
 c     @Curator: Nick N. Gibbons (n.gibbons@uq.edu.au)
 cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 
-      subroutine my_user_flux_debug(ibs,ibc,ibt,j,grdxl,grdxr,grdxl2,grdxr2,sss,ssx,vf,fxi)
+      subroutine my_user_flux_debug(k,j,i,ii,
+            &                     ns, nv, nt, ne, ngr, rsl, rsr, rl, rr,
+            &                     ul, ur, vl, vr, wl, wr, tl, tr, tvl, tvr, evl, evr,
+            &                     pl, pr, rntl, rntr, grdxl, grdxr, grdxl2, grdxr2, 
+            &                     gsp, cvs, hs, sss, ssx, fxi)
       use MPI
       use HDF5
       use H5_EXTRAS
@@ -1164,12 +1168,33 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
       use switches
       use connect
       use sizing
+      use models
+      use simvars
+      use GASPROPS
+      use geometry
       
-      integer, intent(IN) :: ibs,ibc,ibt,j
-      Real(8), integer(IN) :: sss, vf
-      Real(8), dimension(:), intent(IN) :: grdxl,grdxr,grdxl2,grdxr2
-      Real(8), dimension(3), intent(IN) :: ssx
-      Real(8), dimension(:), intent(OUT) :: fxi
+      Implicit none
+      Integer, intent(IN)  :: k,j,i,ii
+      Integer, intent(IN)  :: ns,nv,nt,ne,ngr
+      Real(8), intent(IN)  :: rl,rr,ul,ur,vl,vr,wl,wr,pl,pr
+      Real(8), intent(IN)  :: tl,tr,tvl,tvr,evl,evr,rntl(2),rntr(2),sss
+      Real(8), intent(IN)  :: grdxl(ngr),grdxr(ngr),grdxl2(ngr),grdxr2(ngr)
+      Real(8), dimension(ns), intent(IN)  :: rsl,rsr,gsp,hs,cvs
+      Real(8), dimension(3), intent(IN)   :: ssx
+
+      Real(8), dimension(ne), intent(OUT) :: fxi
+
+      Real(8), parameter :: beta = 2.0d0/3.0d0
+      Real(8), parameter :: alpha = 1.0d0, delta = -2.0d0/45.0d0, gamm = 16.0d0/15.0d0
+      Integer,parameter :: order = 6
+      Real(8) :: upl,upr,upav,rav,rupa,pav,kav,el,er,gtr,gtl
+      Real(8) :: rhosfl(ns),csfl(ns),rfl,ufl,vfl,wfl,pfl,tfl,evfl,tvfl,rntfl(2)
+      Real(8) :: rhosfr(ns),csfr(ns),rfr,ufr,vfr,wfr,pfr,tfr,evfr,tvfr,rntfr(2)
+      Real(8) :: rflag,AA,BB,AH,BH,rpsi,csmn,csmx,ht,rfs,evn(ns),cvv(ns)
+      Real(8) :: hack_x,hack_y,hack_z,hack_r
+      Integer :: n,m,nn,idx
+      Logical :: hackflag
+
       end subroutine my_user_flux_debug
 
 c  ***********************************************************************************
