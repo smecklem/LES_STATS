@@ -1288,6 +1288,58 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
             stop
       end select
 
+      upl     = ufl*ssx(1) + vfl*ssx(2) + wfl*ssx(3)
+      upr     = ufr*ssx(1) + vfr*ssx(2) + wfr*ssx(3)
+      upav    = 0.5d0*(upl + upr)
+
+
+      ! *** mass generation fix (band-aid)
+      rflag = 0.0d0
+      rupa  = 0.0d0
+      rav   = 0.0d0
+
+      do n=1,ns
+            rpsi = 0.5d0
+            csmn = min(csfl(n),csfr(n))
+            csmx = max(csfl(n),csfr(n))
+           
+            if ((csfl(n)+csfr(n)).gt.1.0d-16) then
+              
+               AA = csfl(n)
+               BB = csfr(n)
+               AH = AA/(AA+BB)
+               BH = BB/(AA+BB)
+              
+               rflag = sign(1.0d0,(csfr(n) - csfl(n))*upav)
+               if(rflag.gt.0.0d0) then
+                 
+                  if( (csmx-csmn) .gt. 1.0d-10) then
+                     rpsi = 2.0d0*AH*BH*(AA+BB)
+                     rpsi = (rpsi-csmn)/(csmx-csmn)
+                  else
+                     rpsi = 0.5d0 
+                  endif
+                  rpsi = max(rpsi,0.0d0)
+                  rpsi = min(rpsi,1.0d0)               
+               else
+                  !rfs = (1.0d0-2.0d0*AH*BH)*(AA+BB)
+               endif
+            endif
+           
+            if(csfl(n) .eq. csmn) then
+               rhosfl(n) = 2.0d0*(1.0d0-rpsi)*rhosfl(n)
+               rhosfr(n) = 2.0d0*rpsi*rhosfr(n)
+            else
+               rhosfl(n) = 2.0d0*rpsi*rhosfl(n)
+               rhosfr(n) = 2.0d0*(1.0d0-rpsi)*rhosfr(n)
+            endif
+           
+            rfs    = 0.5d0*(rhosfl(n) + rhosfr(n))
+            rav    = rav  + rfs
+            fxi(n) = rfs*upav  ! Set rhos flux here
+            rupa   = rupa + fxi(n)
+         enddo ! End Mass Gen Fix Section
+         
       end subroutine my_user_flux_debug
 
 c  ***********************************************************************************
