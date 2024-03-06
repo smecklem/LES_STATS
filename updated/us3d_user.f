@@ -1163,16 +1163,16 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
       use us3d_varkinds
       use userdata_stats
       use stats
-
-      use mpivars
-      use switches
       use connect
-      use sizing
-      use models
-      use simvars
-      use GASPROPS
-      use geometry
-      
+
+      Use mpivars, only  : id
+      Use models, only   : gas
+      Use simvars, only  : faci,t,tv
+      Use switches, only : ivib, ncr
+      Use GASPROPS, only : gas_vibels1
+      Use sizing, only   : nel
+      Use geometry, only : xcf
+
       Implicit none
       Integer, intent(IN)  :: k,j,i,ii
       Integer, intent(IN)  :: ns,nv,nt,ne,ngr
