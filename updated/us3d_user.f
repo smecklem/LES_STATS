@@ -1244,6 +1244,48 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
               if(rntfl(n) .lt. 0.0d0) rntfl(n) = rntl(n)
               if(rntfr(n) .lt. 0.0d0) rntfr(n) = rntr(n)
           enddo
+      case(6)
+            do n=1,ns
+              rhosfl(n) = rsl(n)*alpha + grdxl(n)*gamm + grdxl2(n)*delta
+              rhosfr(n) = rsr(n)*alpha + grdxr(n)*gamm + grdxr2(n)*delta
+              if(rhosfl(n) .le. 0.0d0) rhosfl(n) = rsl(n)
+              if(rhosfr(n) .le. 0.0d0) rhosfr(n) = rsr(n)
+              rfl = rfl + rhosfl(n)
+              rfr = rfr + rhosfr(n)
+            enddo
+            csfl(:) = rhosfl(:)/rfl
+            csfr(:) = rhosfr(:)/rfr
+ 
+            ufl = ul*alpha + grdxl(ns+1)*gamm + grdxl2(ns+1)*delta
+            ufr = ur*alpha + grdxr(ns+1)*gamm + grdxr2(ns+1)*delta
+            vfl = vl*alpha + grdxl(ns+2)*gamm + grdxl2(ns+2)*delta
+            vfr = vr*alpha + grdxr(ns+2)*gamm + grdxr2(ns+2)*delta
+            wfl = wl*alpha + grdxl(ns+3)*gamm + grdxl2(ns+3)*delta
+            wfr = wr*alpha + grdxr(ns+3)*gamm + grdxr2(ns+3)*delta
+ 
+            tfl = tl*alpha + grdxl(ns+4)*gamm + grdxl2(ns+4)*delta
+            tfr = tr*alpha + grdxr(ns+4)*gamm + grdxr2(ns+4)*delta
+            if(tfl .le. 0.0d0) tfl = tl
+            if(tfr .le. 0.0d0) tfr = tr
+ 
+            do n=1,nv
+                evfl= evl*alpha + grdxl(ns+5+n)*gamm + grdxl2(ns+5+n)*delta
+                evfr= evr*alpha + grdxr(ns+5+n)*gamm + grdxr2(ns+5+n)*delta
+                if(evfl .le. 0.0d0) evfl = evl
+                if(evfr .le. 0.0d0) evfr = evr
+            enddo
+ 
+            do n=1,nt
+                nn = ns+5+nv+nv+n
+                rntfl(n)= rntl(n)*alpha + grdxl(nn)*gamm + grdxl2(nn)*delta
+                rntfr(n)= rntr(n)*alpha + grdxr(nn)*gamm + grdxr2(nn)*delta
+                if(rntfl(n) .le. 0.0d0) rntfl(n) = rntl(n)
+                if(rntfr(n) .le. 0.0d0) rntfr(n) = rntr(n)
+            enddo
+ 
+        case default 
+            write(*,*) "Error in userflux, check order=4,6"
+            stop
       end select
 
       end subroutine my_user_flux_debug
